@@ -1,0 +1,25 @@
+{
+  "name": "privy360",
+  "private": true,
+  "version": "0.0.0",
+  "packageManager": "pnpm@11.19.0",
+  "engines": {
+    "node": ">=24 <26"
+  },
+  "scripts": {
+    "format": "prettier --check package.json pnpm-workspace.yaml tsconfig.base.json eslint.config.mjs IMPLEMENTATION_PLAN.md apps packages specs regulations infra tests scripts docs .github",
+    "format:write": "prettier --write package.json pnpm-workspace.yaml tsconfig.base.json eslint.config.mjs IMPLEMENTATION_PLAN.md apps packages specs regulations infra tests scripts docs .github",
+    "lint": "eslint .",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "test": "node --test tests/unit/*.test.mjs",
+    "build": "pnpm -r --if-present build",
+    "check:structure": "node scripts/check-structure.mjs"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "eslint": "10.11.0",
+    "@eslint/js": "10.0.1",
+    "typescript-eslint": "8.56.1",
+    "prettier": "3.9.9"
+  }
+}
