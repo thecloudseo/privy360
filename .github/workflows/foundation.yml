@@ -1,16 +1,18 @@
-name: Foundation
+name: Foundation verification
 on:
   push:
   pull_request:
+permissions:
+  contents: read
 jobs:
-  verify:
+  quality:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version-file: .node-version
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061 # v4.2.0
         with:
           version: 11.19.0
       - run: pnpm install --frozen-lockfile
@@ -20,3 +22,112 @@ jobs:
       - run: pnpm test
       - run: pnpm build
       - run: pnpm check:structure
+  playwright:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: .node-version
+      - uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061 # v4.2.0
+        with:
+          version: 11.19.0
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm test:e2e
+  semgrep:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - run: python3 -m venv .venv-semgrep
+      - run: .venv-semgrep/bin/pip install semgrep==1.136.0
+      - run: .venv-semgrep/bin/semgrep scan --config p/security-audit --error .
+  codeql:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: github/codeql-action/init@8aad20d150bbac5944a9f9d289da16a4b0d87c1e # v4.36.2
+        with:
+          languages: javascript-typescript
+          queries: security-and-quality
+      - uses: github/codeql-action/analyze@8aad20d150bbac5944a9f9d289da16a4b0d87c1e # v4.36.2
+        id: analyze
+        with:
+          output: codeql-results
+      - run: node scripts/assert-sarif-clean.mjs codeql-results
+  trivy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
+        with:
+          scan-type: fs
+          version: v0.74.0
+          scan-ref: .
+          trivy-config: trivy.yaml
+          scanners: vuln,secret,misconfig
+          severity: HIGH,CRITICAL
+          exit-code: "1"
+          format: table
+      - run: echo "Container image scan N/A — FOUNDATION-002 creates no image."
+  gitleaks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 0
+      - name: Install verified Gitleaks
+        run: |
+          mkdir -p .cache
+          curl -fsSL https://github.com/gitleaks/gitleaks/releases/download/v8.30.0/gitleaks_8.30.0_linux_x64.tar.gz -o .cache/gitleaks.tar.gz
+          echo '79a3ab579b53f71efd634f3aaf7e04a0fa0cf206b7ed434638d1547a2470a66e  .cache/gitleaks.tar.gz' | sha256sum -c -
+          tar -xzf .cache/gitleaks.tar.gz -C .cache gitleaks
+      - name: Scan repository history
+        run: .cache/gitleaks git --redact .
+      - name: Scan current files
+        run: .cache/gitleaks dir --redact .
+      - name: Verify injected synthetic secret is rejected
+        run: GITLEAKS_BIN=.cache/gitleaks node scripts/verify-gitleaks-fixture.mjs
+  dependency-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: .node-version
+      - uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061 # v4.2.0
+        with:
+          version: 11.19.0
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm audit --audit-level high
+      - run: node scripts/verify-audit-fixture.mjs
+  checkov:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - run: python3 -m venv .venv-checkov
+      - run: .venv-checkov/bin/pip install checkov==3.3.20
+      - name: Inspect infrastructure scope
+        run: node scripts/check-iac-scope.mjs
+      - name: Scan CI workflow configuration
+        run: .venv-checkov/bin/checkov --directory .github/workflows --framework github_actions --quiet --compact
+      - name: Scan IaC when present
+        run: |
+          if find infra -type f ! -name README.md | grep -q .; then
+            .venv-checkov/bin/checkov --directory infra --compact
+          else
+            echo "Checkov IaC scan N/A — only tracked directory placeholders exist."
+          fi
+  sbom:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: anchore/sbom-action@f8bdd1d8ac5e901a77a92f111440fdb1b593736b # v0.20.6
+        with:
+          path: .
+          format: cyclonedx-json
+          artifact-name: privy360-foundation-sbom.cdx.json
+          upload-release-assets: false

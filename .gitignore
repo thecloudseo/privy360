@@ -3,3 +3,9 @@ dist/
 coverage/
 .DS_Store
 *.tsbuildinfo
+playwright-report/
+test-results/
+.ci-fixture/
+.cache/
+.venv-semgrep/
+.venv-checkov/

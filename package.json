@@ -7,11 +7,13 @@
     "node": ">=24 <26"
   },
   "scripts": {
-    "format": "prettier --check package.json pnpm-workspace.yaml tsconfig.base.json eslint.config.mjs IMPLEMENTATION_PLAN.md apps packages specs regulations infra tests scripts docs .github",
-    "format:write": "prettier --write package.json pnpm-workspace.yaml tsconfig.base.json eslint.config.mjs IMPLEMENTATION_PLAN.md apps packages specs regulations infra tests scripts docs .github",
+    "format": "prettier --check package.json pnpm-workspace.yaml trivy.yaml tsconfig.base.json tsconfig.json eslint.config.mjs playwright.config.ts IMPLEMENTATION_PLAN.md apps packages specs regulations infra tests scripts docs .github",
+    "format:write": "prettier --write package.json pnpm-workspace.yaml trivy.yaml tsconfig.base.json tsconfig.json eslint.config.mjs playwright.config.ts IMPLEMENTATION_PLAN.md apps packages specs regulations infra tests scripts docs .github",
     "lint": "eslint .",
-    "typecheck": "pnpm -r --if-present typecheck",
-    "test": "node --test tests/unit/*.test.mjs",
+    "typecheck": "tsc -p tsconfig.json && pnpm -r --if-present typecheck",
+    "test": "node --test tests/unit/*.test.mjs tests/security/*.test.mjs",
+    "test:e2e": "playwright test",
+    "audit:deps": "pnpm audit --audit-level high",
     "build": "pnpm -r --if-present build",
     "check:structure": "node scripts/check-structure.mjs"
   },
@@ -20,6 +22,8 @@
     "eslint": "10.11.0",
     "@eslint/js": "10.0.1",
     "typescript-eslint": "8.56.1",
-    "prettier": "3.9.9"
+    "prettier": "3.9.9",
+    "@playwright/test": "1.63.0",
+    "@types/node": "24.19.0"
   }
 }

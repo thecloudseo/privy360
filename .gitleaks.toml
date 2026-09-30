@@ -1,0 +1,8 @@
+title = "Privy360 generated-file exclusions"
+
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Generated dependency and browser binaries are scanned at their source, not as repository code"
+paths = ['''(^|/)node_modules/''', '''(^|/)\.cache/''', '''(^|/)\.venv-semgrep/''', '''(^|/)\.venv-checkov/''']
