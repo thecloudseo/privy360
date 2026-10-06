@@ -5,14 +5,14 @@ import { URL } from "node:url";
 
 const up = await readFile(
   new URL(
-    "../../packages/database/migrations/0006_regulatory_publication.up.sql",
+    "../../packages/database/migrations/0009_regulatory_publication.up.sql",
     import.meta.url,
   ),
   "utf8",
 );
 const down = await readFile(
   new URL(
-    "../../packages/database/migrations/0006_regulatory_publication.down.sql",
+    "../../packages/database/migrations/0009_regulatory_publication.down.sql",
     import.meta.url,
   ),
   "utf8",

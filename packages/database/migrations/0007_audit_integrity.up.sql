@@ -60,5 +60,5 @@ do $$ begin
 end $$;
 
 insert into audit.schema_migrations(version, checksum)
-values ('0006_audit_integrity', 'AUDIT-003-SQL-V1')
+values ('0007_audit_integrity', 'AUDIT-003-SQL-V1')
 on conflict (version) do nothing;

@@ -4,7 +4,7 @@
 
 **Goal:** Implement the bounded AUDIT-003 signed-anchor exporter and verifier over the existing audit hash chains, with a key-provider port, durable anchor metadata, and metadata-only integrity status.
 
-**Architecture:** `packages/audit` owns the portable anchor/key-provider contract, canonical anchor bytes, exporter, verifier, and fail-closed result types. `packages/database` owns migration `0006_audit_integrity` for tenant and platform anchor metadata, append-only/runtime write boundaries, RLS, and bounded rollback. The implementation records provider key/signature references rather than private material and does not claim WORM storage, non-repudiation, or tamper-proofness; separately administered external retention-locked storage remains an integration boundary.
+**Architecture:** `packages/audit` owns the portable anchor/key-provider contract, canonical anchor bytes, exporter, verifier, and fail-closed result types. `packages/database` owns migration `0007_audit_integrity` for tenant and platform anchor metadata, append-only/runtime write boundaries, RLS, and bounded rollback. The implementation records provider key/signature references rather than private material and does not claim WORM storage, non-repudiation, or tamper-proofness; separately administered external retention-locked storage remains an integration boundary.
 
 **Tech Stack:** TypeScript strict mode, Node built-in test runner, PostgreSQL reviewed SQL migrations, pnpm.
 
@@ -54,7 +54,7 @@
 
 ### Task 3: Add reviewed PostgreSQL anchor migration
 
-**Files:** Create `packages/database/migrations/0006_audit_integrity.up.sql`; create `packages/database/migrations/0006_audit_integrity.down.sql`.
+**Files:** Create `packages/database/migrations/0007_audit_integrity.up.sql`; create `packages/database/migrations/0007_audit_integrity.down.sql`.
 
 **Interfaces:** Persist anchor metadata needed to re-run verification: scope/tenant, stream ID, interval, previous/end hashes, canonicalization version, key reference, signature digest/reference, provider metadata digest, verification state/timestamps, and audit/outbox linkage where supported by existing schema. No raw audit payload or private key.
 

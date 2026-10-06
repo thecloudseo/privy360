@@ -58,14 +58,23 @@ test("OIDC callback rejects issuer, audience, expiry, replay, PKCE, and MFA fail
     { expectedCodeChallenge: "wrong" },
     { mfaVerified: false },
   ]) {
-    assert.throws(() => validateOidcCallback(validInput(overrides), config), AuthBoundaryError);
+    assert.throws(
+      () => validateOidcCallback(validInput(overrides), config),
+      AuthBoundaryError,
+    );
   }
 });
 
 test("OIDC callback never accepts a caller-controlled tenant claim", () => {
   assert.throws(
-    () => validateOidcCallback(validInput({ claims: { tenant_id: "attacker" } }), config),
-    (error) => error instanceof AuthBoundaryError && error.message === "Untrusted tenant claim rejected.",
+    () =>
+      validateOidcCallback(
+        validInput({ claims: { tenant_id: "attacker" } }),
+        config,
+      ),
+    (error) =>
+      error instanceof AuthBoundaryError &&
+      error.message === "Untrusted tenant claim rejected.",
   );
 });
 
@@ -87,9 +96,15 @@ test("opaque sessions persist only a hash and use secure host-only cookies", asy
   assert.doesNotMatch(JSON.stringify(session.record), /rawToken|secret/i);
 
   const store = new Map([[session.record.sessionId, session.record]]);
-  assert.equal((await readActiveSession(store, session.presentedToken)).userId, session.record.userId);
+  assert.equal(
+    (await readActiveSession(store, session.presentedToken)).userId,
+    session.record.userId,
+  );
   await revokeSession(store, session.record.sessionId);
-  await assert.rejects(() => readActiveSession(store, session.presentedToken), /revoked/i);
+  await assert.rejects(
+    () => readActiveSession(store, session.presentedToken),
+    /revoked/i,
+  );
 });
 
 test("audit events are redacted and authentication does not create tenant authority", () => {
@@ -102,7 +117,10 @@ test("audit events are redacted and authentication does not create tenant author
   });
   assert.equal(session.record.tenantId, undefined);
   assert.equal(events[0].type, "LoginSucceeded");
-  assert.doesNotMatch(JSON.stringify(events), /verifier|token|tenant_id|secret/i);
+  assert.doesNotMatch(
+    JSON.stringify(events),
+    /verifier|token|tenant_id|secret/i,
+  );
 });
 
 test("failed authentication emits only a correlation-scoped failure event", async () => {
@@ -112,10 +130,19 @@ test("failed authentication emits only a correlation-scoped failure event", asyn
 });
 
 test("identity migration is tenant-safe and rollback-scoped", async () => {
-  const up = await readFile(resolve("packages/database/migrations/0006_identity_foundation.up.sql"), "utf8");
-  const down = await readFile(resolve("packages/database/migrations/0006_identity_foundation.down.sql"), "utf8");
+  const up = await readFile(
+    resolve("packages/database/migrations/0006_identity_foundation.up.sql"),
+    "utf8",
+  );
+  const down = await readFile(
+    resolve("packages/database/migrations/0006_identity_foundation.down.sql"),
+    "utf8",
+  );
   assert.match(up, /unique \(tenant_id, issuer, subject\)/i);
-  assert.match(up, /foreign key \(tenant_id, user_id\) references tenant\.users/i);
+  assert.match(
+    up,
+    /foreign key \(tenant_id, user_id\) references tenant\.users/i,
+  );
   assert.match(up, /enable row level security/i);
   assert.match(up, /force row level security/i);
   assert.match(up, /token_bundle_secret_ref/i);

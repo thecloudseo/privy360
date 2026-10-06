@@ -33,5 +33,5 @@ CREATE TRIGGER publication_manifests_immutable
   FOR EACH ROW EXECUTE FUNCTION regulatory.reject_published_manifest_mutation();
 
 INSERT INTO audit.schema_migrations(version, checksum)
-VALUES ('0006_regulatory_publication', 'REGULATORY-003-SQL-V1')
+VALUES ('0009_regulatory_publication', 'REGULATORY-003-SQL-V1')
 ON CONFLICT (version) DO NOTHING;

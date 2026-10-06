@@ -48,8 +48,8 @@
 
 **Files:**
 
-- Create: `packages/database/migrations/0006_regulatory_publication.up.sql`
-- Create: `packages/database/migrations/0006_regulatory_publication.down.sql`
+- Create: `packages/database/migrations/0009_regulatory_publication.up.sql`
+- Create: `packages/database/migrations/0009_regulatory_publication.down.sql`
 - Test: `tests/integration/regulatory-003-sql.test.mjs`
 
 **Interfaces:**

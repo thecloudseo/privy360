@@ -29,6 +29,10 @@ export const MIGRATION_SEQUENCE = Object.freeze([
   "0003_regulatory_foundation.up.sql",
   "0004_audit_delivery.up.sql",
   "0005_regulatory_intake.up.sql",
+  "0006_identity_foundation.up.sql",
+  "0007_audit_integrity.up.sql",
+  "0008_atomic_controls.up.sql",
+  "0009_regulatory_publication.up.sql",
 ]);
 
 export const CP1_CASE_NAMES = Object.freeze([

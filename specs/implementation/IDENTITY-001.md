@@ -30,10 +30,12 @@
 ### Task 1: Freeze adversarial contracts
 
 **Files:**
+
 - Create: `tests/security/identity-001.test.mjs`
 - Create: `packages/auth/src/oidc.ts`, `packages/auth/src/session.ts`, `packages/auth/src/index.ts`
 
 **Interfaces:**
+
 - `validateOidcCallback(input, config) -> OidcIdentity` validates exact issuer/audience, state, nonce, PKCE verifier binding, expiry, and MFA assurance.
 - `createOpaqueSession(input) -> { cookie, record }` returns a host-only cookie descriptor and a persistence-safe session record.
 - `revokeSession(store, sessionId)` and `readActiveSession(store, presentedToken)` provide server-side revocation semantics.
@@ -52,6 +54,7 @@
 ### Task 3: Add identity/session migration and static migration tests
 
 **Files:**
+
 - Create: `packages/database/migrations/0006_identity_foundation.up.sql`
 - Create: `packages/database/migrations/0006_identity_foundation.down.sql`
 - Modify: `scripts/cp1-postgres-rls.mjs` only if the governed migration sequence requires the new migration.
