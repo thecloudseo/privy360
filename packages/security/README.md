@@ -1,3 +1,5 @@
 # packages/security
 
-Reserved by the approved repository architecture. Content is added by the owning ticket.
+FOUNDATION-004 owns the portable secret-store and key-provider contracts in
+`src/index.ts`. Provider selection remains configuration-driven and OPEN-02
+continues to gate production acceptance.
