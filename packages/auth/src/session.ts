@@ -2,11 +2,19 @@ import { createHash, randomBytes, randomUUID } from "node:crypto";
 import { AuthBoundaryError } from "./oidc.ts";
 
 export type AuditEvent = Readonly<{
-  type: "LoginSucceeded" | "LoginFailed" | "SessionRevoked";
+  type:
+    | "LoginSucceeded"
+    | "LoginFailed"
+    | "SessionRevoked"
+    | "SessionSelected"
+    | "TenantAccessDenied";
   sessionId?: string;
   userId?: string;
   issuer?: string;
   subject?: string;
+  membershipId?: string;
+  tenantId?: string;
+  reasonCode?: string;
   correlationId: string;
 }>;
 export type AuditSink = Readonly<{
