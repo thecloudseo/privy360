@@ -4,3 +4,4 @@ packages:
   - "packages/security"
   - "packages/api-common"
   - "packages/ui"
+  - "packages/audit"
