@@ -54,6 +54,15 @@ importers:
         specifier: 5.9.3
         version: 5.9.3
 
+  packages/api-common:
+    devDependencies:
+      '@types/node':
+        specifier: 24.19.0
+        version: 24.19.0
+      typescript:
+        specifier: 5.9.3
+        version: 5.9.3
+
   packages/contracts:
     devDependencies:
       typescript:
