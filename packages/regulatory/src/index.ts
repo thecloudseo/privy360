@@ -265,3 +265,5 @@ export function validateBundle(bundle: Bundle): ValidationResult {
     );
   return { valid: errors.length === 0, errors };
 }
+
+export * from "./publication.ts";
