@@ -31,6 +31,13 @@ importers:
         version: 8.56.1(eslint@10.11.0)(typescript@5.9.3)
 
   apps/api:
+    dependencies:
+      '@privy360/api-common':
+        specifier: workspace:*
+        version: link:../../packages/api-common
+      '@privy360/regulatory':
+        specifier: workspace:*
+        version: link:../../packages/regulatory
     devDependencies:
       typescript:
         specifier: 5.9.3
@@ -43,6 +50,13 @@ importers:
         version: 5.9.3
 
   apps/web:
+    dependencies:
+      '@privy360/regulatory':
+        specifier: workspace:*
+        version: link:../../packages/regulatory
+      '@privy360/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
     devDependencies:
       typescript:
         specifier: 5.9.3

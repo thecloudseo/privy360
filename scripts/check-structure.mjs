@@ -74,11 +74,13 @@ for (const app of ["web", "api", "privacy-centre", "worker"]) {
   const files = readdirSync(sourcePath);
   const allowed =
     app === "web" || app === "privacy-centre"
-      ? ["shell.ts", "workspace.ts"]
-      : ["workspace.ts"];
+      ? ["shell.ts", "workspace.ts", "regulatory.ts"]
+      : app === "api"
+        ? ["workspace.ts", "regulatory.ts"]
+        : ["workspace.ts"];
   if (files.some((file) => !allowed.includes(file)))
     throw new Error(`Unexpected application source in ${sourcePath}`);
-  if (app === "api" || app === "worker") {
+  if (app === "worker") {
     if (
       readFileSync(`${sourcePath}/workspace.ts`, "utf8").trim() !== "export {};"
     )

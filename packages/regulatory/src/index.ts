@@ -267,3 +267,4 @@ export function validateBundle(bundle: Bundle): ValidationResult {
 }
 
 export * from "./publication.ts";
+export * from "./library.ts";

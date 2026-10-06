@@ -11,6 +11,7 @@ export const designTokens = {
     accentSoft: "#dcefed",
     rule: "#d8e0e3",
     danger: "#a43d3d",
+    focus: "#f2a900",
   },
   type: {
     family: "Inter, ui-sans-serif, system-ui, sans-serif",
