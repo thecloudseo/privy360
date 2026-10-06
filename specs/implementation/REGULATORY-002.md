@@ -19,7 +19,7 @@ Imported sources remain `UNVERIFIED` or explicitly quarantined, and manifests re
 
 ## Database and transaction boundary
 
-Migration `0004_regulatory_intake` adds a global intake receipt table with manifest digest uniqueness, quarantine state, trusted actor/correlation references, and no raw source bytes. It references the existing global `publication_manifests` table and is bounded to the regulatory schema. Application persistence must insert the receipt and draft corpus rows in the same database transaction represented by the audit unit-of-work; this ticket supplies the port, not a database adapter.
+Migration `0005_regulatory_intake` adds a global intake receipt table with manifest digest uniqueness, quarantine state, trusted actor/correlation references, and no raw source bytes. It references the existing global `publication_manifests` table and is bounded to the regulatory schema. Application persistence must insert the receipt and draft corpus rows in the same database transaction represented by the audit unit-of-work; this ticket supplies the port, not a database adapter.
 
 ## Tests
 

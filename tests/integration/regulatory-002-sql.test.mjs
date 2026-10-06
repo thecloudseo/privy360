@@ -4,14 +4,14 @@ import { readFile } from "node:fs/promises";
 import { URL } from "node:url";
 const up = await readFile(
   new URL(
-    "../../packages/database/migrations/0004_regulatory_intake.up.sql",
+    "../../packages/database/migrations/0005_regulatory_intake.up.sql",
     import.meta.url,
   ),
   "utf8",
 );
 const down = await readFile(
   new URL(
-    "../../packages/database/migrations/0004_regulatory_intake.down.sql",
+    "../../packages/database/migrations/0005_regulatory_intake.down.sql",
     import.meta.url,
   ),
   "utf8",
