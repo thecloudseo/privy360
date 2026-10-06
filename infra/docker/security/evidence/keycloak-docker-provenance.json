@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "image": "quay.io/keycloak/keycloak@sha256:82a77884f3af238beab1e7afd63b5f530e1b5c0590bd7aa60b40a40463e29b2c",
+  "digest": "82a77884f3af238beab1e7afd63b5f530e1b5c0590bd7aa60b40a40463e29b2c",
+  "platform": "linux/amd64",
+  "verifiedAt": "2026-10-06T08:00:22.381Z",
+  "jdbc": {
+    "path": "/opt/keycloak/lib/lib/main/com.microsoft.sqlserver.mssql-jdbc-13.2.1.jre11.jar",
+    "sha256": "2d137aa308c78932878952fe3624ea090ecfe644414b8b23e71a305f425698c5",
+    "publishedFixedVersion": "13.2.1.jre11",
+    "publishedChecksumUrl": "https://repo.maven.apache.org/maven2/com/microsoft/sqlserver/mssql-jdbc/13.2.1.jre11/mssql-jdbc-13.2.1.jre11.jar.sha256",
+    "publishedSha256": "2d137aa308c78932878952fe3624ea090ecfe644414b8b23e71a305f425698c5",
+    "embeddedPomProperties": "#Created by Apache Maven 3.9.6\r\ngroupId=com.microsoft.sqlserver\r\nartifactId=mssql-jdbc\r\nversion=13.2.1"
+  },
+  "pcre2": {
+    "rpmDatabasePath": "/var/lib/rpm/rpmdb.sqlite",
+    "rpmDatabaseSha256": "27a4321dac2cf486cfa0149f12482f49022db9e7db16a3d6895fd4a2dd914a4c",
+    "packageBasenames": [
+      "pcre2|.build-id",
+      "pcre2|1282542036ac05da5dbbe987bb1feae7f7eb4a",
+      "pcre2|2e199f8f08725f767cb3c3167faae14327659f",
+      "pcre2|48",
+      "pcre2|76",
+      "pcre2|libpcre2-8.so.0",
+      "pcre2|libpcre2-8.so.0.11.0",
+      "pcre2|libpcre2-posix.so.3",
+      "pcre2|libpcre2-posix.so.3.0.2",
+      "pcre2-syntax|AUTHORS",
+      "pcre2-syntax|COPYING",
+      "pcre2-syntax|ChangeLog",
+      "pcre2-syntax|LICENCE",
+      "pcre2-syntax|NEWS",
+      "pcre2-syntax|pcre2-syntax",
+      "pcre2-syntax|pcre2-syntax",
+      "pcre2-syntax|pcre2.3.gz",
+      "pcre2-syntax|pcre2compat.3.gz",
+      "pcre2-syntax|pcre2limits.3.gz",
+      "pcre2-syntax|pcre2matching.3.gz",
+      "pcre2-syntax|pcre2partial.3.gz",
+      "pcre2-syntax|pcre2pattern.3.gz",
+      "pcre2-syntax|pcre2perform.3.gz",
+      "pcre2-syntax|pcre2syntax.3.gz",
+      "pcre2-syntax|pcre2unicode.3.gz"
+    ],
+    "packageDirectories": [
+      "pcre2|/usr/lib/",
+      "pcre2|/usr/lib/.build-id/",
+      "pcre2|/usr/lib/.build-id/48/",
+      "pcre2|/usr/lib/.build-id/76/",
+      "pcre2|/usr/lib64/",
+      "pcre2-syntax|/usr/share/doc/",
+      "pcre2-syntax|/usr/share/doc/pcre2-syntax/",
+      "pcre2-syntax|/usr/share/licenses/",
+      "pcre2-syntax|/usr/share/licenses/pcre2-syntax/",
+      "pcre2-syntax|/usr/share/man/man3/"
+    ],
+    "conclusion": "pcre2 has shared libraries; pcre2-syntax has documentation/man-page paths in this RPM database. Shared-library findings remain unresolved."
+  }
+}

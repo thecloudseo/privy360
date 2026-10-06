@@ -1,0 +1,63 @@
+{
+  "image": "cgr.dev/chainguard/busybox@sha256:7cf02f9aec5f52ee8ce43d4094b2fe068043d5111bd22897a676d7cdac15d941",
+  "platform": "linux/amd64",
+  "generator": "Syft",
+  "generatorVersion": "1.52.0",
+  "generatedAt": "2026-10-06T09:19:57.192Z",
+  "packages": [
+    {
+      "name": "busybox",
+      "version": "1.38.0-r2",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "ca-certificates-bundle",
+      "version": "20260909-r1",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "glibc-2.44",
+      "version": "2.44-r7",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "glibc-2.44-locale-posix",
+      "version": "2.44-r7",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "ld-linux-2.44",
+      "version": "2.44-r7",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "libcrypt1-2.44",
+      "version": "2.44-r7",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "libgcc",
+      "version": "16.2.0-r1",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "libxcrypt",
+      "version": "4.5.2-r5",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "wolfi-baselayout",
+      "version": "20230201-r30",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    }
+  ]
+}

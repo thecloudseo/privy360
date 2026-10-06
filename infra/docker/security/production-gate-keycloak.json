@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "image": "quay.io/keycloak/keycloak@sha256:82a77884f3af238beab1e7afd63b5f530e1b5c0590bd7aa60b40a40463e29b2c",
+  "platform": "linux/amd64",
+  "scanner": "Trivy",
+  "scannerVersion": "0.74.0",
+  "scannerBinarySha256": "43ae1fd02532315b44a9d0496ae06326d5a1f3496cae26499be624807813fa8c",
+  "databaseVersion": 2,
+  "databaseUpdatedAt": "2026-10-05T19:07:00.467Z",
+  "scannedAt": "2026-10-06T09:40:43.842Z",
+  "scanCommand": "trivy image --config infra/docker/security/trivy-image.yaml --ignorefile /dev/null --cache-dir <local-cache> --scanners vuln --severity HIGH,CRITICAL --list-all-pkgs --exit-code 1 --format json <pinned-Keycloak-image>",
+  "exitStatus": 1,
+  "highCriticalOccurrences": 23,
+  "originalFile": "production-gate-keycloak.json.gz",
+  "originalSha256": "42793e4bec48d518ade58868de9cc2cd6862bd241b707eeaf1c6c70f4687b4b1",
+  "result": "rejected",
+  "localDispositionsApplied": false
+}

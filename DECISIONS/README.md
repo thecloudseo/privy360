@@ -37,3 +37,4 @@ Selected = Chief Architect baseline engineering choice, not human/security produ
 | [ADR-031](ADR-031.md) | Workflow and approval integrity | Selected for architecture baseline |
 | [ADR-032](ADR-032.md) | Extensibility without arbitrary code | Selected for architecture baseline |
 | [ADR-033](ADR-033.md) | Tenant-scoped search and vector retrieval | Selected for architecture baseline |
+| [ADR-034](ADR-034.md) | Local service vulnerability eligibility boundary | Chief Architect approved for FOUNDATION-003 local-development remediation |

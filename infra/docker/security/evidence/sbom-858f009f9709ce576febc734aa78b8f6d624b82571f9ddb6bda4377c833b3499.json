@@ -1,0 +1,129 @@
+{
+  "image": "redis@sha256:858f009f9709ce576febc734aa78b8f6d624b82571f9ddb6bda4377c833b3499",
+  "platform": "linux/amd64",
+  "generator": "Syft",
+  "generatorVersion": "1.52.0",
+  "generatedAt": "2026-10-06T09:19:00.315Z",
+  "packages": [
+    {
+      "name": ".redis-rundeps",
+      "version": "20260917.213246",
+      "type": "apk",
+      "locations": ["/lib/apk/db/installed"]
+    },
+    {
+      "name": "alpine-baselayout",
+      "version": "3.6.8-r1",
+      "type": "apk",
+      "locations": ["/lib/apk/db/installed"]
+    },
+    {
+      "name": "alpine-baselayout-data",
+      "version": "3.6.8-r1",
+      "type": "apk",
+      "locations": ["/lib/apk/db/installed"]
+    },
+    {
+      "name": "alpine-keys",
+      "version": "2.5-r0",
+      "type": "apk",
+      "locations": ["/lib/apk/db/installed"]
+    },
+    {
+      "name": "alpine-release",
+      "version": "3.21.8-r0",
+      "type": "apk",
+      "locations": ["/lib/apk/db/installed"]
+    },
+    {
+      "name": "apk-tools",
+      "version": "2.14.6-r3",
+      "type": "apk",
+      "locations": ["/lib/apk/db/installed"]
+    },
+    {
+      "name": "busybox",
+      "version": "1.37.0-r14",
+      "type": "apk",
+      "locations": ["/lib/apk/db/installed"]
+    },
+    {
+      "name": "busybox-binsh",
+      "version": "1.37.0-r14",
+      "type": "apk",
+      "locations": ["/lib/apk/db/installed"]
+    },
+    {
+      "name": "ca-certificates-bundle",
+      "version": "20260909-r0",
+      "type": "apk",
+      "locations": ["/lib/apk/db/installed"]
+    },
+    {
+      "name": "libcap-ng",
+      "version": "0.8.5-r0",
+      "type": "apk",
+      "locations": ["/lib/apk/db/installed"]
+    },
+    {
+      "name": "libcrypto3",
+      "version": "3.3.7-r1",
+      "type": "apk",
+      "locations": ["/lib/apk/db/installed"]
+    },
+    {
+      "name": "libssl3",
+      "version": "3.3.7-r1",
+      "type": "apk",
+      "locations": ["/lib/apk/db/installed"]
+    },
+    {
+      "name": "musl",
+      "version": "1.2.5-r11",
+      "type": "apk",
+      "locations": ["/lib/apk/db/installed"]
+    },
+    {
+      "name": "musl-utils",
+      "version": "1.2.5-r11",
+      "type": "apk",
+      "locations": ["/lib/apk/db/installed"]
+    },
+    {
+      "name": "redis",
+      "version": "7.4.11",
+      "type": "binary",
+      "locations": ["/usr/local/bin/redis-server"]
+    },
+    {
+      "name": "scanelf",
+      "version": "1.3.8-r1",
+      "type": "apk",
+      "locations": ["/lib/apk/db/installed"]
+    },
+    {
+      "name": "setpriv",
+      "version": "2.40.4-r1",
+      "type": "apk",
+      "locations": ["/lib/apk/db/installed"]
+    },
+    {
+      "name": "ssl_client",
+      "version": "1.37.0-r14",
+      "type": "apk",
+      "locations": ["/lib/apk/db/installed"]
+    },
+    {
+      "name": "tzdata",
+      "version": "2026d-r0",
+      "type": "apk",
+      "locations": ["/lib/apk/db/installed"]
+    },
+    {
+      "name": "zlib",
+      "version": "1.3.2-r0",
+      "type": "apk",
+      "locations": ["/lib/apk/db/installed"]
+    }
+  ]
+}

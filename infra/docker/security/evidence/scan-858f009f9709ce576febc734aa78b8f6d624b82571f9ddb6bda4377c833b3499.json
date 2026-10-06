@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 3,
+  "image": "redis@sha256:858f009f9709ce576febc734aa78b8f6d624b82571f9ddb6bda4377c833b3499",
+  "tag": "7.4.11-alpine",
+  "digest": "858f009f9709ce576febc734aa78b8f6d624b82571f9ddb6bda4377c833b3499",
+  "platform": "linux/amd64",
+  "configurationHash": "a8f94c9d42937ababde999e7998ea834634fff0205e3eb6498d7f50191fe5e36",
+  "mountHashes": {
+    "dynamicconfig": {
+      "type": "directory",
+      "mode": 493,
+      "entries": {
+        "docker.yaml": {
+          "type": "file",
+          "mode": 420,
+          "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+        }
+      }
+    },
+    "setup-temporal.sh": {
+      "type": "file",
+      "mode": 420,
+      "sha256": "d82c56bd46dba77bd656f5f1a2c8227288457debbac9a6fa561d213d55761fea"
+    }
+  },
+  "scanner": "Trivy",
+  "scannerVersion": "0.74.0",
+  "scannerBinarySha256": "43ae1fd02532315b44a9d0496ae06326d5a1f3496cae26499be624807813fa8c",
+  "syftVersion": "1.52.0",
+  "syftBinarySha256": "abdbb5e8955ed65f67f058c10de9dc2fb36921236dab7d76a7d4618da3869e15",
+  "scannerIsolation": {
+    "config": "infra/docker/security/trivy-image.yaml",
+    "ignorefile": "/dev/null",
+    "inheritedOverridesRemoved": true,
+    "anonymousRegistryConfig": true
+  },
+  "databaseUpdatedAt": "2026-10-05T19:07:00.467Z",
+  "databaseVersion": 2,
+  "scanCommand": "trivy image --config infra/docker/security/trivy-image.yaml --ignorefile /dev/null --cache-dir <local-cache> --scanners vuln --severity HIGH,CRITICAL --list-all-pkgs --format json redis@sha256:858f009f9709ce576febc734aa78b8f6d624b82571f9ddb6bda4377c833b3499",
+  "syftCommand": "syft redis@sha256:858f009f9709ce576febc734aa78b8f6d624b82571f9ddb6bda4377c833b3499 -o json",
+  "scanOptions": ["vuln", "HIGH,CRITICAL", "list-all-pkgs"],
+  "scannedAt": "2026-10-06T09:18:53.289Z",
+  "collectionStatus": "complete",
+  "coverage": {
+    "trivyResults": true,
+    "syftArtifacts": true
+  },
+  "sbomFile": "sbom-858f009f9709ce576febc734aa78b8f6d624b82571f9ddb6bda4377c833b3499.json",
+  "sbomSha256": "ba04309e57fe6c5e278ec24861c76e76d200e40e5f3b45cdf2ee4acb37b7449b",
+  "rawTrivyFile": "trivy-858f009f9709ce576febc734aa78b8f6d624b82571f9ddb6bda4377c833b3499.json.gz",
+  "rawTrivySha256": "5f1a94fc3a0c41f68e0fd21fea104b204b1600dcc38f1233b8976e56a81ddc6b",
+  "rawSyftFile": "syft-858f009f9709ce576febc734aa78b8f6d624b82571f9ddb6bda4377c833b3499.json.gz",
+  "rawSyftSha256": "091c7bad78fde23dc7ef3067538fcd47466bd4e167b9a5a767e8b53fe137fc9a",
+  "identityFile": "identity-858f009f9709ce576febc734aa78b8f6d624b82571f9ddb6bda4377c833b3499.json",
+  "identitySha256": "c3aa899148d298eb22f34b7f40d8f1522e7b6364bdfcf02893b6b16eb9b5dbea",
+  "findings": [
+    {
+      "cve": "CVE-2026-75804",
+      "package": "libcrypto3",
+      "installedVersion": "3.3.7-r1",
+      "fixedVersion": "3.3.7-r2",
+      "fixedStatus": "fixed",
+      "packagePath": "/lib/apk/db/installed",
+      "packagePathSource": "OS package database provenance",
+      "severity": "HIGH",
+      "advisory": "https://avd.aquasec.com/nvd/cve-2026-75804",
+      "dispositionStatus": "unreviewed",
+      "dispositionScope": "local-development"
+    },
+    {
+      "cve": "CVE-2026-84782",
+      "package": "libcrypto3",
+      "installedVersion": "3.3.7-r1",
+      "fixedVersion": "3.3.7-r2",
+      "fixedStatus": "fixed",
+      "packagePath": "/lib/apk/db/installed",
+      "packagePathSource": "OS package database provenance",
+      "severity": "HIGH",
+      "advisory": "https://avd.aquasec.com/nvd/cve-2026-84782",
+      "dispositionStatus": "unreviewed",
+      "dispositionScope": "local-development"
+    },
+    {
+      "cve": "CVE-2026-75804",
+      "package": "libssl3",
+      "installedVersion": "3.3.7-r1",
+      "fixedVersion": "3.3.7-r2",
+      "fixedStatus": "fixed",
+      "packagePath": "/lib/apk/db/installed",
+      "packagePathSource": "OS package database provenance",
+      "severity": "HIGH",
+      "advisory": "https://avd.aquasec.com/nvd/cve-2026-75804",
+      "dispositionStatus": "unreviewed",
+      "dispositionScope": "local-development"
+    },
+    {
+      "cve": "CVE-2026-84782",
+      "package": "libssl3",
+      "installedVersion": "3.3.7-r1",
+      "fixedVersion": "3.3.7-r2",
+      "fixedStatus": "fixed",
+      "packagePath": "/lib/apk/db/installed",
+      "packagePathSource": "OS package database provenance",
+      "severity": "HIGH",
+      "advisory": "https://avd.aquasec.com/nvd/cve-2026-84782",
+      "dispositionStatus": "unreviewed",
+      "dispositionScope": "local-development"
+    }
+  ]
+}

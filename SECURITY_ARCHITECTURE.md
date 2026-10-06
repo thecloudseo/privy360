@@ -62,6 +62,8 @@ Connector executors use restricted egress proxy, DNS/IP validation at each redir
 
 ## Verification gates
 
+FOUNDATION-003 local-development service eligibility follows ADR-034. It requires exact digest/platform/material-configuration-bound original scanner and full SBOM provenance plus individually reviewed, time-bounded dispositions; the default is deny. Mounted scripts/configuration and top-level volume/network configuration are material. Scanner-correction, configuration-specific-nonexposure and residual-risk-acceptance remain separate claims. Approval strings are insufficient without protected independent approval provenance; no verifier or disposition is currently active. This eligibility never implies vulnerability-free, production, customer, government or release-bundle approval. All deployable artifacts retain the unchanged High/Critical container gate. Local dispositions cannot be inherited by staging under production policy or any deployment profile. Raw findings stay visible.
+
 Each tenant endpoint: A actor/B resource GET/POST/PATCH/DELETE/search/filter/export/graph and nested FK negative tests. Add session theft/revocation, role escalation, CSRF/XSS, injection, pool reuse, cross-tenant cache/object/workflow, malicious upload, audit failure and restore tests. Mandatory CI tools from MASTER_SPEC run on applicable changes without silent skips; no finding suppression to pass. Independent critical-area review and human/security acceptance precede production. No real-person data in dev/demo.
 
 ## Delegation and sensitive payload storage

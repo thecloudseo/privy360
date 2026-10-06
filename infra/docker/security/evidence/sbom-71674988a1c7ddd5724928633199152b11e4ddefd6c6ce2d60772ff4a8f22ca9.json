@@ -1,0 +1,2277 @@
+{
+  "image": "cgr.dev/chainguard/minio@sha256:71674988a1c7ddd5724928633199152b11e4ddefd6c6ce2d60772ff4a8f22ca9",
+  "platform": "linux/amd64",
+  "generator": "Syft",
+  "generatorVersion": "1.52.0",
+  "generatedAt": "2026-10-06T09:20:05.928Z",
+  "packages": [
+    {
+      "name": "aead.dev/mem",
+      "version": "v0.2.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "aead.dev/minisign",
+      "version": "v0.3.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "aead.dev/minisign",
+      "version": "v0.3.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "aead.dev/mtls",
+      "version": "v0.2.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "bash",
+      "version": "5.3-r13",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "bash-binsh",
+      "version": "5.3-r13",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "ca-certificates-bundle",
+      "version": "20260909-r1",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "cel.dev/expr",
+      "version": "v0.25.2",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "cloud.google.com/go",
+      "version": "v0.121.6",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "cloud.google.com/go/auth",
+      "version": "v0.18.2",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "cloud.google.com/go/auth/oauth2adapt",
+      "version": "v0.2.8",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "cloud.google.com/go/compute/metadata",
+      "version": "v0.9.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "cloud.google.com/go/iam",
+      "version": "v1.5.3",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "cloud.google.com/go/monitoring",
+      "version": "v1.24.3",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "cloud.google.com/go/storage",
+      "version": "v1.56.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "coreutils",
+      "version": "9.12-r3",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "filippo.io/edwards25519",
+      "version": "v1.1.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/Azure/azure-sdk-for-go/sdk/azcore",
+      "version": "v1.21.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/Azure/azure-sdk-for-go/sdk/azidentity",
+      "version": "v1.13.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/Azure/azure-sdk-for-go/sdk/internal",
+      "version": "v1.11.2",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/Azure/azure-sdk-for-go/sdk/storage/azblob",
+      "version": "v1.6.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/Azure/go-ntlmssp",
+      "version": "v0.1.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/AzureAD/microsoft-authentication-library-for-go",
+      "version": "v1.6.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/GoogleCloudPlatform/opentelemetry-operations-go/detectors/gcp",
+      "version": "v1.33.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/GoogleCloudPlatform/opentelemetry-operations-go/exporter/metric",
+      "version": "v0.53.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/GoogleCloudPlatform/opentelemetry-operations-go/internal/resourcemapping",
+      "version": "v0.53.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/IBM/sarama",
+      "version": "v1.45.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/VividCortex/ewma",
+      "version": "v1.2.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/VividCortex/ewma",
+      "version": "v1.2.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/acarl005/stripansi",
+      "version": "v0.0.0-20180116102854-5a71ef0e047d",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/acarl005/stripansi",
+      "version": "v0.0.0-20180116102854-5a71ef0e047d",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/alecthomas/participle",
+      "version": "v0.7.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/apache/thrift",
+      "version": "v0.24.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/aymanbagabas/go-osc52/v2",
+      "version": "v2.0.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/aymanbagabas/go-osc52/v2",
+      "version": "v2.0.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/beevik/ntp",
+      "version": "v1.4.3",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/beorn7/perks",
+      "version": "v1.0.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/beorn7/perks",
+      "version": "v1.0.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/buger/jsonparser",
+      "version": "v1.1.2",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/cespare/xxhash/v2",
+      "version": "v2.3.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/cespare/xxhash/v2",
+      "version": "v2.3.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/chainguard-forks/minio",
+      "version": "v0.0.0-20260922192217-df34868a88cc+dirty",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/charmbracelet/bubbles",
+      "version": "v0.20.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/charmbracelet/bubbles",
+      "version": "v0.20.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/charmbracelet/bubbletea",
+      "version": "v1.3.4",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/charmbracelet/bubbletea",
+      "version": "v1.3.4",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/charmbracelet/lipgloss",
+      "version": "v1.0.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/charmbracelet/lipgloss",
+      "version": "v1.0.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/charmbracelet/x/ansi",
+      "version": "v0.8.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/charmbracelet/x/ansi",
+      "version": "v0.8.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/charmbracelet/x/term",
+      "version": "v0.2.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/charmbracelet/x/term",
+      "version": "v0.2.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/cheggaaa/pb",
+      "version": "v1.0.29",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/cheggaaa/pb",
+      "version": "v1.0.29",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/cncf/xds/go",
+      "version": "v0.0.0-20260202195803-dba9d589def2",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/coreos/go-oidc/v3",
+      "version": "v3.14.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/coreos/go-semver",
+      "version": "v0.3.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/coreos/go-semver",
+      "version": "v0.3.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/coreos/go-systemd/v22",
+      "version": "v22.6.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/coreos/go-systemd/v22",
+      "version": "v22.6.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/cosnicolaou/pbzip2",
+      "version": "v1.0.5",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/davecgh/go-spew",
+      "version": "v1.1.2-0.20180830191138-d8f796af33cc",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/dchest/siphash",
+      "version": "v1.2.3",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/docker/go-units",
+      "version": "v0.5.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/dustin/go-humanize",
+      "version": "v1.0.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/dustin/go-humanize",
+      "version": "v1.0.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/eapache/go-resiliency",
+      "version": "v1.7.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/eapache/go-xerial-snappy",
+      "version": "v0.0.0-20230731223053-c322873962e3",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/eapache/queue",
+      "version": "v1.1.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/eclipse/paho.mqtt.golang",
+      "version": "v1.5.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/elastic/go-elasticsearch/v7",
+      "version": "v7.17.10",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/envoyproxy/go-control-plane/envoy",
+      "version": "v1.37.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/envoyproxy/protoc-gen-validate",
+      "version": "v1.3.3",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/fatih/color",
+      "version": "v1.18.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/fatih/color",
+      "version": "v1.18.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/fatih/structs",
+      "version": "v1.1.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/fatih/structs",
+      "version": "v1.1.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/felixge/fgprof",
+      "version": "v0.9.5",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/felixge/httpsnoop",
+      "version": "v1.0.4",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/fraugster/parquet-go",
+      "version": "v0.12.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/go-asn1-ber/asn1-ber",
+      "version": "v1.5.8-0.20250403174932-29230038a667",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/go-ini/ini",
+      "version": "v1.67.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/go-ini/ini",
+      "version": "v1.67.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/go-jose/go-jose/v4",
+      "version": "v4.1.4",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/go-ldap/ldap/v3",
+      "version": "v3.4.11",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/go-logr/logr",
+      "version": "v1.4.4",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/go-logr/stdr",
+      "version": "v1.2.2",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/go-openapi/analysis",
+      "version": "v0.24.2",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/go-openapi/errors",
+      "version": "v0.22.7",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/go-openapi/jsonpointer",
+      "version": "v0.22.5",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/go-openapi/jsonreference",
+      "version": "v0.21.4",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/go-openapi/loads",
+      "version": "v0.23.2",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/go-openapi/runtime",
+      "version": "v0.28.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/go-openapi/spec",
+      "version": "v0.22.3",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/go-openapi/strfmt",
+      "version": "v0.26.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/go-openapi/swag",
+      "version": "v0.25.4",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/go-openapi/swag/cmdutils",
+      "version": "v0.25.4",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/go-openapi/swag/conv",
+      "version": "v0.25.4",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/go-openapi/swag/fileutils",
+      "version": "v0.25.4",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/go-openapi/swag/jsonname",
+      "version": "v0.25.5",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/go-openapi/swag/jsonutils",
+      "version": "v0.25.4",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/go-openapi/swag/loading",
+      "version": "v0.25.4",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/go-openapi/swag/mangling",
+      "version": "v0.25.4",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/go-openapi/swag/netutils",
+      "version": "v0.25.4",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/go-openapi/swag/stringutils",
+      "version": "v0.25.4",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/go-openapi/swag/typeutils",
+      "version": "v0.25.4",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/go-openapi/swag/yamlutils",
+      "version": "v0.25.4",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/go-openapi/validate",
+      "version": "v0.25.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/go-sql-driver/mysql",
+      "version": "v1.9.2",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/go-viper/mapstructure/v2",
+      "version": "v2.5.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/gobwas/httphead",
+      "version": "v0.1.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/gobwas/pool",
+      "version": "v0.2.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/gobwas/ws",
+      "version": "v1.4.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/goccy/go-json",
+      "version": "v0.10.5",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/goccy/go-json",
+      "version": "v0.10.5",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/gogo/protobuf",
+      "version": "v1.3.2",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/gogo/protobuf",
+      "version": "v1.3.2",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/golang-jwt/jwt/v4",
+      "version": "v4.5.2",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/golang-jwt/jwt/v4",
+      "version": "v4.5.2",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/golang-jwt/jwt/v5",
+      "version": "v5.3.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/golang/protobuf",
+      "version": "v1.5.4",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/golang/protobuf",
+      "version": "v1.5.4",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/golang/snappy",
+      "version": "v1.0.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/gomodule/redigo",
+      "version": "v1.9.2",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/google/pprof",
+      "version": "v0.0.0-20260302011040-a15ffb7f9dcc",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/google/s2a-go",
+      "version": "v0.1.9",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/google/shlex",
+      "version": "v0.0.0-20191202100458-e7afc7fbc510",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/google/shlex",
+      "version": "v0.0.0-20191202100458-e7afc7fbc510",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/google/uuid",
+      "version": "v1.6.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/google/uuid",
+      "version": "v1.6.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/googleapis/enterprise-certificate-proxy",
+      "version": "v0.3.14",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/googleapis/gax-go/v2",
+      "version": "v2.18.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/gorilla/websocket",
+      "version": "v1.5.4-0.20250319132907-e064f32e3674",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/grafana/regexp",
+      "version": "v0.0.0-20250905093917-f7b3be9d1853",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/grafana/regexp",
+      "version": "v0.0.0-20250905093917-f7b3be9d1853",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/hashicorp/errwrap",
+      "version": "v1.1.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/hashicorp/errwrap",
+      "version": "v1.1.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/hashicorp/go-multierror",
+      "version": "v1.1.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/hashicorp/go-multierror",
+      "version": "v1.1.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/hashicorp/go-uuid",
+      "version": "v1.0.3",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/inconshreveable/mousetrap",
+      "version": "v1.1.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/inconshreveable/mousetrap",
+      "version": "v1.1.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/jcmturner/aescts/v2",
+      "version": "v2.0.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/jcmturner/dnsutils/v2",
+      "version": "v2.0.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/jcmturner/gofork",
+      "version": "v1.7.6",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/jcmturner/gokrb5/v8",
+      "version": "v8.4.4",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/jcmturner/rpc/v2",
+      "version": "v2.0.3",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/jedib0t/go-pretty/v6",
+      "version": "v6.6.7",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/jedib0t/go-pretty/v6",
+      "version": "v6.6.7",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/jessevdk/go-flags",
+      "version": "v1.6.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/json-iterator/go",
+      "version": "v1.1.12",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/juju/ratelimit",
+      "version": "v1.0.2",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/juju/ratelimit",
+      "version": "v1.0.2",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/klauspost/compress",
+      "version": "v1.18.5",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/klauspost/compress",
+      "version": "v1.18.7",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/klauspost/cpuid/v2",
+      "version": "v2.2.10",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/klauspost/cpuid/v2",
+      "version": "v2.2.10",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/klauspost/filepathx",
+      "version": "v1.1.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/klauspost/pgzip",
+      "version": "v1.2.6",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/klauspost/readahead",
+      "version": "v1.4.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/klauspost/reedsolomon",
+      "version": "v1.12.4",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/kr/fs",
+      "version": "v0.1.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/kylelemons/godebug",
+      "version": "v1.1.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/lestrrat-go/blackmagic",
+      "version": "v1.0.2",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/lestrrat-go/blackmagic",
+      "version": "v1.0.2",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/lestrrat-go/httpcc",
+      "version": "v1.0.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/lestrrat-go/httpcc",
+      "version": "v1.0.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/lestrrat-go/httprc",
+      "version": "v1.0.6",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/lestrrat-go/httprc",
+      "version": "v1.0.6",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/lestrrat-go/iter",
+      "version": "v1.0.2",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/lestrrat-go/iter",
+      "version": "v1.0.2",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/lestrrat-go/jwx/v2",
+      "version": "v2.1.4",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/lestrrat-go/jwx/v2",
+      "version": "v2.1.4",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/lestrrat-go/option",
+      "version": "v1.0.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/lestrrat-go/option",
+      "version": "v1.0.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/lib/pq",
+      "version": "v1.10.9",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/lithammer/shortuuid/v4",
+      "version": "v4.2.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/lucasb-eyer/go-colorful",
+      "version": "v1.2.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/lucasb-eyer/go-colorful",
+      "version": "v1.2.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/mattn/go-colorable",
+      "version": "v0.1.14",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/mattn/go-colorable",
+      "version": "v0.1.14",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/mattn/go-ieproxy",
+      "version": "v0.0.12",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/mattn/go-ieproxy",
+      "version": "v0.0.12",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/mattn/go-isatty",
+      "version": "v0.0.20",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/mattn/go-isatty",
+      "version": "v0.0.20",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/mattn/go-runewidth",
+      "version": "v0.0.16",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/mattn/go-runewidth",
+      "version": "v0.0.16",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/matttproud/golang_protobuf_extensions",
+      "version": "v1.0.4",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/matttproud/golang_protobuf_extensions",
+      "version": "v1.0.4",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/miekg/dns",
+      "version": "v1.1.72",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/minio/cli",
+      "version": "v1.24.2",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/minio/cli",
+      "version": "v1.24.2",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/minio/colorjson",
+      "version": "v1.0.8",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/minio/colorjson",
+      "version": "v1.0.8",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/minio/console",
+      "version": "v1.7.7-0.20250905210349-2017f33b26e1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/minio/crc64nvme",
+      "version": "v1.0.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/minio/crc64nvme",
+      "version": "v1.0.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/minio/csvparser",
+      "version": "v1.0.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/minio/dnscache",
+      "version": "v0.1.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/minio/dperf",
+      "version": "v0.6.3",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/minio/filepath",
+      "version": "v1.0.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/minio/filepath",
+      "version": "v1.0.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/minio/highwayhash",
+      "version": "v1.0.4-0.20251030100505-070ab1a87a76",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/minio/kms-go/kes",
+      "version": "v0.3.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/minio/kms-go/kms",
+      "version": "v0.5.1-0.20250225090116-4e64ce8d0f35",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/minio/madmin-go/v3",
+      "version": "v3.0.107-0.20250415152934-4b504b82db63",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/minio/madmin-go/v3",
+      "version": "v3.0.109",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/minio/mc",
+      "version": "v0.0.0-20250313080218-cf909e1063a9",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/minio/mc",
+      "version": "v0.0.0-20250813083541-7394ce0dd2a8+dirty",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/minio/md5-simd",
+      "version": "v1.1.2",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/minio/md5-simd",
+      "version": "v1.1.2",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/minio/minio-go/v7",
+      "version": "v7.0.90",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/minio/minio-go/v7",
+      "version": "v7.0.91",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/minio/mux",
+      "version": "v1.9.2",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/minio/pkg/v3",
+      "version": "v3.1.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/minio/pkg/v3",
+      "version": "v3.1.3",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/minio/selfupdate",
+      "version": "v0.6.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/minio/selfupdate",
+      "version": "v0.6.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/minio/simdjson-go",
+      "version": "v0.4.5",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/minio/sio",
+      "version": "v0.4.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/minio/websocket",
+      "version": "v1.6.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/minio/xxml",
+      "version": "v0.0.3",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/minio/zipindex",
+      "version": "v0.4.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/mitchellh/go-homedir",
+      "version": "v1.1.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/mitchellh/go-homedir",
+      "version": "v1.1.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/modern-go/concurrent",
+      "version": "v0.0.0-20180306012644-bacd9c7ef1dd",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/modern-go/reflect2",
+      "version": "v1.0.3-0.20250322232337-35a7c28c31ee",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/muesli/ansi",
+      "version": "v0.0.0-20230316100256-276c6243b2f6",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/muesli/ansi",
+      "version": "v0.0.0-20230316100256-276c6243b2f6",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/muesli/cancelreader",
+      "version": "v0.2.2",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/muesli/cancelreader",
+      "version": "v0.2.2",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/muesli/reflow",
+      "version": "v0.3.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/muesli/reflow",
+      "version": "v0.3.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/muesli/termenv",
+      "version": "v0.16.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/muesli/termenv",
+      "version": "v0.16.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/munnerz/goautoneg",
+      "version": "v0.0.0-20191010083416-a7dc8b61c822",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/munnerz/goautoneg",
+      "version": "v0.0.0-20191010083416-a7dc8b61c822",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/nats-io/nats.go",
+      "version": "v1.49.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/nats-io/nkeys",
+      "version": "v0.4.15",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/nats-io/nuid",
+      "version": "v1.0.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/nats-io/stan.go",
+      "version": "v0.10.4",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/ncw/directio",
+      "version": "v1.0.5",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/nsqio/go-nsq",
+      "version": "v1.1.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/oklog/ulid/v2",
+      "version": "v2.1.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/olekukonko/tablewriter",
+      "version": "v0.0.5",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/olekukonko/tablewriter",
+      "version": "v0.0.5",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/philhofer/fwd",
+      "version": "v1.1.3-0.20240916144458-20a13a1f6b7c",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/philhofer/fwd",
+      "version": "v1.2.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/pierrec/lz4/v4",
+      "version": "v4.1.22",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/pkg/browser",
+      "version": "v0.0.0-20240102092130-5ac0b6a4141c",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/pkg/errors",
+      "version": "v0.9.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/pkg/sftp",
+      "version": "v1.13.9",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/pkg/xattr",
+      "version": "v0.4.10",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/pkg/xattr",
+      "version": "v0.4.10",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/posener/complete",
+      "version": "v1.2.3",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/posener/complete",
+      "version": "v1.2.3",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/prometheus/client_golang",
+      "version": "v1.23.2",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/prometheus/client_golang",
+      "version": "v1.23.2",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/prometheus/client_model",
+      "version": "v0.6.2",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/prometheus/client_model",
+      "version": "v0.6.2",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/prometheus/common",
+      "version": "v0.67.5",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/prometheus/common",
+      "version": "v0.67.5",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/prometheus/procfs",
+      "version": "v0.16.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/prometheus/procfs",
+      "version": "v0.16.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/prometheus/prom2json",
+      "version": "v1.4.2",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/prometheus/prom2json",
+      "version": "v1.4.2",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/prometheus/prometheus",
+      "version": "v0.311.3",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/prometheus/prometheus",
+      "version": "v0.311.3",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/puzpuzpuz/xsync/v3",
+      "version": "v3.5.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/rabbitmq/amqp091-go",
+      "version": "v1.15.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/rcrowley/go-metrics",
+      "version": "v0.0.0-20250401214520-65e299d6c5c9",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/rivo/uniseg",
+      "version": "v0.4.7",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/rivo/uniseg",
+      "version": "v0.4.7",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/rjeczalik/notify",
+      "version": "v0.9.3",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/rjeczalik/notify",
+      "version": "v0.9.3",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/rs/cors",
+      "version": "v1.11.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/rs/xid",
+      "version": "v1.6.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/rs/xid",
+      "version": "v1.6.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/safchain/ethtool",
+      "version": "v0.5.10",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/safchain/ethtool",
+      "version": "v0.5.10",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/secure-io/sio-go",
+      "version": "v0.3.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/secure-io/sio-go",
+      "version": "v0.3.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/shirou/gopsutil/v3",
+      "version": "v3.24.5",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/shirou/gopsutil/v3",
+      "version": "v3.24.5",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/spiffe/go-spiffe/v2",
+      "version": "v2.7.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/tidwall/gjson",
+      "version": "v1.18.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/tidwall/gjson",
+      "version": "v1.18.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/tidwall/match",
+      "version": "v1.1.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/tidwall/match",
+      "version": "v1.1.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/tidwall/pretty",
+      "version": "v1.2.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/tidwall/pretty",
+      "version": "v1.2.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/tinylib/msgp",
+      "version": "v1.2.5",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/tinylib/msgp",
+      "version": "v1.4.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/tklauser/go-sysconf",
+      "version": "v0.3.15",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/tklauser/go-sysconf",
+      "version": "v0.3.15",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/tklauser/numcpus",
+      "version": "v0.10.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/tklauser/numcpus",
+      "version": "v0.10.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/unrolled/secure",
+      "version": "v1.17.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/valyala/bytebufferpool",
+      "version": "v1.0.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/vbauerster/mpb/v8",
+      "version": "v8.9.3",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "github.com/vbauerster/mpb/v8",
+      "version": "v8.9.3",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/xdg/scram",
+      "version": "v1.0.5",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/xdg/stringprep",
+      "version": "v1.0.3",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "github.com/zeebo/xxh3",
+      "version": "v1.0.2",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "glibc-2.44",
+      "version": "2.44-r7",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "glibc-2.44-locale-posix",
+      "version": "2.44-r7",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "go.etcd.io/etcd/api/v3",
+      "version": "v3.5.19",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "go.etcd.io/etcd/api/v3",
+      "version": "v3.5.33",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "go.etcd.io/etcd/client/pkg/v3",
+      "version": "v3.5.19",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "go.etcd.io/etcd/client/pkg/v3",
+      "version": "v3.5.33",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "go.etcd.io/etcd/client/v3",
+      "version": "v3.5.19",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "go.etcd.io/etcd/client/v3",
+      "version": "v3.5.33",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "go.opentelemetry.io/auto/sdk",
+      "version": "v1.2.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "go.opentelemetry.io/contrib/detectors/gcp",
+      "version": "v1.44.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc",
+      "version": "v0.61.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp",
+      "version": "v0.67.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "go.opentelemetry.io/otel",
+      "version": "v1.45.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "go.opentelemetry.io/otel/metric",
+      "version": "v1.45.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "go.opentelemetry.io/otel/sdk",
+      "version": "v1.45.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "go.opentelemetry.io/otel/sdk/metric",
+      "version": "v1.45.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "go.opentelemetry.io/otel/trace",
+      "version": "v1.45.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "go.uber.org/atomic",
+      "version": "v1.11.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "go.uber.org/multierr",
+      "version": "v1.11.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "go.uber.org/multierr",
+      "version": "v1.11.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "go.uber.org/zap",
+      "version": "v1.27.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "go.uber.org/zap",
+      "version": "v1.27.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "go.yaml.in/yaml/v2",
+      "version": "v2.4.4",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "go.yaml.in/yaml/v2",
+      "version": "v2.4.4",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "go.yaml.in/yaml/v3",
+      "version": "v3.0.4",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "goftp.io/server/v2",
+      "version": "v2.0.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "golang.org/x/crypto",
+      "version": "v0.55.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "golang.org/x/crypto",
+      "version": "v0.56.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "golang.org/x/net",
+      "version": "v0.58.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "golang.org/x/net",
+      "version": "v0.58.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "golang.org/x/oauth2",
+      "version": "v0.36.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "golang.org/x/sync",
+      "version": "v0.22.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "golang.org/x/sync",
+      "version": "v0.22.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "golang.org/x/sys",
+      "version": "v0.47.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "golang.org/x/sys",
+      "version": "v0.47.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "golang.org/x/term",
+      "version": "v0.45.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "golang.org/x/term",
+      "version": "v0.45.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "golang.org/x/text",
+      "version": "v0.41.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "golang.org/x/text",
+      "version": "v0.41.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "golang.org/x/time",
+      "version": "v0.15.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "google.golang.org/api",
+      "version": "v0.272.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "google.golang.org/genproto",
+      "version": "v0.0.0-20260217215200-42d3e9bedb6d",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "google.golang.org/genproto/googleapis/api",
+      "version": "v0.0.0-20260526163538-3dc84a4a5aaa",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "google.golang.org/genproto/googleapis/api",
+      "version": "v0.0.0-20260526163538-3dc84a4a5aaa",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "google.golang.org/genproto/googleapis/rpc",
+      "version": "v0.0.0-20260526163538-3dc84a4a5aaa",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "google.golang.org/genproto/googleapis/rpc",
+      "version": "v0.0.0-20260526163538-3dc84a4a5aaa",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "google.golang.org/grpc",
+      "version": "v1.83.2",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "google.golang.org/grpc",
+      "version": "v1.83.2",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "google.golang.org/protobuf",
+      "version": "v1.36.11",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "google.golang.org/protobuf",
+      "version": "v1.36.11",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "gopkg.in/yaml.v2",
+      "version": "v2.4.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "gopkg.in/yaml.v2",
+      "version": "v2.4.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "gopkg.in/yaml.v3",
+      "version": "v3.0.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "gopkg.in/yaml.v3",
+      "version": "v3.0.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "ld-linux-2.44",
+      "version": "2.44-r7",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "libacl1",
+      "version": "2.4.0-r3",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "libattr1",
+      "version": "2.6.0-r3",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "libbrotlicommon1",
+      "version": "1.2.0-r5",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "libbrotlidec1",
+      "version": "1.2.0-r5",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "libbrotlienc1",
+      "version": "1.2.0-r5",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "libcrypto3",
+      "version": "3.6.4-r8",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "libgcc",
+      "version": "16.2.0-r1",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "libpcre2-8-0",
+      "version": "10.49-r0",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "libselinux",
+      "version": "3.11-r2",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "libsepol",
+      "version": "3.11-r3",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "mc",
+      "version": "0.20250813.083541-r24",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "minio",
+      "version": "0.20260922.192518-r0",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "ncurses",
+      "version": "6.6.20260926-r0",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "ncurses-terminfo-base",
+      "version": "6.6.20260926-r0",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "openssl-4.0-libcrypto",
+      "version": "4.0.2-r2",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "openssl-provider-legacy-allowed",
+      "version": "4.0.2-r3",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "stdlib",
+      "version": "go1.27.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/mc"]
+    },
+    {
+      "name": "stdlib",
+      "version": "go1.27.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/minio"]
+    },
+    {
+      "name": "wolfi-baselayout",
+      "version": "20230201-r30",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    }
+  ]
+}

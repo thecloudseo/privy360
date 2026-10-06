@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "image": "quay.io/keycloak/keycloak@sha256:82a77884f3af238beab1e7afd63b5f530e1b5c0590bd7aa60b40a40463e29b2c",
+  "platform": "linux/amd64",
+  "verifiedAt": "2026-10-06T09:23:14.412Z",
+  "source": {
+    "trivyOriginalSha256": "e6f58f659c85058fe8feb24aa59b6d709489a744d79ea412396fc729c320178e",
+    "syftOriginalSha256": "1d55888cba80a9896e494b0aad3d15f8ab53537b0b72c99769794f59be0e0539",
+    "scannedAt": "2026-10-06T09:19:10.380Z",
+    "syftManifestDigest": "sha256:b84458723aafe991b81fac961e48e23e4b759b29c720815df728398e9232049e",
+    "syftImageConfigDigest": "sha256:b2f3e1b85071d17a1da8d2cbcc54707853d19c74ae027071789ea1bb12b3ec89"
+  },
+  "jdbc": {
+    "path": "/opt/keycloak/lib/lib/main/com.microsoft.sqlserver.mssql-jdbc-13.2.1.jre11.jar",
+    "packageVersion": "13.2.1",
+    "embeddedPomVersion": "13.2.1",
+    "imageSha256": "2d137aa308c78932878952fe3624ea090ecfe644414b8b23e71a305f425698c5",
+    "imageSha1": "406aa00b60c1b30e1bb02e469530dd2e21f2eace",
+    "publishedFixedVersion": "13.2.1.jre11",
+    "publishedSha256": "2d137aa308c78932878952fe3624ea090ecfe644414b8b23e71a305f425698c5",
+    "publishedSha1": "406aa00b60c1b30e1bb02e469530dd2e21f2eace",
+    "publishedSha256Url": "https://repo.maven.apache.org/maven2/com/microsoft/sqlserver/mssql-jdbc/13.2.1.jre11/mssql-jdbc-13.2.1.jre11.jar.sha256",
+    "publishedSha1Url": "https://repo.maven.apache.org/maven2/com/microsoft/sqlserver/mssql-jdbc/13.2.1.jre11/mssql-jdbc-13.2.1.jre11.jar.sha1",
+    "assessment": "Exact image file digest matches the published fixed JAR; Trivy finding remains visible pending scanner-correction review."
+  },
+  "pcre2": {
+    "pcre2": {
+      "version": "10.40-6.el9",
+      "sourceRpm": "pcre2-10.40-6.el9.src.rpm",
+      "packagePath": "/var/lib/rpm/rpmdb.sqlite",
+      "files": [
+        {
+          "path": "/usr/lib/.build-id",
+          "mode": 16877,
+          "size": 0,
+          "sha256": null
+        },
+        {
+          "path": "/usr/lib/.build-id/48",
+          "mode": 16877,
+          "size": 0,
+          "sha256": null
+        },
+        {
+          "path": "/usr/lib/.build-id/48/1282542036ac05da5dbbe987bb1feae7f7eb4a",
+          "mode": 41471,
+          "size": 42,
+          "sha256": null
+        },
+        {
+          "path": "/usr/lib/.build-id/76",
+          "mode": 16877,
+          "size": 0,
+          "sha256": null
+        },
+        {
+          "path": "/usr/lib/.build-id/76/2e199f8f08725f767cb3c3167faae14327659f",
+          "mode": 41471,
+          "size": 45,
+          "sha256": null
+        },
+        {
+          "path": "/usr/lib64/libpcre2-8.so.0",
+          "mode": 41471,
+          "size": 20,
+          "sha256": null
+        },
+        {
+          "path": "/usr/lib64/libpcre2-8.so.0.11.0",
+          "mode": 33261,
+          "size": 636848,
+          "sha256": "9a7c5324aa19b789ec6451fac312238ba8b266886e37f2dcad51b612deaae96c"
+        },
+        {
+          "path": "/usr/lib64/libpcre2-posix.so.3",
+          "mode": 41471,
+          "size": 23,
+          "sha256": null
+        },
+        {
+          "path": "/usr/lib64/libpcre2-posix.so.3.0.2",
+          "mode": 33261,
+          "size": 15320,
+          "sha256": "cd07b910ec2713c62bd756ca1b5b1b33822fe53b0c22b57bb21a7277c6d38664"
+        }
+      ]
+    },
+    "pcre2-syntax": {
+      "version": "10.40-6.el9",
+      "sourceRpm": "pcre2-10.40-6.el9.src.rpm",
+      "packagePath": "/var/lib/rpm/rpmdb.sqlite",
+      "files": [
+        {
+          "path": "/usr/share/licenses/pcre2-syntax",
+          "mode": 16877,
+          "size": 0,
+          "sha256": null
+        },
+        {
+          "path": "/usr/share/licenses/pcre2-syntax/COPYING",
+          "mode": 33188,
+          "size": 97,
+          "sha256": "99272c55f3dcfa07a8a7e15a5c1a33096e4727de74241d65fa049fccfdd59507"
+        },
+        {
+          "path": "/usr/share/licenses/pcre2-syntax/LICENCE",
+          "mode": 33188,
+          "size": 3477,
+          "sha256": "87d884eceb7fc54611470ce9f74280d28612b0c877adfc767e9676892a638987"
+        }
+      ]
+    },
+    "assessment": "pcre2 contains shared libraries; pcre2-syntax inventory contains only /usr/share paths. Shared-library CVEs remain unresolved."
+  },
+  "dispositionStatus": "none-approved"
+}

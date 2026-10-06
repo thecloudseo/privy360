@@ -1,0 +1,4273 @@
+{
+  "image": "quay.io/keycloak/keycloak@sha256:82a77884f3af238beab1e7afd63b5f530e1b5c0590bd7aa60b40a40463e29b2c",
+  "platform": "linux/amd64",
+  "generator": "Syft",
+  "generatorVersion": "1.52.0",
+  "generatedAt": "2026-10-06T09:19:28.805Z",
+  "packages": [
+    {
+      "name": "HdrHistogram",
+      "version": "2.2.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.hdrhistogram.HdrHistogram-2.2.2.jar"
+      ]
+    },
+    {
+      "name": "LatencyUtils",
+      "version": "2.0.3",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.latencyutils.LatencyUtils-2.0.3.jar"
+      ]
+    },
+    {
+      "name": "aesh",
+      "version": "2.8.2",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/lib/lib/deployment/org.aesh.aesh-2.8.2.jar"]
+    },
+    {
+      "name": "agroal-api",
+      "version": "3.0.1",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/lib/lib/main/io.agroal.agroal-api-3.0.1.jar"]
+    },
+    {
+      "name": "agroal-narayana",
+      "version": "3.0.1",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.agroal.agroal-narayana-3.0.1.jar"
+      ]
+    },
+    {
+      "name": "agroal-pool",
+      "version": "3.0.1",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.agroal.agroal-pool-3.0.1.jar"
+      ]
+    },
+    {
+      "name": "alternatives",
+      "version": "1.24-2.el9",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "angus-activation",
+      "version": "2.0.3",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.eclipse.angus.angus-activation-2.0.3.jar"
+      ]
+    },
+    {
+      "name": "angus-core",
+      "version": "2.0.5",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.eclipse.angus.angus-mail-2.0.5.jar"
+      ]
+    },
+    {
+      "name": "angus-mail",
+      "version": "2.0.5",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.eclipse.angus.angus-mail-2.0.5.jar"
+      ]
+    },
+    {
+      "name": "antlr4-runtime",
+      "version": "4.13.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.antlr.antlr4-runtime-4.13.2.jar"
+      ]
+    },
+    {
+      "name": "arc",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.arc.arc-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "arc-processor",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.arc.arc-processor-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "arjuna",
+      "version": "7.3.3.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.jboss.narayana.jta.narayana-jta-7.3.3.Final.jar"
+      ]
+    },
+    {
+      "name": "asm",
+      "version": "9.9.1",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/lib/lib/main/org.ow2.asm.asm-9.9.1.jar"]
+    },
+    {
+      "name": "asm-analysis",
+      "version": "9.9.1",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.ow2.asm.asm-analysis-9.9.1.jar"
+      ]
+    },
+    {
+      "name": "asm-commons",
+      "version": "9.9.1",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.ow2.asm.asm-commons-9.9.1.jar"
+      ]
+    },
+    {
+      "name": "asm-tree",
+      "version": "9.9.1",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/lib/lib/main/org.ow2.asm.asm-tree-9.9.1.jar"]
+    },
+    {
+      "name": "asm-util",
+      "version": "9.9.1",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/lib/lib/main/org.ow2.asm.asm-util-9.9.1.jar"]
+    },
+    {
+      "name": "basesystem",
+      "version": "11-13.el9",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "bash",
+      "version": "5.1.8-9.el9",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "bcpkix-jdk18on",
+      "version": "1.84",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.bouncycastle.bcpkix-jdk18on-1.84.jar"
+      ]
+    },
+    {
+      "name": "bcprov-jdk18on",
+      "version": "1.84",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/bin/client/lib/bcprov-jdk18on-1.84.jar"]
+    },
+    {
+      "name": "bcprov-jdk18on",
+      "version": "1.84",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.bouncycastle.bcprov-jdk18on-1.84.jar"
+      ]
+    },
+    {
+      "name": "bcutil-jdk18on",
+      "version": "1.84",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.bouncycastle.bcutil-jdk18on-1.84.jar"
+      ]
+    },
+    {
+      "name": "brotli4j",
+      "version": "1.23.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/com.aayushatharva.brotli4j.brotli4j-1.23.0.jar"
+      ]
+    },
+    {
+      "name": "byte-buddy",
+      "version": "1.17.8",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/net.bytebuddy.byte-buddy-1.17.8.jar"
+      ]
+    },
+    {
+      "name": "byte-buddy-agent",
+      "version": "1.17.8",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/net.bytebuddy.byte-buddy-agent-1.17.8.jar"
+      ]
+    },
+    {
+      "name": "ca-certificates",
+      "version": "2025.2.80_v9.0.305-91.el9",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "caffeine",
+      "version": "3.2.3",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/com.github.ben-manes.caffeine.caffeine-3.2.3.jar"
+      ]
+    },
+    {
+      "name": "cdi",
+      "version": "7.3.3.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.jboss.narayana.jta.narayana-jta-7.3.3.Final.jar"
+      ]
+    },
+    {
+      "name": "classmate",
+      "version": "1.7.1",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/com.fasterxml.classmate-1.7.1.jar"
+      ]
+    },
+    {
+      "name": "common",
+      "version": "7.3.3.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.jboss.narayana.jta.narayana-jta-7.3.3.Final.jar"
+      ]
+    },
+    {
+      "name": "commons-codec",
+      "version": "1.21.0",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/bin/client/keycloak-admin-cli-26.7.4.jar"]
+    },
+    {
+      "name": "commons-codec",
+      "version": "1.21.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/commons-codec.commons-codec-1.21.0.jar"
+      ]
+    },
+    {
+      "name": "commons-collections4",
+      "version": "4.5.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.apache.commons.commons-collections4-4.5.0.jar"
+      ]
+    },
+    {
+      "name": "commons-compress",
+      "version": "1.28.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/org.apache.commons.commons-compress-1.28.0.jar"
+      ]
+    },
+    {
+      "name": "commons-io",
+      "version": "2.21.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/commons-io.commons-io-2.21.0.jar"
+      ]
+    },
+    {
+      "name": "commons-lang3",
+      "version": "3.20.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.apache.commons.commons-lang3-3.20.0.jar"
+      ]
+    },
+    {
+      "name": "commons-logging-jboss-logging",
+      "version": "2.0.0.Final",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/bin/client/keycloak-admin-cli-26.7.4.jar"]
+    },
+    {
+      "name": "commons-logging-jboss-logging",
+      "version": "2.0.0.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.jboss.logging.commons-logging-jboss-logging-2.0.0.Final.jar"
+      ]
+    },
+    {
+      "name": "core",
+      "version": "3.4.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/com.google.zxing.core-3.4.0.jar"
+      ]
+    },
+    {
+      "name": "coreutils-single",
+      "version": "8.32-41.el9_8.1",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "crac",
+      "version": "1.5.0",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/lib/lib/boot/org.crac.crac-1.5.0.jar"]
+    },
+    {
+      "name": "crypto-policies",
+      "version": "20260224-1.gitea0f072.el9_8",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "crypto-policies-scripts",
+      "version": "20260224-1.gitea0f072.el9_8",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "dbus-java-core",
+      "version": "5.2.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/com.github.hypfvieh.dbus-java-core-5.2.0.jar"
+      ]
+    },
+    {
+      "name": "dbus-java-core",
+      "version": "5.2.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.keycloak.keycloak-sssd-federation-26.7.4.jar"
+      ]
+    },
+    {
+      "name": "dbus-java-transport-native-unixsocket",
+      "version": "5.2.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/com.github.hypfvieh.dbus-java-transport-native-unixsocket-5.2.0.jar"
+      ]
+    },
+    {
+      "name": "dbus-java-transport-native-unixsocket",
+      "version": "5.2.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.keycloak.keycloak-sssd-federation-26.7.4.jar"
+      ]
+    },
+    {
+      "name": "error_prone_annotations",
+      "version": "2.47.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/com.google.errorprone.error_prone_annotations-2.47.0.jar"
+      ]
+    },
+    {
+      "name": "expressly",
+      "version": "6.0.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.glassfish.expressly.expressly-6.0.0.jar"
+      ]
+    },
+    {
+      "name": "filesystem",
+      "version": "3.16-5.el9",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "findutils",
+      "version": "1:4.8.0-7.el9",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "freemarker",
+      "version": "2.3.32",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.freemarker.freemarker-2.3.32.jar"
+      ]
+    },
+    {
+      "name": "gizmo",
+      "version": "1.10.1",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.gizmo.gizmo-1.10.1.jar"
+      ]
+    },
+    {
+      "name": "gizmo2",
+      "version": "2.1.1",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.gizmo.gizmo2-2.1.1.jar"
+      ]
+    },
+    {
+      "name": "glibc",
+      "version": "2.34-275.el9_8",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "glibc-common",
+      "version": "2.34-275.el9_8",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "glibc-langpack-en",
+      "version": "2.34-275.el9_8",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "grep",
+      "version": "3.6-5.el9",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "grpc-api",
+      "version": "1.81.0",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/lib/lib/main/io.grpc.grpc-api-1.81.0.jar"]
+    },
+    {
+      "name": "grpc-context",
+      "version": "1.81.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.grpc.grpc-context-1.81.0.jar"
+      ]
+    },
+    {
+      "name": "grpc-core",
+      "version": "1.81.0",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/lib/lib/main/io.grpc.grpc-core-1.81.0.jar"]
+    },
+    {
+      "name": "grpc-netty",
+      "version": "1.81.0",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/lib/lib/main/io.grpc.grpc-netty-1.81.0.jar"]
+    },
+    {
+      "name": "grpc-protobuf",
+      "version": "1.81.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.grpc.grpc-protobuf-1.81.0.jar"
+      ]
+    },
+    {
+      "name": "grpc-protobuf-lite",
+      "version": "1.81.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.grpc.grpc-protobuf-lite-1.81.0.jar"
+      ]
+    },
+    {
+      "name": "grpc-stub",
+      "version": "1.81.0",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/lib/lib/main/io.grpc.grpc-stub-1.81.0.jar"]
+    },
+    {
+      "name": "grpc-util",
+      "version": "1.81.0",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/lib/lib/main/io.grpc.grpc-util-1.81.0.jar"]
+    },
+    {
+      "name": "gson",
+      "version": "2.13.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/com.google.code.gson.gson-2.13.2.jar"
+      ]
+    },
+    {
+      "name": "guava",
+      "version": "33.5.0-jre",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/com.google.guava.guava-33.5.0-jre.jar"
+      ]
+    },
+    {
+      "name": "h2",
+      "version": "2.4.240",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/lib/lib/main/com.h2database.h2-2.4.240.jar"]
+    },
+    {
+      "name": "hibernate-community-dialects",
+      "version": "7.2.19.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.hibernate.orm.hibernate-community-dialects-7.2.19.Final.jar"
+      ]
+    },
+    {
+      "name": "hibernate-core",
+      "version": "7.2.19.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.hibernate.orm.hibernate-core-7.2.19.Final.jar"
+      ]
+    },
+    {
+      "name": "hibernate-graalvm",
+      "version": "7.2.19.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.hibernate.orm.hibernate-graalvm-7.2.19.Final.jar"
+      ]
+    },
+    {
+      "name": "hibernate-models",
+      "version": "1.0.1",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.hibernate.models.hibernate-models-1.0.1.jar"
+      ]
+    },
+    {
+      "name": "hibernate-validator",
+      "version": "9.1.0.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.hibernate.validator.hibernate-validator-9.1.0.Final.jar"
+      ]
+    },
+    {
+      "name": "httpclient",
+      "version": "4.5.14",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/bin/client/keycloak-admin-cli-26.7.4.jar"]
+    },
+    {
+      "name": "httpclient",
+      "version": "4.5.14",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.apache.httpcomponents.httpclient-4.5.14.jar"
+      ]
+    },
+    {
+      "name": "httpcore",
+      "version": "4.4.16",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/bin/client/keycloak-admin-cli-26.7.4.jar"]
+    },
+    {
+      "name": "httpcore",
+      "version": "4.4.16",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.apache.httpcomponents.httpcore-4.4.16.jar"
+      ]
+    },
+    {
+      "name": "imap",
+      "version": "2.0.5",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.eclipse.angus.angus-mail-2.0.5.jar"
+      ]
+    },
+    {
+      "name": "infinispan-api",
+      "version": "16.0.14",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.infinispan.infinispan-api-16.0.14.jar"
+      ]
+    },
+    {
+      "name": "infinispan-cachestore-remote",
+      "version": "16.0.14",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.infinispan.infinispan-cachestore-remote-16.0.14.jar"
+      ]
+    },
+    {
+      "name": "infinispan-client-hotrod",
+      "version": "16.0.14",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.infinispan.infinispan-client-hotrod-16.0.14.jar"
+      ]
+    },
+    {
+      "name": "infinispan-commons",
+      "version": "16.0.14",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.infinispan.infinispan-commons-16.0.14.jar"
+      ]
+    },
+    {
+      "name": "infinispan-core",
+      "version": "16.0.14",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.infinispan.infinispan-core-16.0.14.jar"
+      ]
+    },
+    {
+      "name": "infinispan-counter-api",
+      "version": "16.0.14",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.infinispan.infinispan-counter-api-16.0.14.jar"
+      ]
+    },
+    {
+      "name": "infinispan-multimap",
+      "version": "16.0.14",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.infinispan.infinispan-multimap-16.0.14.jar"
+      ]
+    },
+    {
+      "name": "istack-commons-runtime",
+      "version": "3.0.10",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/com.sun.istack.istack-commons-runtime-3.0.10.jar"
+      ]
+    },
+    {
+      "name": "jackson-annotations",
+      "version": "2.21",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/com.fasterxml.jackson.core.jackson-annotations-2.21.jar"
+      ]
+    },
+    {
+      "name": "jackson-core",
+      "version": "2.21.5",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/bin/client/keycloak-admin-cli-26.7.4.jar"]
+    },
+    {
+      "name": "jackson-core",
+      "version": "2.21.5",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/com.fasterxml.jackson.core.jackson-core-2.21.5.jar"
+      ]
+    },
+    {
+      "name": "jackson-databind",
+      "version": "2.21.5",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/bin/client/keycloak-admin-cli-26.7.4.jar"]
+    },
+    {
+      "name": "jackson-databind",
+      "version": "2.21.5",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/com.fasterxml.jackson.core.jackson-databind-2.21.5.jar"
+      ]
+    },
+    {
+      "name": "jackson-dataformat-cbor",
+      "version": "2.21.5",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/com.fasterxml.jackson.dataformat.jackson-dataformat-cbor-2.21.5.jar"
+      ]
+    },
+    {
+      "name": "jackson-dataformat-yaml",
+      "version": "2.21.5",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/bin/client/keycloak-admin-cli-26.7.4.jar"]
+    },
+    {
+      "name": "jackson-dataformat-yaml",
+      "version": "2.21.5",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/com.fasterxml.jackson.dataformat.jackson-dataformat-yaml-2.21.5.jar"
+      ]
+    },
+    {
+      "name": "jackson-datatype-jdk8",
+      "version": "2.21.5",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/bin/client/keycloak-admin-cli-26.7.4.jar"]
+    },
+    {
+      "name": "jackson-datatype-jdk8",
+      "version": "2.21.5",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/com.fasterxml.jackson.datatype.jackson-datatype-jdk8-2.21.5.jar"
+      ]
+    },
+    {
+      "name": "jackson-datatype-jsr310",
+      "version": "2.21.5",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/bin/client/keycloak-admin-cli-26.7.4.jar"]
+    },
+    {
+      "name": "jackson-datatype-jsr310",
+      "version": "2.21.5",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/com.fasterxml.jackson.datatype.jackson-datatype-jsr310-2.21.5.jar"
+      ]
+    },
+    {
+      "name": "jackson-jakarta-rs-base",
+      "version": "2.21.5",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/com.fasterxml.jackson.jakarta.rs.jackson-jakarta-rs-base-2.21.5.jar"
+      ]
+    },
+    {
+      "name": "jackson-jakarta-rs-yaml-provider",
+      "version": "2.21.5",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/com.fasterxml.jackson.jakarta.rs.jackson-jakarta-rs-yaml-provider-2.21.5.jar"
+      ]
+    },
+    {
+      "name": "jackson-module-jakarta-xmlbind-annotations",
+      "version": "2.21.5",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/com.fasterxml.jackson.module.jackson-module-jakarta-xmlbind-annotations-2.21.5.jar"
+      ]
+    },
+    {
+      "name": "jackson-module-parameter-names",
+      "version": "2.21.5",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/com.fasterxml.jackson.module.jackson-module-parameter-names-2.21.5.jar"
+      ]
+    },
+    {
+      "name": "jakarta.activation-api",
+      "version": "2.1.4",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/bin/client/keycloak-admin-cli-26.7.4.jar"]
+    },
+    {
+      "name": "jakarta.activation-api",
+      "version": "2.1.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/jakarta.activation.jakarta.activation-api-2.1.4.jar"
+      ]
+    },
+    {
+      "name": "jakarta.annotation-api",
+      "version": "3.0.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/jakarta.annotation.jakarta.annotation-api-3.0.0.jar"
+      ]
+    },
+    {
+      "name": "jakarta.el-api",
+      "version": "6.0.1",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/jakarta.el.jakarta.el-api-6.0.1.jar"
+      ]
+    },
+    {
+      "name": "jakarta.enterprise.cdi-api",
+      "version": "4.1.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/jakarta.enterprise.jakarta.enterprise.cdi-api-4.1.0.jar"
+      ]
+    },
+    {
+      "name": "jakarta.enterprise.lang-model",
+      "version": "4.1.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/jakarta.enterprise.jakarta.enterprise.lang-model-4.1.0.jar"
+      ]
+    },
+    {
+      "name": "jakarta.inject-api",
+      "version": "2.0.1",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/jakarta.inject.jakarta.inject-api-2.0.1.jar"
+      ]
+    },
+    {
+      "name": "jakarta.interceptor-api",
+      "version": "2.2.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/jakarta.interceptor.jakarta.interceptor-api-2.2.0.jar"
+      ]
+    },
+    {
+      "name": "jakarta.json-api",
+      "version": "2.1.3",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/boot/jakarta.json.jakarta.json-api-2.1.3.jar"
+      ]
+    },
+    {
+      "name": "jakarta.mail-api",
+      "version": "2.1.1",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/jakarta.mail.jakarta.mail-api-2.1.1.jar"
+      ]
+    },
+    {
+      "name": "jakarta.persistence-api",
+      "version": "3.2.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/jakarta.persistence.jakarta.persistence-api-3.2.0.jar"
+      ]
+    },
+    {
+      "name": "jakarta.resource-api",
+      "version": "2.1.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/jakarta.resource.jakarta.resource-api-2.1.0.jar"
+      ]
+    },
+    {
+      "name": "jakarta.servlet-api",
+      "version": "6.0.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/jakarta.servlet.jakarta.servlet-api-6.0.0.jar"
+      ]
+    },
+    {
+      "name": "jakarta.transaction-api",
+      "version": "2.0.1",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/jakarta.transaction.jakarta.transaction-api-2.0.1.jar"
+      ]
+    },
+    {
+      "name": "jakarta.validation-api",
+      "version": "3.1.1",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/jakarta.validation.jakarta.validation-api-3.1.1.jar"
+      ]
+    },
+    {
+      "name": "jakarta.ws.rs-api",
+      "version": "3.1.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/jakarta.ws.rs.jakarta.ws.rs-api-3.1.0.jar"
+      ]
+    },
+    {
+      "name": "jakarta.xml.bind-api",
+      "version": "4.0.5",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/jakarta.xml.bind.jakarta.xml.bind-api-4.0.5.jar"
+      ]
+    },
+    {
+      "name": "jakarta.xml.soap-api",
+      "version": "3.0.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/jakarta.xml.soap.jakarta.xml.soap-api-3.0.0.jar"
+      ]
+    },
+    {
+      "name": "jandex",
+      "version": "3.5.3",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/bin/client/keycloak-admin-cli-26.7.4.jar"]
+    },
+    {
+      "name": "jandex",
+      "version": "3.5.3",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/lib/lib/main/io.smallrye.jandex-3.5.3.jar"]
+    },
+    {
+      "name": "jandex-gizmo2",
+      "version": "3.5.3",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.smallrye.jandex-gizmo2-3.5.3.jar"
+      ]
+    },
+    {
+      "name": "jansi",
+      "version": "4.2.1",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/org.jline.jansi-4.2.1.jar"
+      ]
+    },
+    {
+      "name": "jansi-core",
+      "version": "4.2.1",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/org.jline.jansi-4.2.1.jar"
+      ]
+    },
+    {
+      "name": "java-21-openjdk-headless",
+      "version": "1:21.0.12.1.1-1.2.el9",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "java10-shim",
+      "version": "20260101.1",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/com.googlecode.owasp-java-html-sanitizer.java10-shim-20260101.1.jar"
+      ]
+    },
+    {
+      "name": "java8-shim",
+      "version": "20260101.1",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/com.googlecode.owasp-java-html-sanitizer.java8-shim-20260101.1.jar"
+      ]
+    },
+    {
+      "name": "javapackages-filesystem",
+      "version": "6.4.0-1.el9",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "javase",
+      "version": "3.4.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/com.google.zxing.javase-3.4.0.jar"
+      ]
+    },
+    {
+      "name": "jaxb-core",
+      "version": "4.0.8",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.glassfish.jaxb.jaxb-core-4.0.8.jar"
+      ]
+    },
+    {
+      "name": "jaxb-runtime",
+      "version": "4.0.8",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.glassfish.jaxb.jaxb-runtime-4.0.8.jar"
+      ]
+    },
+    {
+      "name": "jboss-invocation",
+      "version": "2.0.0.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.jboss.invocation.jboss-invocation-2.0.0.Final.jar"
+      ]
+    },
+    {
+      "name": "jboss-logging",
+      "version": "3.6.2.Final",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/bin/client/keycloak-admin-cli-26.7.4.jar"]
+    },
+    {
+      "name": "jboss-logging",
+      "version": "3.6.2.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/boot/org.jboss.logging.jboss-logging-3.6.2.Final.jar"
+      ]
+    },
+    {
+      "name": "jboss-logmanager",
+      "version": "3.2.1.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/boot/org.jboss.logmanager.jboss-logmanager-3.2.1.Final.jar"
+      ]
+    },
+    {
+      "name": "jboss-threads",
+      "version": "3.9.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.jboss.threads.jboss-threads-3.9.2.jar"
+      ]
+    },
+    {
+      "name": "jboss-transaction-spi",
+      "version": "8.0.0.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.jboss.jboss-transaction-spi-8.0.0.Final.jar"
+      ]
+    },
+    {
+      "name": "jctools-core",
+      "version": "4.0.5",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.netty.netty-common-4.1.136.Final.jar"
+      ]
+    },
+    {
+      "name": "jctools-core",
+      "version": "4.0.5",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.opentelemetry.opentelemetry-sdk-trace-1.57.0.jar"
+      ]
+    },
+    {
+      "name": "jctools-core",
+      "version": "4.0.5",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.jctools.jctools-core-4.0.5.jar"
+      ]
+    },
+    {
+      "name": "jdbc",
+      "version": "7.3.3.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.jboss.narayana.jta.narayana-jta-7.3.3.Final.jar"
+      ]
+    },
+    {
+      "name": "jdk-classfile-backport",
+      "version": "26",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.smallrye.classfile.jdk-classfile-backport-26.jar"
+      ]
+    },
+    {
+      "name": "jgroups",
+      "version": "5.5.5.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.jgroups.jgroups-5.5.5.Final.jar"
+      ]
+    },
+    {
+      "name": "jline-native",
+      "version": "4.2.1",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/org.jline.jansi-4.2.1.jar"
+      ]
+    },
+    {
+      "name": "jline-terminal",
+      "version": "4.2.1",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/org.jline.jansi-4.2.1.jar"
+      ]
+    },
+    {
+      "name": "jline-terminal-jni",
+      "version": "4.2.1",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/org.jline.jansi-4.2.1.jar"
+      ]
+    },
+    {
+      "name": "jms",
+      "version": "7.3.3.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.jboss.narayana.jta.narayana-jta-7.3.3.Final.jar"
+      ]
+    },
+    {
+      "name": "jna",
+      "version": "5.8.0",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/lib/lib/main/net.java.dev.jna.jna-5.8.0.jar"]
+    },
+    {
+      "name": "jrt-fs",
+      "version": "21.0.12.1",
+      "type": "java-archive",
+      "locations": [
+        "/usr/lib/jvm/java-21-openjdk-21.0.12.1.1-1.2.el9.x86_64/lib/jrt-fs.jar"
+      ]
+    },
+    {
+      "name": "jspecify",
+      "version": "1.0.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.jspecify.jspecify-1.0.0.jar"
+      ]
+    },
+    {
+      "name": "jta",
+      "version": "7.3.3.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.jboss.narayana.jta.narayana-jta-7.3.3.Final.jar"
+      ]
+    },
+    {
+      "name": "jts-core",
+      "version": "1.19.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.locationtech.jts.jts-core-1.19.0.jar"
+      ]
+    },
+    {
+      "name": "keycloak-account-ui",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.keycloak.keycloak-account-ui-26.7.4.jar"
+      ]
+    },
+    {
+      "name": "keycloak-admin-cli",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/bin/client/keycloak-admin-cli-26.7.4.jar"]
+    },
+    {
+      "name": "keycloak-admin-ui",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.keycloak.keycloak-admin-ui-26.7.4.jar"
+      ]
+    },
+    {
+      "name": "keycloak-admin-v2-api",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.keycloak.keycloak-admin-v2-api-26.7.4.jar"
+      ]
+    },
+    {
+      "name": "keycloak-admin-v2-services",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.keycloak.keycloak-admin-v2-services-26.7.4.jar"
+      ]
+    },
+    {
+      "name": "keycloak-authz-policy-common",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.keycloak.keycloak-authz-policy-common-26.7.4.jar"
+      ]
+    },
+    {
+      "name": "keycloak-authzen-services",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.keycloak.keycloak-authzen-services-26.7.4.jar"
+      ]
+    },
+    {
+      "name": "keycloak-common",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.keycloak.keycloak-common-26.7.4.jar"
+      ]
+    },
+    {
+      "name": "keycloak-config-api",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.keycloak.keycloak-config-api-26.7.4.jar"
+      ]
+    },
+    {
+      "name": "keycloak-core",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.keycloak.keycloak-core-26.7.4.jar"
+      ]
+    },
+    {
+      "name": "keycloak-crypto-default",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/bin/client/lib/keycloak-crypto-default-26.7.4.jar"
+      ]
+    },
+    {
+      "name": "keycloak-crypto-default",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.keycloak.keycloak-crypto-default-26.7.4.jar"
+      ]
+    },
+    {
+      "name": "keycloak-crypto-fips1402",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/bin/client/lib/keycloak-crypto-fips1402-26.7.4.jar"
+      ]
+    },
+    {
+      "name": "keycloak-crypto-fips1402",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.keycloak.keycloak-crypto-fips1402-26.7.4.jar"
+      ]
+    },
+    {
+      "name": "keycloak-ipatuura-federation",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.keycloak.keycloak-ipatuura-federation-26.7.4.jar"
+      ]
+    },
+    {
+      "name": "keycloak-kerberos-federation",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.keycloak.keycloak-kerberos-federation-26.7.4.jar"
+      ]
+    },
+    {
+      "name": "keycloak-ldap-federation",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.keycloak.keycloak-ldap-federation-26.7.4.jar"
+      ]
+    },
+    {
+      "name": "keycloak-model-infinispan",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.keycloak.keycloak-model-infinispan-26.7.4.jar"
+      ]
+    },
+    {
+      "name": "keycloak-model-jpa",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.keycloak.keycloak-model-jpa-26.7.4.jar"
+      ]
+    },
+    {
+      "name": "keycloak-model-storage",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.keycloak.keycloak-model-storage-26.7.4.jar"
+      ]
+    },
+    {
+      "name": "keycloak-model-storage-private",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.keycloak.keycloak-model-storage-private-26.7.4.jar"
+      ]
+    },
+    {
+      "name": "keycloak-model-storage-services",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.keycloak.keycloak-model-storage-services-26.7.4.jar"
+      ]
+    },
+    {
+      "name": "keycloak-quarkus-server",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.keycloak.keycloak-quarkus-server-26.7.4.jar"
+      ]
+    },
+    {
+      "name": "keycloak-quarkus-server-app",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/lib/app/keycloak.jar"]
+    },
+    {
+      "name": "keycloak-quarkus-server-deployment",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/org.keycloak.keycloak-quarkus-server-deployment-26.7.4.jar"
+      ]
+    },
+    {
+      "name": "keycloak-rest-admin-ui-ext",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.keycloak.keycloak-rest-admin-ui-ext-26.7.4.jar"
+      ]
+    },
+    {
+      "name": "keycloak-saml-core",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.keycloak.keycloak-saml-core-26.7.4.jar"
+      ]
+    },
+    {
+      "name": "keycloak-saml-core-public",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.keycloak.keycloak-saml-core-public-26.7.4.jar"
+      ]
+    },
+    {
+      "name": "keycloak-scim-core",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.keycloak.keycloak-scim-core-26.7.4.jar"
+      ]
+    },
+    {
+      "name": "keycloak-scim-model",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.keycloak.keycloak-scim-model-26.7.4.jar"
+      ]
+    },
+    {
+      "name": "keycloak-scim-services",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.keycloak.keycloak-scim-services-26.7.4.jar"
+      ]
+    },
+    {
+      "name": "keycloak-server-spi",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.keycloak.keycloak-server-spi-26.7.4.jar"
+      ]
+    },
+    {
+      "name": "keycloak-server-spi-private",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.keycloak.keycloak-server-spi-private-26.7.4.jar"
+      ]
+    },
+    {
+      "name": "keycloak-services",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.keycloak.keycloak-services-26.7.4.jar"
+      ]
+    },
+    {
+      "name": "keycloak-ssf-core",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.keycloak.keycloak-ssf-core-26.7.4.jar"
+      ]
+    },
+    {
+      "name": "keycloak-ssf-services",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.keycloak.keycloak-ssf-services-26.7.4.jar"
+      ]
+    },
+    {
+      "name": "keycloak-ssf-transmitter",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.keycloak.keycloak-ssf-transmitter-26.7.4.jar"
+      ]
+    },
+    {
+      "name": "keycloak-sssd-federation",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.keycloak.keycloak-sssd-federation-26.7.4.jar"
+      ]
+    },
+    {
+      "name": "keycloak-themes",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.keycloak.keycloak-themes-26.7.4.jar"
+      ]
+    },
+    {
+      "name": "keycloak-themes-vendor",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.keycloak.keycloak-themes-vendor-26.7.4.jar"
+      ]
+    },
+    {
+      "name": "libacl",
+      "version": "2.4.0-1.el9_8",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "libattr",
+      "version": "2.6.0-1.el9_8",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "libcap",
+      "version": "2.48-10.el9_8.1",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "libffi",
+      "version": "3.4.2-8.el9",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "libgcc",
+      "version": "11.5.0-14.el9",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "libselinux",
+      "version": "3.6-3.el9",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "libsepol",
+      "version": "3.6-3.el9",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "libsigsegv",
+      "version": "2.13-4.el9",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "libtasn1",
+      "version": "4.16.0-10.el9_8",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "liquibase-core",
+      "version": "4.33.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.liquibase.liquibase-core-4.33.0.jar"
+      ]
+    },
+    {
+      "name": "lksctp-tools",
+      "version": "1.0.19-3.el9_4",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "logging-mailhandler",
+      "version": "2.0.5",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.eclipse.angus.angus-mail-2.0.5.jar"
+      ]
+    },
+    {
+      "name": "mariadb-java-client",
+      "version": "3.5.9",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.mariadb.jdbc.mariadb-java-client-3.5.9.jar"
+      ]
+    },
+    {
+      "name": "micrometer-commons",
+      "version": "1.16.6",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.micrometer.micrometer-commons-1.16.6.jar"
+      ]
+    },
+    {
+      "name": "micrometer-core",
+      "version": "1.16.6",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.micrometer.micrometer-core-1.16.6.jar"
+      ]
+    },
+    {
+      "name": "micrometer-observation",
+      "version": "1.16.6",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.micrometer.micrometer-observation-1.16.6.jar"
+      ]
+    },
+    {
+      "name": "micrometer-registry-prometheus-simpleclient",
+      "version": "1.16.6",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.micrometer.micrometer-registry-prometheus-simpleclient-1.16.6.jar"
+      ]
+    },
+    {
+      "name": "microprofile-config-api",
+      "version": "3.1.1",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/bin/client/keycloak-admin-cli-26.7.4.jar"]
+    },
+    {
+      "name": "microprofile-config-api",
+      "version": "3.1.1",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.eclipse.microprofile.config.microprofile-config-api-3.1.1.jar"
+      ]
+    },
+    {
+      "name": "microprofile-context-propagation-api",
+      "version": "1.3",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.eclipse.microprofile.context-propagation.microprofile-context-propagation-api-1.3.jar"
+      ]
+    },
+    {
+      "name": "microprofile-health-api",
+      "version": "4.0.1",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.eclipse.microprofile.health.microprofile-health-api-4.0.1.jar"
+      ]
+    },
+    {
+      "name": "microprofile-openapi-api",
+      "version": "4.1.1",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/bin/client/keycloak-admin-cli-26.7.4.jar"]
+    },
+    {
+      "name": "microprofile-openapi-api",
+      "version": "4.1.1",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.eclipse.microprofile.openapi.microprofile-openapi-api-4.1.1.jar"
+      ]
+    },
+    {
+      "name": "microprofile-reactive-streams-operators-api",
+      "version": "3.0.1",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.eclipse.microprofile.reactive-streams-operators.microprofile-reactive-streams-operators-api-3.0.1.jar"
+      ]
+    },
+    {
+      "name": "mssql-jdbc",
+      "version": "13.2.1",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/com.microsoft.sqlserver.mssql-jdbc-13.2.1.jre11.jar"
+      ]
+    },
+    {
+      "name": "mutiny",
+      "version": "3.1.1",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.smallrye.reactive.mutiny-3.1.1.jar"
+      ]
+    },
+    {
+      "name": "mutiny-smallrye-context-propagation",
+      "version": "3.1.1",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.smallrye.reactive.mutiny-smallrye-context-propagation-3.1.1.jar"
+      ]
+    },
+    {
+      "name": "mutiny-zero-flow-adapters",
+      "version": "1.1.1",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.smallrye.reactive.mutiny-zero-flow-adapters-1.1.1.jar"
+      ]
+    },
+    {
+      "name": "mysql-connector-j",
+      "version": "9.6.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/com.mysql.mysql-connector-j-9.6.0.jar"
+      ]
+    },
+    {
+      "name": "narayana-jta",
+      "version": "7.3.3.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.jboss.narayana.jta.narayana-jta-7.3.3.Final.jar"
+      ]
+    },
+    {
+      "name": "narayana-jts-integration",
+      "version": "7.3.3.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.jboss.narayana.jts.narayana-jts-integration-7.3.3.Final.jar"
+      ]
+    },
+    {
+      "name": "nashorn-core",
+      "version": "15.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.openjdk.nashorn.nashorn-core-15.4.jar"
+      ]
+    },
+    {
+      "name": "native-linux-x86_64",
+      "version": "1.23.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/com.aayushatharva.brotli4j.native-linux-x86_64-1.23.0.jar"
+      ]
+    },
+    {
+      "name": "ncurses-base",
+      "version": "6.2-12.20210508.el9",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "ncurses-libs",
+      "version": "6.2-12.20210508.el9",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "netty-buffer",
+      "version": "4.1.136.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.netty.netty-buffer-4.1.136.Final.jar"
+      ]
+    },
+    {
+      "name": "netty-codec",
+      "version": "4.1.136.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.netty.netty-codec-4.1.136.Final.jar"
+      ]
+    },
+    {
+      "name": "netty-codec-dns",
+      "version": "4.1.136.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.netty.netty-codec-dns-4.1.136.Final.jar"
+      ]
+    },
+    {
+      "name": "netty-codec-haproxy",
+      "version": "4.1.136.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.netty.netty-codec-haproxy-4.1.136.Final.jar"
+      ]
+    },
+    {
+      "name": "netty-codec-http",
+      "version": "4.1.136.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.netty.netty-codec-http-4.1.136.Final.jar"
+      ]
+    },
+    {
+      "name": "netty-codec-http2",
+      "version": "4.1.136.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.netty.netty-codec-http2-4.1.136.Final.jar"
+      ]
+    },
+    {
+      "name": "netty-codec-socks",
+      "version": "4.1.136.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.netty.netty-codec-socks-4.1.136.Final.jar"
+      ]
+    },
+    {
+      "name": "netty-common",
+      "version": "4.1.136.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.netty.netty-common-4.1.136.Final.jar"
+      ]
+    },
+    {
+      "name": "netty-handler",
+      "version": "4.1.136.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.netty.netty-handler-4.1.136.Final.jar"
+      ]
+    },
+    {
+      "name": "netty-handler-proxy",
+      "version": "4.1.136.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.netty.netty-handler-proxy-4.1.136.Final.jar"
+      ]
+    },
+    {
+      "name": "netty-resolver",
+      "version": "4.1.136.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.netty.netty-resolver-4.1.136.Final.jar"
+      ]
+    },
+    {
+      "name": "netty-resolver-dns",
+      "version": "4.1.136.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.netty.netty-resolver-dns-4.1.136.Final.jar"
+      ]
+    },
+    {
+      "name": "netty-tcnative-classes",
+      "version": "2.0.78.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.netty.netty-tcnative-classes-2.0.78.Final.jar"
+      ]
+    },
+    {
+      "name": "netty-transport",
+      "version": "4.1.136.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.netty.netty-transport-4.1.136.Final.jar"
+      ]
+    },
+    {
+      "name": "netty-transport-classes-epoll",
+      "version": "4.1.136.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.netty.netty-transport-classes-epoll-4.1.136.Final.jar"
+      ]
+    },
+    {
+      "name": "netty-transport-native-epoll",
+      "version": "4.1.136.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.netty.netty-transport-native-epoll-4.1.136.Final-linux-aarch_64.jar"
+      ]
+    },
+    {
+      "name": "netty-transport-native-epoll",
+      "version": "4.1.136.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.netty.netty-transport-native-epoll-4.1.136.Final-linux-x86_64.jar"
+      ]
+    },
+    {
+      "name": "netty-transport-native-unix-common",
+      "version": "4.1.136.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.netty.netty-transport-native-unix-common-4.1.136.Final.jar"
+      ]
+    },
+    {
+      "name": "nspr",
+      "version": "4.39.0-5.el9_6",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "nss",
+      "version": "3.124.0-5.el9_6",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "nss-softokn",
+      "version": "3.124.0-5.el9_6",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "nss-softokn-freebl",
+      "version": "3.124.0-5.el9_6",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "nss-sysinit",
+      "version": "3.124.0-5.el9_6",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "nss-util",
+      "version": "3.124.0-5.el9_6",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "opencsv",
+      "version": "5.11.2",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/lib/lib/main/com.opencsv.opencsv-5.11.2.jar"]
+    },
+    {
+      "name": "opentelemetry-apache-httpclient",
+      "version": "4.3-2.23.0-alpha",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.opentelemetry.instrumentation.opentelemetry-apache-httpclient-4.3-2.23.0-alpha.jar"
+      ]
+    },
+    {
+      "name": "opentelemetry-api",
+      "version": "1.57.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.opentelemetry.opentelemetry-api-1.57.0.jar"
+      ]
+    },
+    {
+      "name": "opentelemetry-api-incubator",
+      "version": "1.57.0-alpha",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.opentelemetry.opentelemetry-api-incubator-1.57.0-alpha.jar"
+      ]
+    },
+    {
+      "name": "opentelemetry-common",
+      "version": "1.57.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.opentelemetry.opentelemetry-common-1.57.0.jar"
+      ]
+    },
+    {
+      "name": "opentelemetry-context",
+      "version": "1.57.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.opentelemetry.opentelemetry-context-1.57.0.jar"
+      ]
+    },
+    {
+      "name": "opentelemetry-exporter-common",
+      "version": "1.57.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.opentelemetry.opentelemetry-exporter-common-1.57.0.jar"
+      ]
+    },
+    {
+      "name": "opentelemetry-exporter-otlp",
+      "version": "1.57.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.opentelemetry.opentelemetry-exporter-otlp-1.57.0.jar"
+      ]
+    },
+    {
+      "name": "opentelemetry-exporter-otlp-common",
+      "version": "1.57.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.opentelemetry.opentelemetry-exporter-otlp-common-1.57.0.jar"
+      ]
+    },
+    {
+      "name": "opentelemetry-instrumentation-annotations",
+      "version": "2.23.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.opentelemetry.instrumentation.opentelemetry-instrumentation-annotations-2.23.0.jar"
+      ]
+    },
+    {
+      "name": "opentelemetry-instrumentation-annotations-support",
+      "version": "2.23.0-alpha",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.opentelemetry.instrumentation.opentelemetry-instrumentation-annotations-support-2.23.0-alpha.jar"
+      ]
+    },
+    {
+      "name": "opentelemetry-instrumentation-api",
+      "version": "2.23.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.opentelemetry.instrumentation.opentelemetry-instrumentation-api-2.23.0.jar"
+      ]
+    },
+    {
+      "name": "opentelemetry-instrumentation-api-incubator",
+      "version": "2.23.0-alpha",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.opentelemetry.instrumentation.opentelemetry-instrumentation-api-incubator-2.23.0-alpha.jar"
+      ]
+    },
+    {
+      "name": "opentelemetry-jdbc",
+      "version": "2.23.0-alpha",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.opentelemetry.instrumentation.opentelemetry-jdbc-2.23.0-alpha.jar"
+      ]
+    },
+    {
+      "name": "opentelemetry-micrometer",
+      "version": "1.5-2.23.0-alpha",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.opentelemetry.instrumentation.opentelemetry-micrometer-1.5-2.23.0-alpha.jar"
+      ]
+    },
+    {
+      "name": "opentelemetry-runtime-telemetry-java17",
+      "version": "2.23.0-alpha",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.opentelemetry.instrumentation.opentelemetry-runtime-telemetry-java17-2.23.0-alpha.jar"
+      ]
+    },
+    {
+      "name": "opentelemetry-runtime-telemetry-java8",
+      "version": "2.23.0-alpha",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.opentelemetry.instrumentation.opentelemetry-runtime-telemetry-java8-2.23.0-alpha.jar"
+      ]
+    },
+    {
+      "name": "opentelemetry-sdk",
+      "version": "1.57.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.opentelemetry.opentelemetry-sdk-1.57.0.jar"
+      ]
+    },
+    {
+      "name": "opentelemetry-sdk-common",
+      "version": "1.57.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.opentelemetry.opentelemetry-sdk-common-1.57.0.jar"
+      ]
+    },
+    {
+      "name": "opentelemetry-sdk-extension-autoconfigure",
+      "version": "1.57.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.opentelemetry.opentelemetry-sdk-extension-autoconfigure-1.57.0.jar"
+      ]
+    },
+    {
+      "name": "opentelemetry-sdk-extension-autoconfigure-spi",
+      "version": "1.57.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.opentelemetry.opentelemetry-sdk-extension-autoconfigure-spi-1.57.0.jar"
+      ]
+    },
+    {
+      "name": "opentelemetry-sdk-logs",
+      "version": "1.57.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.opentelemetry.opentelemetry-sdk-logs-1.57.0.jar"
+      ]
+    },
+    {
+      "name": "opentelemetry-sdk-metrics",
+      "version": "1.57.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.opentelemetry.opentelemetry-sdk-metrics-1.57.0.jar"
+      ]
+    },
+    {
+      "name": "opentelemetry-sdk-trace",
+      "version": "1.57.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.opentelemetry.opentelemetry-sdk-trace-1.57.0.jar"
+      ]
+    },
+    {
+      "name": "opentelemetry-semconv",
+      "version": "1.37.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.opentelemetry.semconv.opentelemetry-semconv-1.37.0.jar"
+      ]
+    },
+    {
+      "name": "opentelemetry-semconv-incubating",
+      "version": "1.37.0-alpha",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.opentelemetry.semconv.opentelemetry-semconv-incubating-1.37.0-alpha.jar"
+      ]
+    },
+    {
+      "name": "owasp-java-html-sanitizer",
+      "version": "20260101.1",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/com.googlecode.owasp-java-html-sanitizer.owasp-java-html-sanitizer-20260101.1.jar"
+      ]
+    },
+    {
+      "name": "p11-kit-trust",
+      "version": "0.26.4-1.el9_8",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "parsson",
+      "version": "1.1.7",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/boot/org.eclipse.parsson.parsson-1.1.7.jar"
+      ]
+    },
+    {
+      "name": "pcre",
+      "version": "8.44-4.el9",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "pcre2",
+      "version": "10.40-6.el9",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "pcre2-syntax",
+      "version": "10.40-6.el9",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "perfmark-api",
+      "version": "0.27.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.perfmark.perfmark-api-0.27.0.jar"
+      ]
+    },
+    {
+      "name": "picocli",
+      "version": "4.7.7",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/lib/lib/main/info.picocli.picocli-4.7.7.jar"]
+    },
+    {
+      "name": "pop3",
+      "version": "2.0.5",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.eclipse.angus.angus-mail-2.0.5.jar"
+      ]
+    },
+    {
+      "name": "postgresql",
+      "version": "42.7.13",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.postgresql.postgresql-42.7.13.jar"
+      ]
+    },
+    {
+      "name": "proto-google-common-protos",
+      "version": "2.65.1",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/com.google.api.grpc.proto-google-common-protos-2.65.1.jar"
+      ]
+    },
+    {
+      "name": "protobuf-java",
+      "version": "4.33.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/com.google.protobuf.protobuf-java-4.33.2.jar"
+      ]
+    },
+    {
+      "name": "protostream",
+      "version": "6.0.7",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.infinispan.protostream.protostream-6.0.7.jar"
+      ]
+    },
+    {
+      "name": "protostream-types",
+      "version": "6.0.7",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.infinispan.protostream.protostream-types-6.0.7.jar"
+      ]
+    },
+    {
+      "name": "quarkus-agroal",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-agroal-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-agroal-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-agroal-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-agroal-spi",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-agroal-spi-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-arc",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-arc-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-arc-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-arc-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-arc-test-supplement",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-arc-test-supplement-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-arc-test-supplement-decorator",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-arc-test-supplement-decorator-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-assistant-deployment-spi",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-assistant-deployment-spi-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-assistant-dev",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-assistant-dev-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-bootstrap-app-model",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-bootstrap-app-model-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-bootstrap-core",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-bootstrap-core-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-bootstrap-json",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-bootstrap-json-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-bootstrap-runner",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/boot/io.quarkus.quarkus-bootstrap-runner-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-builder",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-builder-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-caffeine",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-caffeine-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-caffeine-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-caffeine-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-class-change-agent",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-class-change-agent-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-classloader-commons",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/boot/io.quarkus.quarkus-classloader-commons-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-core",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-core-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-core-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-core-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-credentials",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-credentials-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-credentials-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-credentials-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-datasource",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-datasource-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-datasource-common",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-datasource-common-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-datasource-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-datasource-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-datasource-deployment-spi",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-datasource-deployment-spi-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-development-mode-spi",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/boot/io.quarkus.quarkus-development-mode-spi-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-devservices",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-devservices-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-devui-deployment-spi",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-devui-deployment-spi-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-fs-util",
+      "version": "1.4.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-fs-util-1.4.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-grpc-common",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-grpc-common-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-grpc-common-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-grpc-common-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-hibernate-orm",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-hibernate-orm-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-hibernate-orm-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-hibernate-orm-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-hibernate-orm-deployment-spi",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-hibernate-orm-deployment-spi-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-hibernate-validator",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-hibernate-validator-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-hibernate-validator-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-hibernate-validator-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-hibernate-validator-spi",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-hibernate-validator-spi-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-http-core",
+      "version": "5.5.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.http.quarkus-http-core-5.5.0.jar"
+      ]
+    },
+    {
+      "name": "quarkus-http-http-core",
+      "version": "5.5.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.http.quarkus-http-http-core-5.5.0.jar"
+      ]
+    },
+    {
+      "name": "quarkus-http-servlet",
+      "version": "5.5.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.http.quarkus-http-servlet-5.5.0.jar"
+      ]
+    },
+    {
+      "name": "quarkus-jackson",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-jackson-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-jackson-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-jackson-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-jackson-spi",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-jackson-spi-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-jaxrs-spi-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-jaxrs-spi-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-jdbc-h2",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-jdbc-h2-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-jdbc-h2-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-jdbc-h2-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-jdbc-mariadb",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-jdbc-mariadb-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-jdbc-mariadb-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-jdbc-mariadb-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-jdbc-mssql",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-jdbc-mssql-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-jdbc-mssql-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-jdbc-mssql-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-jdbc-mysql",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-jdbc-mysql-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-jdbc-mysql-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-jdbc-mysql-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-jdbc-oracle",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-jdbc-oracle-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-jdbc-oracle-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-jdbc-oracle-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-jdbc-postgresql",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-jdbc-postgresql-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-jdbc-postgresql-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-jdbc-postgresql-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-jsonp",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-jsonp-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-jsonp-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-jsonp-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-kubernetes-service-binding-spi",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-kubernetes-service-binding-spi-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-kubernetes-spi",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-kubernetes-spi-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-local-cache",
+      "version": "0.5.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.hibernate.local-cache.quarkus-local-cache-0.5.0.jar"
+      ]
+    },
+    {
+      "name": "quarkus-logging-json",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-logging-json-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-logging-json-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-logging-json-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-micrometer",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-micrometer-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-micrometer-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-micrometer-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-micrometer-opentelemetry",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-micrometer-opentelemetry-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-micrometer-opentelemetry-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-micrometer-opentelemetry-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-micrometer-registry-prometheus",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-micrometer-registry-prometheus-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-micrometer-registry-prometheus-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-micrometer-registry-prometheus-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-mutiny",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-mutiny-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-mutiny-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-mutiny-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-narayana-jta",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-narayana-jta-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-narayana-jta-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-narayana-jta-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-netty",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-netty-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-netty-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-netty-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-opentelemetry",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-opentelemetry-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-opentelemetry-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-opentelemetry-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-panache-common",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-panache-common-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-panache-common-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-panache-common-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-panache-hibernate-common",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-panache-hibernate-common-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-panache-hibernate-common-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-panache-hibernate-common-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-reactive-datasource-spi",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-reactive-datasource-spi-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-rest",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-rest-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-rest-common",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-rest-common-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-rest-common-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-rest-common-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-rest-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-rest-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-rest-jackson",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-rest-jackson-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-rest-jackson-common",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-rest-jackson-common-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-rest-jackson-common-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-rest-jackson-common-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-rest-jackson-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-rest-jackson-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-rest-server-spi-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-rest-server-spi-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-rest-spi-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-rest-spi-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-resteasy-common-spi",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-resteasy-common-spi-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-resteasy-server-common-spi",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-resteasy-server-common-spi-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-run",
+      "version": "26.7.4",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/lib/quarkus-run.jar"]
+    },
+    {
+      "name": "quarkus-security",
+      "version": "2.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.security.quarkus-security-2.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-security-runtime-spi",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-security-runtime-spi-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-security-spi",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-security-spi-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-smallrye-context-propagation",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-smallrye-context-propagation-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-smallrye-context-propagation-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-smallrye-context-propagation-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-smallrye-context-propagation-spi",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-smallrye-context-propagation-spi-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-smallrye-health",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-smallrye-health-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-smallrye-health-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-smallrye-health-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-smallrye-health-dev",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-smallrye-health-dev-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-smallrye-health-spi",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-smallrye-health-spi-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-smallrye-openapi",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-smallrye-openapi-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-smallrye-openapi-common-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-smallrye-openapi-common-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-smallrye-openapi-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-smallrye-openapi-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-smallrye-openapi-dev",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-smallrye-openapi-dev-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-smallrye-openapi-spi",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-smallrye-openapi-spi-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-swagger-ui",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-swagger-ui-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-swagger-ui-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-swagger-ui-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-tls-registry",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-tls-registry-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-tls-registry-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-tls-registry-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-tls-registry-deployment-spi",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-tls-registry-deployment-spi-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-tls-registry-spi",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-tls-registry-spi-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-transaction-annotations",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-transaction-annotations-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-undertow-spi",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-undertow-spi-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-value-registry",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/boot/io.quarkus.quarkus-value-registry-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-vertx",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-vertx-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-vertx-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-vertx-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-vertx-deployment-spi",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-vertx-deployment-spi-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-vertx-http",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-vertx-http-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-vertx-http-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-vertx-http-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-vertx-http-deployment-spi",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-vertx-http-deployment-spi-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-vertx-latebound-mdc-provider",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/boot/io.quarkus.quarkus-vertx-latebound-mdc-provider-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-vertx-utils",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.vertx.utils.quarkus-vertx-utils-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-virtual-threads",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-virtual-threads-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-virtual-threads-deployment",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.quarkus-virtual-threads-deployment-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "quarkus-websockets-next-spi",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.quarkus-websockets-next-spi-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "rdf-urdna",
+      "version": "1.1",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/lib/lib/main/io.setl.rdf-urdna-1.1.jar"]
+    },
+    {
+      "name": "reactive-streams",
+      "version": "1.0.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.reactivestreams.reactive-streams-1.0.4.jar"
+      ]
+    },
+    {
+      "name": "readline",
+      "version": "2.6.3",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/org.aesh.readline-2.6.3.jar"
+      ]
+    },
+    {
+      "name": "redhat-release",
+      "version": "9.8-1.0.el9",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "resteasy-reactive",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.resteasy.reactive.resteasy-reactive-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "resteasy-reactive-common",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.resteasy.reactive.resteasy-reactive-common-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "resteasy-reactive-common-processor",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.resteasy.reactive.resteasy-reactive-common-processor-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "resteasy-reactive-common-types",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.resteasy.reactive.resteasy-reactive-common-types-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "resteasy-reactive-jackson",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.resteasy.reactive.resteasy-reactive-jackson-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "resteasy-reactive-processor",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.quarkus.resteasy.reactive.resteasy-reactive-processor-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "resteasy-reactive-vertx",
+      "version": "3.33.3.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.quarkus.resteasy.reactive.resteasy-reactive-vertx-3.33.3.2.jar"
+      ]
+    },
+    {
+      "name": "rxjava",
+      "version": "3.1.12",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.reactivex.rxjava3.rxjava-3.1.12.jar"
+      ]
+    },
+    {
+      "name": "saaj-impl",
+      "version": "2.0.1",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/com.sun.xml.messaging.saaj.saaj-impl-2.0.1.jar"
+      ]
+    },
+    {
+      "name": "sed",
+      "version": "4.8-10.el9",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "service",
+      "version": "1.23.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/com.aayushatharva.brotli4j.service-1.23.0.jar"
+      ]
+    },
+    {
+      "name": "setup",
+      "version": "2.13.7-10.el9",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "simpleclient",
+      "version": "0.16.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.prometheus.simpleclient-0.16.0.jar"
+      ]
+    },
+    {
+      "name": "simpleclient_common",
+      "version": "0.16.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.prometheus.simpleclient_common-0.16.0.jar"
+      ]
+    },
+    {
+      "name": "simpleclient_tracer_common",
+      "version": "0.16.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.prometheus.simpleclient_tracer_common-0.16.0.jar"
+      ]
+    },
+    {
+      "name": "simpleclient_tracer_otel",
+      "version": "0.16.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.prometheus.simpleclient_tracer_otel-0.16.0.jar"
+      ]
+    },
+    {
+      "name": "simpleclient_tracer_otel_agent",
+      "version": "0.16.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.prometheus.simpleclient_tracer_otel_agent-0.16.0.jar"
+      ]
+    },
+    {
+      "name": "slf4j-api",
+      "version": "2.0.17",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/lib/lib/main/org.slf4j.slf4j-api-2.0.17.jar"]
+    },
+    {
+      "name": "slf4j-jboss-logmanager",
+      "version": "2.0.2.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.jboss.slf4j.slf4j-jboss-logmanager-2.0.2.Final.jar"
+      ]
+    },
+    {
+      "name": "smallrye-common-annotation",
+      "version": "2.16.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.smallrye.common.smallrye-common-annotation-2.16.0.jar"
+      ]
+    },
+    {
+      "name": "smallrye-common-classloader",
+      "version": "2.16.0",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/bin/client/keycloak-admin-cli-26.7.4.jar"]
+    },
+    {
+      "name": "smallrye-common-classloader",
+      "version": "2.16.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.smallrye.common.smallrye-common-classloader-2.16.0.jar"
+      ]
+    },
+    {
+      "name": "smallrye-common-constraint",
+      "version": "2.16.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/boot/io.smallrye.common.smallrye-common-constraint-2.16.0.jar"
+      ]
+    },
+    {
+      "name": "smallrye-common-cpu",
+      "version": "2.16.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/boot/io.smallrye.common.smallrye-common-cpu-2.16.0.jar"
+      ]
+    },
+    {
+      "name": "smallrye-common-expression",
+      "version": "2.16.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/boot/io.smallrye.common.smallrye-common-expression-2.16.0.jar"
+      ]
+    },
+    {
+      "name": "smallrye-common-function",
+      "version": "2.16.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/boot/io.smallrye.common.smallrye-common-function-2.16.0.jar"
+      ]
+    },
+    {
+      "name": "smallrye-common-io",
+      "version": "2.16.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/boot/io.smallrye.common.smallrye-common-io-2.16.0.jar"
+      ]
+    },
+    {
+      "name": "smallrye-common-net",
+      "version": "2.16.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/boot/io.smallrye.common.smallrye-common-net-2.16.0.jar"
+      ]
+    },
+    {
+      "name": "smallrye-common-os",
+      "version": "2.16.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/boot/io.smallrye.common.smallrye-common-os-2.16.0.jar"
+      ]
+    },
+    {
+      "name": "smallrye-common-process",
+      "version": "2.16.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.smallrye.common.smallrye-common-process-2.16.0.jar"
+      ]
+    },
+    {
+      "name": "smallrye-common-ref",
+      "version": "2.16.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/boot/io.smallrye.common.smallrye-common-ref-2.16.0.jar"
+      ]
+    },
+    {
+      "name": "smallrye-common-resource",
+      "version": "2.16.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.smallrye.common.smallrye-common-resource-2.16.0.jar"
+      ]
+    },
+    {
+      "name": "smallrye-common-vertx-context",
+      "version": "2.16.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.smallrye.common.smallrye-common-vertx-context-2.16.0.jar"
+      ]
+    },
+    {
+      "name": "smallrye-config",
+      "version": "3.16.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.smallrye.config.smallrye-config-3.16.0.jar"
+      ]
+    },
+    {
+      "name": "smallrye-config-common",
+      "version": "3.16.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.smallrye.config.smallrye-config-common-3.16.0.jar"
+      ]
+    },
+    {
+      "name": "smallrye-config-core",
+      "version": "3.16.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.smallrye.config.smallrye-config-core-3.16.0.jar"
+      ]
+    },
+    {
+      "name": "smallrye-config-source-keystore",
+      "version": "3.16.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.smallrye.config.smallrye-config-source-keystore-3.16.0.jar"
+      ]
+    },
+    {
+      "name": "smallrye-config-validator",
+      "version": "3.16.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.smallrye.config.smallrye-config-validator-3.16.0.jar"
+      ]
+    },
+    {
+      "name": "smallrye-context-propagation",
+      "version": "2.3.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.smallrye.smallrye-context-propagation-2.3.0.jar"
+      ]
+    },
+    {
+      "name": "smallrye-context-propagation-api",
+      "version": "2.3.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.smallrye.smallrye-context-propagation-api-2.3.0.jar"
+      ]
+    },
+    {
+      "name": "smallrye-context-propagation-jta",
+      "version": "2.3.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.smallrye.smallrye-context-propagation-jta-2.3.0.jar"
+      ]
+    },
+    {
+      "name": "smallrye-context-propagation-storage",
+      "version": "2.3.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.smallrye.smallrye-context-propagation-storage-2.3.0.jar"
+      ]
+    },
+    {
+      "name": "smallrye-fault-tolerance-vertx",
+      "version": "6.10.1",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.smallrye.smallrye-fault-tolerance-vertx-6.10.1.jar"
+      ]
+    },
+    {
+      "name": "smallrye-health",
+      "version": "4.3.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.smallrye.smallrye-health-4.3.0.jar"
+      ]
+    },
+    {
+      "name": "smallrye-health-api",
+      "version": "4.3.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.smallrye.smallrye-health-api-4.3.0.jar"
+      ]
+    },
+    {
+      "name": "smallrye-health-provided-checks",
+      "version": "4.3.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.smallrye.smallrye-health-provided-checks-4.3.0.jar"
+      ]
+    },
+    {
+      "name": "smallrye-health-ui",
+      "version": "4.3.0",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.smallrye.smallrye-health-ui-4.3.0.jar"
+      ]
+    },
+    {
+      "name": "smallrye-mutiny-vertx-auth-common",
+      "version": "3.21.6",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.smallrye.reactive.smallrye-mutiny-vertx-auth-common-3.21.6.jar"
+      ]
+    },
+    {
+      "name": "smallrye-mutiny-vertx-bridge-common",
+      "version": "3.21.6",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.smallrye.reactive.smallrye-mutiny-vertx-bridge-common-3.21.6.jar"
+      ]
+    },
+    {
+      "name": "smallrye-mutiny-vertx-core",
+      "version": "3.21.6",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.smallrye.reactive.smallrye-mutiny-vertx-core-3.21.6.jar"
+      ]
+    },
+    {
+      "name": "smallrye-mutiny-vertx-runtime",
+      "version": "3.21.6",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.smallrye.reactive.smallrye-mutiny-vertx-runtime-3.21.6.jar"
+      ]
+    },
+    {
+      "name": "smallrye-mutiny-vertx-uri-template",
+      "version": "3.21.6",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.smallrye.reactive.smallrye-mutiny-vertx-uri-template-3.21.6.jar"
+      ]
+    },
+    {
+      "name": "smallrye-mutiny-vertx-web",
+      "version": "3.21.6",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.smallrye.reactive.smallrye-mutiny-vertx-web-3.21.6.jar"
+      ]
+    },
+    {
+      "name": "smallrye-mutiny-vertx-web-common",
+      "version": "3.21.6",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.smallrye.reactive.smallrye-mutiny-vertx-web-common-3.21.6.jar"
+      ]
+    },
+    {
+      "name": "smallrye-open-api-core",
+      "version": "4.2.4",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/bin/client/keycloak-admin-cli-26.7.4.jar"]
+    },
+    {
+      "name": "smallrye-open-api-core",
+      "version": "4.2.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.smallrye.smallrye-open-api-core-4.2.4.jar"
+      ]
+    },
+    {
+      "name": "smallrye-open-api-jaxrs",
+      "version": "4.2.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.smallrye.smallrye-open-api-jaxrs-4.2.4.jar"
+      ]
+    },
+    {
+      "name": "smallrye-open-api-model",
+      "version": "4.2.4",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/bin/client/keycloak-admin-cli-26.7.4.jar"]
+    },
+    {
+      "name": "smallrye-open-api-model",
+      "version": "4.2.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.smallrye.smallrye-open-api-model-4.2.4.jar"
+      ]
+    },
+    {
+      "name": "smallrye-open-api-spring",
+      "version": "4.2.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.smallrye.smallrye-open-api-spring-4.2.4.jar"
+      ]
+    },
+    {
+      "name": "smallrye-open-api-ui",
+      "version": "4.2.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.smallrye.smallrye-open-api-ui-4.2.4.jar"
+      ]
+    },
+    {
+      "name": "smallrye-open-api-vertx",
+      "version": "4.2.4",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/io.smallrye.smallrye-open-api-vertx-4.2.4.jar"
+      ]
+    },
+    {
+      "name": "smallrye-private-key-pem-parser",
+      "version": "0.9.3",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.smallrye.certs.smallrye-private-key-pem-parser-0.9.3.jar"
+      ]
+    },
+    {
+      "name": "smallrye-reactive-converter-api",
+      "version": "3.0.3",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.smallrye.reactive.smallrye-reactive-converter-api-3.0.3.jar"
+      ]
+    },
+    {
+      "name": "smallrye-reactive-converter-mutiny",
+      "version": "3.0.3",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.smallrye.reactive.smallrye-reactive-converter-mutiny-3.0.3.jar"
+      ]
+    },
+    {
+      "name": "smtp",
+      "version": "2.0.5",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.eclipse.angus.angus-mail-2.0.5.jar"
+      ]
+    },
+    {
+      "name": "snakeyaml",
+      "version": "2.0",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/bin/client/keycloak-admin-cli-26.7.4.jar"]
+    },
+    {
+      "name": "snakeyaml",
+      "version": "2.0",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/lib/lib/main/org.yaml.snakeyaml-2.0.jar"]
+    },
+    {
+      "name": "snakeyaml-engine",
+      "version": "2.6",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.snakeyaml.snakeyaml-engine-2.6.jar"
+      ]
+    },
+    {
+      "name": "sqlite-libs",
+      "version": "3.34.1-11.el9_8",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "stax-ex",
+      "version": "2.0.1",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.jvnet.staxex.stax-ex-2.0.1.jar"
+      ]
+    },
+    {
+      "name": "terminal-api",
+      "version": "2.6.3",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/deployment/org.aesh.readline-2.6.3.jar"
+      ]
+    },
+    {
+      "name": "titanium-json-ld",
+      "version": "1.3.3",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/com.apicatalog.titanium-json-ld-1.3.3.jar"
+      ]
+    },
+    {
+      "name": "twitter4j-core",
+      "version": "4.1.2",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.twitter4j.twitter4j-core-4.1.2.jar"
+      ]
+    },
+    {
+      "name": "txoj",
+      "version": "7.3.3.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.jboss.narayana.jta.narayana-jta-7.3.3.Final.jar"
+      ]
+    },
+    {
+      "name": "txw2",
+      "version": "4.0.8",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.glassfish.jaxb.txw2-4.0.8.jar"
+      ]
+    },
+    {
+      "name": "tzdata",
+      "version": "2026c-1.el9_8",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "tzdata-java",
+      "version": "2026c-1.el9_8",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    },
+    {
+      "name": "uap-java",
+      "version": "1.6.1",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/com.github.ua-parser.uap-java-1.6.1.jar"
+      ]
+    },
+    {
+      "name": "vertx-auth-common",
+      "version": "4.5.31",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.vertx.vertx-auth-common-4.5.31.jar"
+      ]
+    },
+    {
+      "name": "vertx-bridge-common",
+      "version": "4.5.31",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.vertx.vertx-bridge-common-4.5.31.jar"
+      ]
+    },
+    {
+      "name": "vertx-codegen",
+      "version": "4.5.31",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.vertx.vertx-codegen-4.5.31.jar"
+      ]
+    },
+    {
+      "name": "vertx-core",
+      "version": "4.5.31",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/lib/lib/main/io.vertx.vertx-core-4.5.31.jar"]
+    },
+    {
+      "name": "vertx-grpc",
+      "version": "4.5.31",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/lib/lib/main/io.vertx.vertx-grpc-4.5.31.jar"]
+    },
+    {
+      "name": "vertx-grpc-client",
+      "version": "4.5.31",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.vertx.vertx-grpc-client-4.5.31.jar"
+      ]
+    },
+    {
+      "name": "vertx-grpc-common",
+      "version": "4.5.31",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.vertx.vertx-grpc-common-4.5.31.jar"
+      ]
+    },
+    {
+      "name": "vertx-grpc-server",
+      "version": "4.5.31",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.vertx.vertx-grpc-server-4.5.31.jar"
+      ]
+    },
+    {
+      "name": "vertx-mutiny-generator",
+      "version": "3.21.6",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.smallrye.reactive.vertx-mutiny-generator-3.21.6.jar"
+      ]
+    },
+    {
+      "name": "vertx-web",
+      "version": "4.5.31",
+      "type": "java-archive",
+      "locations": ["/opt/keycloak/lib/lib/main/io.vertx.vertx-web-4.5.31.jar"]
+    },
+    {
+      "name": "vertx-web-common",
+      "version": "4.5.31",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/io.vertx.vertx-web-common-4.5.31.jar"
+      ]
+    },
+    {
+      "name": "webauthn4j-core",
+      "version": "0.30.3.RELEASE",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/com.webauthn4j.webauthn4j-core-0.30.3.RELEASE.jar"
+      ]
+    },
+    {
+      "name": "webauthn4j-util",
+      "version": "0.30.3.RELEASE",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/com.webauthn4j.webauthn4j-util-0.30.3.RELEASE.jar"
+      ]
+    },
+    {
+      "name": "wildfly-common",
+      "version": "1.5.4.Final-format-001",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.wildfly.common.wildfly-common-1.5.4.Final-format-001.jar"
+      ]
+    },
+    {
+      "name": "wildfly-elytron-asn1",
+      "version": "2.8.4.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.wildfly.security.wildfly-elytron-asn1-2.8.4.Final.jar"
+      ]
+    },
+    {
+      "name": "wildfly-elytron-auth",
+      "version": "2.8.4.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.wildfly.security.wildfly-elytron-auth-2.8.4.Final.jar"
+      ]
+    },
+    {
+      "name": "wildfly-elytron-auth-server",
+      "version": "2.8.4.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.wildfly.security.wildfly-elytron-auth-server-2.8.4.Final.jar"
+      ]
+    },
+    {
+      "name": "wildfly-elytron-base",
+      "version": "2.8.4.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.wildfly.security.wildfly-elytron-base-2.8.4.Final.jar"
+      ]
+    },
+    {
+      "name": "wildfly-elytron-credential",
+      "version": "2.8.4.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.wildfly.security.wildfly-elytron-credential-2.8.4.Final.jar"
+      ]
+    },
+    {
+      "name": "wildfly-elytron-http",
+      "version": "2.8.4.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.wildfly.security.wildfly-elytron-http-2.8.4.Final.jar"
+      ]
+    },
+    {
+      "name": "wildfly-elytron-keystore",
+      "version": "2.8.4.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.wildfly.security.wildfly-elytron-keystore-2.8.4.Final.jar"
+      ]
+    },
+    {
+      "name": "wildfly-elytron-mechanism",
+      "version": "2.8.4.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.wildfly.security.wildfly-elytron-mechanism-2.8.4.Final.jar"
+      ]
+    },
+    {
+      "name": "wildfly-elytron-mechanism-digest",
+      "version": "2.8.4.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.wildfly.security.wildfly-elytron-mechanism-digest-2.8.4.Final.jar"
+      ]
+    },
+    {
+      "name": "wildfly-elytron-mechanism-gssapi",
+      "version": "2.8.4.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.wildfly.security.wildfly-elytron-mechanism-gssapi-2.8.4.Final.jar"
+      ]
+    },
+    {
+      "name": "wildfly-elytron-mechanism-oauth2",
+      "version": "2.8.4.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.wildfly.security.wildfly-elytron-mechanism-oauth2-2.8.4.Final.jar"
+      ]
+    },
+    {
+      "name": "wildfly-elytron-mechanism-scram",
+      "version": "2.8.4.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.wildfly.security.wildfly-elytron-mechanism-scram-2.8.4.Final.jar"
+      ]
+    },
+    {
+      "name": "wildfly-elytron-password-impl",
+      "version": "2.8.4.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.wildfly.security.wildfly-elytron-password-impl-2.8.4.Final.jar"
+      ]
+    },
+    {
+      "name": "wildfly-elytron-permission",
+      "version": "2.8.4.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.wildfly.security.wildfly-elytron-permission-2.8.4.Final.jar"
+      ]
+    },
+    {
+      "name": "wildfly-elytron-provider-util",
+      "version": "2.8.4.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.wildfly.security.wildfly-elytron-provider-util-2.8.4.Final.jar"
+      ]
+    },
+    {
+      "name": "wildfly-elytron-sasl",
+      "version": "2.8.4.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.wildfly.security.wildfly-elytron-sasl-2.8.4.Final.jar"
+      ]
+    },
+    {
+      "name": "wildfly-elytron-sasl-digest",
+      "version": "2.8.4.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.wildfly.security.wildfly-elytron-sasl-digest-2.8.4.Final.jar"
+      ]
+    },
+    {
+      "name": "wildfly-elytron-sasl-external",
+      "version": "2.8.4.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.wildfly.security.wildfly-elytron-sasl-external-2.8.4.Final.jar"
+      ]
+    },
+    {
+      "name": "wildfly-elytron-sasl-gs2",
+      "version": "2.8.4.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.wildfly.security.wildfly-elytron-sasl-gs2-2.8.4.Final.jar"
+      ]
+    },
+    {
+      "name": "wildfly-elytron-sasl-gssapi",
+      "version": "2.8.4.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.wildfly.security.wildfly-elytron-sasl-gssapi-2.8.4.Final.jar"
+      ]
+    },
+    {
+      "name": "wildfly-elytron-sasl-oauth2",
+      "version": "2.8.4.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.wildfly.security.wildfly-elytron-sasl-oauth2-2.8.4.Final.jar"
+      ]
+    },
+    {
+      "name": "wildfly-elytron-sasl-plain",
+      "version": "2.8.4.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.wildfly.security.wildfly-elytron-sasl-plain-2.8.4.Final.jar"
+      ]
+    },
+    {
+      "name": "wildfly-elytron-sasl-scram",
+      "version": "2.8.4.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.wildfly.security.wildfly-elytron-sasl-scram-2.8.4.Final.jar"
+      ]
+    },
+    {
+      "name": "wildfly-elytron-security-manager-action",
+      "version": "2.8.4.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.wildfly.security.wildfly-elytron-security-manager-action-2.8.4.Final.jar"
+      ]
+    },
+    {
+      "name": "wildfly-elytron-ssl",
+      "version": "2.8.4.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.wildfly.security.wildfly-elytron-ssl-2.8.4.Final.jar"
+      ]
+    },
+    {
+      "name": "wildfly-elytron-util",
+      "version": "2.8.4.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.wildfly.security.wildfly-elytron-util-2.8.4.Final.jar"
+      ]
+    },
+    {
+      "name": "wildfly-elytron-x500",
+      "version": "2.8.4.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.wildfly.security.wildfly-elytron-x500-2.8.4.Final.jar"
+      ]
+    },
+    {
+      "name": "wildfly-elytron-x500-cert",
+      "version": "2.8.4.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.wildfly.security.wildfly-elytron-x500-cert-2.8.4.Final.jar"
+      ]
+    },
+    {
+      "name": "wildfly-elytron-x500-cert-util",
+      "version": "2.8.4.Final",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.wildfly.security.wildfly-elytron-x500-cert-util-2.8.4.Final.jar"
+      ]
+    },
+    {
+      "name": "xmlsec",
+      "version": "3.0.6",
+      "type": "java-archive",
+      "locations": [
+        "/opt/keycloak/lib/lib/main/org.apache.santuario.xmlsec-3.0.6.jar"
+      ]
+    },
+    {
+      "name": "zlib",
+      "version": "1.2.11-40.el9",
+      "type": "rpm",
+      "locations": ["/var/lib/rpm/rpmdb.sqlite"]
+    }
+  ]
+}

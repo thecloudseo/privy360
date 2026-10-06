@@ -15,7 +15,14 @@
     "test:e2e": "playwright test",
     "audit:deps": "pnpm audit --audit-level high",
     "build": "pnpm -r --if-present build",
-    "check:structure": "node scripts/check-structure.mjs"
+    "check:structure": "node scripts/check-structure.mjs",
+    "check:production-boundary": "node scripts/check-production-boundary.mjs",
+    "services:up": "node scripts/local-services.mjs up",
+    "services:down": "node scripts/local-services.mjs down",
+    "services:status": "node scripts/local-services.mjs status",
+    "services:config": "node scripts/local-services.mjs config",
+    "services:security:collect": "node scripts/local-image-evidence.mjs collect",
+    "services:security:eligibility": "node scripts/local-image-evidence.mjs collect-evaluate"
   },
   "devDependencies": {
     "typescript": "5.9.3",

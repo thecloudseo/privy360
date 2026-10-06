@@ -1,0 +1,405 @@
+{
+  "image": "cgr.dev/chainguard/postgres@sha256:a2aec7d9a0456cb64eb59e75752fa6aebd13100d320d3e544fe09f102076ff5c",
+  "platform": "linux/amd64",
+  "generator": "Syft",
+  "generatorVersion": "1.52.0",
+  "generatedAt": "2026-10-06T09:18:52.801Z",
+  "packages": [
+    {
+      "name": "bash",
+      "version": "5.3-r13",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "busybox",
+      "version": "1.38.0-r2",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "ca-certificates-bundle",
+      "version": "20260909-r1",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "cyrus-sasl-heimdal-libs",
+      "version": "2.1.28-r57",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "ecpg-18",
+      "version": "18.6-r3",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "gdbm",
+      "version": "1.26-r6",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "github.com/moby/sys/user",
+      "version": "v0.1.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/gosu"]
+    },
+    {
+      "name": "github.com/tianon/gosu",
+      "version": "v0.0.0-20250923190938-6456aaa0f3c8",
+      "type": "go-module",
+      "locations": ["/usr/bin/gosu"]
+    },
+    {
+      "name": "glibc-2.44",
+      "version": "2.44-r7",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "glibc-2.44-locale-en",
+      "version": "2.44-r7",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "glibc-2.44-locale-posix",
+      "version": "2.44-r7",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "golang.org/x/sys",
+      "version": "v0.1.0",
+      "type": "go-module",
+      "locations": ["/usr/bin/gosu"]
+    },
+    {
+      "name": "gosu",
+      "version": "1.19-r17",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "heimdal-libs",
+      "version": "7.8.0-r52",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "icu78-data-full",
+      "version": "78.3-r3",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "keyutils-libs",
+      "version": "1.6.3-r40",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "krb5-conf",
+      "version": "1.0-r9",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "krb5-libs",
+      "version": "1.22.2-r4",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "ld-linux-2.44",
+      "version": "2.44-r7",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "libLLVM-19",
+      "version": "19.1.7-r28",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "libbrotlicommon1",
+      "version": "1.2.0-r5",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "libbrotlidec1",
+      "version": "1.2.0-r5",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "libbrotlienc1",
+      "version": "1.2.0-r5",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "libcom_err",
+      "version": "1.47.4-r2",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "libcrypt1-2.44",
+      "version": "2.44-r7",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "libcrypto3",
+      "version": "3.6.5-r0",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "libedit",
+      "version": "3.1-r19",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "libffi",
+      "version": "3.8.0-r1",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "libgcc",
+      "version": "16.2.0-r1",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "libicu78",
+      "version": "78.3-r3",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "libldap-2.7",
+      "version": "2.7.1-r1",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "liblz4-1",
+      "version": "1.10.0-r10",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "libpcre2-8-0",
+      "version": "10.49-r1",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "libpq-18",
+      "version": "18.6-r3",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "libselinux",
+      "version": "3.11-r2",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "libsepol",
+      "version": "3.11-r3",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "libssl3",
+      "version": "3.6.5-r0",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "libstdc++",
+      "version": "16.2.0-r1",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "libuuid",
+      "version": "2.42.4-r0",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "libverto",
+      "version": "0.3.2-r8",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "libxcrypt",
+      "version": "4.5.2-r5",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "libxml2-16",
+      "version": "2.15.4-r0",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "libxslt",
+      "version": "1.1.45-r4",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "libzstd1",
+      "version": "1.5.7-r10",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "linux-pam",
+      "version": "1.7.3-r0",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "ncurses",
+      "version": "6.6.20260926-r0",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "ncurses-terminfo-base",
+      "version": "6.6.20260926-r0",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "openssl-4.0-libcrypto",
+      "version": "4.0.3-r0",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "openssl-4.0-libssl",
+      "version": "4.0.3-r0",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "openssl-provider-legacy-allowed",
+      "version": "4.0.2-r3",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "pgaudit-18",
+      "version": "18.0-r5",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "posix-libc-utils-2.44",
+      "version": "2.44-r7",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "posix-libc-utils-bin-2.44",
+      "version": "2.44-r7",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "postgresql-18",
+      "version": "18.6-r3",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "postgresql-18-base",
+      "version": "18.6-r3",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "postgresql-18-client",
+      "version": "18.6-r3",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "postgresql-18-client-base",
+      "version": "18.6-r3",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "postgresql-18-contrib",
+      "version": "18.6-r3",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "postgresql-18-oci-entrypoint",
+      "version": "18.6-r3",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "postgresql-18-oci-entrypoint-base",
+      "version": "18.6-r3",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "readline",
+      "version": "8.3-r3",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "sqlite-libs",
+      "version": "3.53.4-r2",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "stdlib",
+      "version": "go1.27.1",
+      "type": "go-module",
+      "locations": ["/usr/bin/gosu"]
+    },
+    {
+      "name": "tzdata",
+      "version": "2026e-r0",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "wolfi-baselayout",
+      "version": "20230201-r30",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    },
+    {
+      "name": "zlib",
+      "version": "1.3.2.1_rc20260601-r0",
+      "type": "apk",
+      "locations": ["/usr/lib/apk/db/installed"]
+    }
+  ]
+}

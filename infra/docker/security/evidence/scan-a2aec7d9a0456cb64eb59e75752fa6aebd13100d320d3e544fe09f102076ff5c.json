@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 3,
+  "image": "cgr.dev/chainguard/postgres@sha256:a2aec7d9a0456cb64eb59e75752fa6aebd13100d320d3e544fe09f102076ff5c",
+  "tag": "PostgreSQL 18",
+  "digest": "a2aec7d9a0456cb64eb59e75752fa6aebd13100d320d3e544fe09f102076ff5c",
+  "platform": "linux/amd64",
+  "configurationHash": "a8f94c9d42937ababde999e7998ea834634fff0205e3eb6498d7f50191fe5e36",
+  "mountHashes": {
+    "dynamicconfig": {
+      "type": "directory",
+      "mode": 493,
+      "entries": {
+        "docker.yaml": {
+          "type": "file",
+          "mode": 420,
+          "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+        }
+      }
+    },
+    "setup-temporal.sh": {
+      "type": "file",
+      "mode": 420,
+      "sha256": "d82c56bd46dba77bd656f5f1a2c8227288457debbac9a6fa561d213d55761fea"
+    }
+  },
+  "scanner": "Trivy",
+  "scannerVersion": "0.74.0",
+  "scannerBinarySha256": "43ae1fd02532315b44a9d0496ae06326d5a1f3496cae26499be624807813fa8c",
+  "syftVersion": "1.52.0",
+  "syftBinarySha256": "abdbb5e8955ed65f67f058c10de9dc2fb36921236dab7d76a7d4618da3869e15",
+  "scannerIsolation": {
+    "config": "infra/docker/security/trivy-image.yaml",
+    "ignorefile": "/dev/null",
+    "inheritedOverridesRemoved": true,
+    "anonymousRegistryConfig": true
+  },
+  "databaseUpdatedAt": "2026-10-05T19:07:00.467Z",
+  "databaseVersion": 2,
+  "scanCommand": "trivy image --config infra/docker/security/trivy-image.yaml --ignorefile /dev/null --cache-dir <local-cache> --scanners vuln --severity HIGH,CRITICAL --list-all-pkgs --format json cgr.dev/chainguard/postgres@sha256:a2aec7d9a0456cb64eb59e75752fa6aebd13100d320d3e544fe09f102076ff5c",
+  "syftCommand": "syft cgr.dev/chainguard/postgres@sha256:a2aec7d9a0456cb64eb59e75752fa6aebd13100d320d3e544fe09f102076ff5c -o json",
+  "scanOptions": ["vuln", "HIGH,CRITICAL", "list-all-pkgs"],
+  "scannedAt": "2026-10-06T09:18:37.103Z",
+  "collectionStatus": "complete",
+  "coverage": {
+    "trivyResults": true,
+    "syftArtifacts": true
+  },
+  "sbomFile": "sbom-a2aec7d9a0456cb64eb59e75752fa6aebd13100d320d3e544fe09f102076ff5c.json",
+  "sbomSha256": "90c681649ebe7e27585f7878ac25c169aec22de1a282e210128808370ba28925",
+  "rawTrivyFile": "trivy-a2aec7d9a0456cb64eb59e75752fa6aebd13100d320d3e544fe09f102076ff5c.json.gz",
+  "rawTrivySha256": "30e4a136f2e9a90debe17a18507cd981898857b66ed4e5e96a17c7c8d8013bfc",
+  "rawSyftFile": "syft-a2aec7d9a0456cb64eb59e75752fa6aebd13100d320d3e544fe09f102076ff5c.json.gz",
+  "rawSyftSha256": "74fc3bc57f4a17982b5a6c2a0d2975004adc88505393ba5080a6813fdab16c29",
+  "identityFile": "identity-a2aec7d9a0456cb64eb59e75752fa6aebd13100d320d3e544fe09f102076ff5c.json",
+  "identitySha256": "f27ecee2db040a7af53ad87bf67d97a753c4b4cc1aa87d2387da52d89d4d8a89",
+  "findings": []
+}

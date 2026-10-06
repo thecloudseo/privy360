@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 3,
+  "image": "temporalio/admin-tools@sha256:a9f84fb9a374b2374fe2e67c8efc0468ff3f1c66c8a0b14597ec86e349e62bca",
+  "tag": "1.32.0",
+  "digest": "a9f84fb9a374b2374fe2e67c8efc0468ff3f1c66c8a0b14597ec86e349e62bca",
+  "platform": "linux/amd64",
+  "configurationHash": "a8f94c9d42937ababde999e7998ea834634fff0205e3eb6498d7f50191fe5e36",
+  "mountHashes": {
+    "dynamicconfig": {
+      "type": "directory",
+      "mode": 493,
+      "entries": {
+        "docker.yaml": {
+          "type": "file",
+          "mode": 420,
+          "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+        }
+      }
+    },
+    "setup-temporal.sh": {
+      "type": "file",
+      "mode": 420,
+      "sha256": "d82c56bd46dba77bd656f5f1a2c8227288457debbac9a6fa561d213d55761fea"
+    }
+  },
+  "scanner": "Trivy",
+  "scannerVersion": "0.74.0",
+  "scannerBinarySha256": "43ae1fd02532315b44a9d0496ae06326d5a1f3496cae26499be624807813fa8c",
+  "syftVersion": "1.52.0",
+  "syftBinarySha256": "abdbb5e8955ed65f67f058c10de9dc2fb36921236dab7d76a7d4618da3869e15",
+  "scannerIsolation": {
+    "config": "infra/docker/security/trivy-image.yaml",
+    "ignorefile": "/dev/null",
+    "inheritedOverridesRemoved": true,
+    "anonymousRegistryConfig": true
+  },
+  "databaseUpdatedAt": "2026-10-05T19:07:00.467Z",
+  "databaseVersion": 2,
+  "scanCommand": "trivy image --config infra/docker/security/trivy-image.yaml --ignorefile /dev/null --cache-dir <local-cache> --scanners vuln --severity HIGH,CRITICAL --list-all-pkgs --format json temporalio/admin-tools@sha256:a9f84fb9a374b2374fe2e67c8efc0468ff3f1c66c8a0b14597ec86e349e62bca",
+  "syftCommand": "syft temporalio/admin-tools@sha256:a9f84fb9a374b2374fe2e67c8efc0468ff3f1c66c8a0b14597ec86e349e62bca -o json",
+  "scanOptions": ["vuln", "HIGH,CRITICAL", "list-all-pkgs"],
+  "scannedAt": "2026-10-06T09:19:29.369Z",
+  "collectionStatus": "complete",
+  "coverage": {
+    "trivyResults": true,
+    "syftArtifacts": true
+  },
+  "sbomFile": "sbom-a9f84fb9a374b2374fe2e67c8efc0468ff3f1c66c8a0b14597ec86e349e62bca.json",
+  "sbomSha256": "9cfbf4ba36370d73675f2d9bbb4708488ce7c5d03771c5b4dc94c42ca5ee81dc",
+  "rawTrivyFile": "trivy-a9f84fb9a374b2374fe2e67c8efc0468ff3f1c66c8a0b14597ec86e349e62bca.json.gz",
+  "rawTrivySha256": "0ada401ddef8ade313031a715daed6a383f58fae62319bb25f4361a779ba0ce3",
+  "rawSyftFile": "syft-a9f84fb9a374b2374fe2e67c8efc0468ff3f1c66c8a0b14597ec86e349e62bca.json.gz",
+  "rawSyftSha256": "b806a6afa393f4c8b1e1184c326b04761105f48a07b9e570ff3f72e3d84fa41d",
+  "identityFile": "identity-a9f84fb9a374b2374fe2e67c8efc0468ff3f1c66c8a0b14597ec86e349e62bca.json",
+  "identitySha256": "15a88a8f037c436491f631f2c5e4129643e4cd091b4cb34aa4eafabd87f0c274",
+  "findings": []
+}

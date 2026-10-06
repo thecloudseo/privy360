@@ -1,0 +1,236 @@
+name: privy360-local
+
+x-health: &health
+  interval: 5s
+  timeout: 5s
+  retries: 30
+  start_period: 20s
+
+services:
+  app-db:
+    image: cgr.dev/chainguard/postgres@sha256:a2aec7d9a0456cb64eb59e75752fa6aebd13100d320d3e544fe09f102076ff5c
+    platform: linux/amd64
+    mem_limit: 512m
+    cpus: 1
+    pids_limit: 256
+    environment:
+      POSTGRES_DB: privy360
+      POSTGRES_USER: privy360_app
+      POSTGRES_PASSWORD: ${APP_DB_PASSWORD:?local credential required}
+    volumes: [app-db-v18-data:/var/lib/postgresql/data]
+    networks: [app-net]
+    healthcheck:
+      <<: *health
+      test: [CMD-SHELL, "pg_isready -U privy360_app -d privy360"]
+    security_opt: [no-new-privileges:true]
+
+  idp-db:
+    image: cgr.dev/chainguard/postgres@sha256:a2aec7d9a0456cb64eb59e75752fa6aebd13100d320d3e544fe09f102076ff5c
+    platform: linux/amd64
+    mem_limit: 512m
+    cpus: 1
+    pids_limit: 256
+    environment:
+      POSTGRES_DB: keycloak
+      POSTGRES_USER: keycloak
+      POSTGRES_PASSWORD: ${IDP_DB_PASSWORD:?local credential required}
+    volumes: [idp-db-v18-data:/var/lib/postgresql/data]
+    networks: [idp-net]
+    healthcheck:
+      <<: *health
+      test: [CMD-SHELL, "pg_isready -U keycloak -d keycloak"]
+    security_opt: [no-new-privileges:true]
+
+  temporal-db:
+    image: cgr.dev/chainguard/postgres@sha256:a2aec7d9a0456cb64eb59e75752fa6aebd13100d320d3e544fe09f102076ff5c
+    platform: linux/amd64
+    mem_limit: 512m
+    cpus: 1
+    pids_limit: 256
+    environment:
+      POSTGRES_DB: temporal
+      POSTGRES_USER: temporal
+      POSTGRES_PASSWORD: ${TEMPORAL_DB_PASSWORD:?local credential required}
+    volumes: [temporal-db-v18-data:/var/lib/postgresql/data]
+    networks: [temporal-net]
+    healthcheck:
+      <<: *health
+      test: [CMD-SHELL, "pg_isready -U temporal -d temporal"]
+    security_opt: [no-new-privileges:true]
+
+  redis:
+    image: redis@sha256:858f009f9709ce576febc734aa78b8f6d624b82571f9ddb6bda4377c833b3499
+    platform: linux/amd64
+    mem_limit: 256m
+    cpus: 1
+    pids_limit: 128
+    user: "999:999"
+    cap_drop: [ALL]
+    environment:
+      REDIS_PASSWORD: ${REDIS_PASSWORD:?local credential required}
+    command:
+      [
+        sh,
+        -ec,
+        'exec redis-server --requirepass "$${REDIS_PASSWORD}" --appendonly no --dir /tmp',
+      ]
+    networks: [app-net]
+    healthcheck:
+      <<: *health
+      test:
+        [
+          CMD-SHELL,
+          'redis-cli -a "$${REDIS_PASSWORD}" ping 2>/dev/null | grep -qx PONG',
+        ]
+    security_opt: [no-new-privileges:true]
+
+  keycloak:
+    image: quay.io/keycloak/keycloak@sha256:82a77884f3af238beab1e7afd63b5f530e1b5c0590bd7aa60b40a40463e29b2c
+    platform: linux/amd64
+    mem_limit: 1536m
+    cpus: 2
+    pids_limit: 512
+    cap_drop: [ALL]
+    command: [start-dev, --health-enabled=true]
+    environment:
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://idp-db:5432/keycloak
+      KC_DB_USERNAME: keycloak
+      KC_DB_PASSWORD: ${IDP_DB_PASSWORD:?local credential required}
+      KC_BOOTSTRAP_ADMIN_USERNAME: local-admin
+      KC_BOOTSTRAP_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD:?local credential required}
+      KC_HTTP_ENABLED: "true"
+      KC_HOSTNAME: http://localhost:8081
+    depends_on:
+      idp-db: { condition: service_healthy }
+    networks: [idp-net, app-net]
+    healthcheck:
+      <<: *health
+      start_period: 90s
+      test:
+        [
+          CMD-SHELL,
+          "{ printf 'HEAD /health/ready HTTP/1.0\\r\\n\\r\\n' >&0; grep -q 'HTTP/1.0 200'; } 0<>/dev/tcp/localhost/9000",
+        ]
+    security_opt: [no-new-privileges:true]
+
+  temporal-setup:
+    image: temporalio/admin-tools@sha256:a9f84fb9a374b2374fe2e67c8efc0468ff3f1c66c8a0b14597ec86e349e62bca
+    platform: linux/amd64
+    mem_limit: 256m
+    cpus: 1
+    pids_limit: 128
+    cap_drop: [ALL]
+    environment:
+      SQL_PASSWORD: ${TEMPORAL_DB_PASSWORD:?local credential required}
+    entrypoint: [/bin/sh, /setup-temporal.sh]
+    volumes: ["./setup-temporal.sh:/setup-temporal.sh:ro"]
+    depends_on:
+      temporal-db: { condition: service_healthy }
+    networks: [temporal-net]
+    restart: "no"
+    security_opt: [no-new-privileges:true]
+
+  temporal:
+    image: temporalio/server@sha256:c3e752127759616bb1615e0f9ba0e21635aeb5fdeb922de4f371c350955f46ae
+    platform: linux/amd64
+    mem_limit: 1536m
+    cpus: 2
+    pids_limit: 512
+    cap_drop: [ALL]
+    environment:
+      DB: postgres12
+      DB_PORT: "5432"
+      POSTGRES_SEEDS: temporal-db
+      POSTGRES_USER: temporal
+      POSTGRES_PWD: ${TEMPORAL_DB_PASSWORD:?local credential required}
+      BIND_ON_IP: 0.0.0.0
+    depends_on:
+      temporal-setup: { condition: service_completed_successfully }
+    volumes: ["./dynamicconfig:/etc/temporal/config/dynamicconfig:ro"]
+    networks: [temporal-net, app-net]
+    healthcheck:
+      <<: *health
+      start_period: 90s
+      test: [CMD, nc, -z, localhost, "7233"]
+    security_opt: [no-new-privileges:true]
+
+  minio-volume-init:
+    image: cgr.dev/chainguard/busybox@sha256:7cf02f9aec5f52ee8ce43d4094b2fe068043d5111bd22897a676d7cdac15d941
+    platform: linux/amd64
+    mem_limit: 128m
+    cpus: 1
+    pids_limit: 64
+    user: "0"
+    entrypoint: [chown, -R, "65532:65532", /data]
+    volumes: [minio-local-data:/data]
+    network_mode: none
+    read_only: true
+    cap_drop: [ALL]
+    cap_add: [CHOWN]
+    security_opt: [no-new-privileges:true]
+    restart: "no"
+
+  minio:
+    image: cgr.dev/chainguard/minio@sha256:71674988a1c7ddd5724928633199152b11e4ddefd6c6ce2d60772ff4a8f22ca9
+    platform: linux/amd64
+    mem_limit: 512m
+    cpus: 1
+    pids_limit: 256
+    cap_drop: [ALL]
+    command: [server, /data, --console-address, ":9001"]
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:?local credential required}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:?local credential required}
+    depends_on:
+      minio-volume-init: { condition: service_completed_successfully }
+    volumes: [minio-local-data:/data]
+    networks: [storage-net, app-net]
+    security_opt: [no-new-privileges:true]
+
+  storage-probe:
+    image: cgr.dev/chainguard/curl@sha256:0224b86a41c7f4c50f23ecae94bc7ead55477edfd4a4024f7abea9eb0d513949
+    platform: linux/amd64
+    mem_limit: 64m
+    cpus: 0.5
+    pids_limit: 32
+    profiles: [probe]
+    command:
+      [
+        "--fail",
+        "--silent",
+        "--show-error",
+        "--max-time",
+        "2",
+        "http://minio:9000/minio/health/ready",
+      ]
+    networks: [storage-net]
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+
+  temporal-probe:
+    image: temporalio/admin-tools@sha256:a9f84fb9a374b2374fe2e67c8efc0468ff3f1c66c8a0b14597ec86e349e62bca
+    platform: linux/amd64
+    mem_limit: 128m
+    cpus: 0.5
+    pids_limit: 64
+    profiles: [probe]
+    entrypoint: [temporal]
+    command: [operator, cluster, health, --address, temporal:7233]
+    networks: [temporal-net]
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+
+networks:
+  app-net: { internal: true }
+  idp-net: { internal: true }
+  temporal-net: { internal: true }
+  storage-net: { internal: true }
+
+volumes:
+  app-db-v18-data:
+  idp-db-v18-data:
+  temporal-db-v18-data:
+  minio-local-data:

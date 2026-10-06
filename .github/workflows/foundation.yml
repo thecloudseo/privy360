@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version-file: .node-version
@@ -22,6 +24,8 @@ jobs:
       - run: pnpm test
       - run: pnpm build
       - run: pnpm check:structure
+      - run: pnpm check:production-boundary
+      - run: pnpm services:config
   playwright:
     runs-on: ubuntu-latest
     steps:
@@ -72,7 +76,32 @@ jobs:
           severity: HIGH,CRITICAL
           exit-code: "1"
           format: table
-      - run: echo "Container image scan N/A — FOUNDATION-002 creates no image."
+  container-images:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        image:
+          - cgr.dev/chainguard/postgres@sha256:a2aec7d9a0456cb64eb59e75752fa6aebd13100d320d3e544fe09f102076ff5c
+          - redis@sha256:858f009f9709ce576febc734aa78b8f6d624b82571f9ddb6bda4377c833b3499
+          - quay.io/keycloak/keycloak@sha256:82a77884f3af238beab1e7afd63b5f530e1b5c0590bd7aa60b40a40463e29b2c
+          - temporalio/server@sha256:c3e752127759616bb1615e0f9ba0e21635aeb5fdeb922de4f371c350955f46ae
+          - temporalio/admin-tools@sha256:a9f84fb9a374b2374fe2e67c8efc0468ff3f1c66c8a0b14597ec86e349e62bca
+          - cgr.dev/chainguard/busybox@sha256:7cf02f9aec5f52ee8ce43d4094b2fe068043d5111bd22897a676d7cdac15d941
+          - cgr.dev/chainguard/minio@sha256:71674988a1c7ddd5724928633199152b11e4ddefd6c6ce2d60772ff4a8f22ca9
+          - cgr.dev/chainguard/curl@sha256:0224b86a41c7f4c50f23ecae94bc7ead55477edfd4a4024f7abea9eb0d513949
+    steps:
+      - name: Production-style High/Critical image gate
+        run: echo 'Local eligibility and dispositions do not apply to this job.'
+      - uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
+        with:
+          scan-type: image
+          image-ref: ${{ matrix.image }}
+          version: v0.74.0
+          scanners: vuln
+          severity: HIGH,CRITICAL
+          exit-code: "1"
+          format: table
   gitleaks:
     runs-on: ubuntu-latest
     steps:
@@ -89,6 +118,8 @@ jobs:
         run: .cache/gitleaks git --redact .
       - name: Scan current files
         run: .cache/gitleaks dir --redact .
+      - name: Scan decompressed retained evidence
+        run: GITLEAKS_BIN=.cache/gitleaks node scripts/scan-retained-evidence.mjs
       - name: Verify injected synthetic secret is rejected
         run: GITLEAKS_BIN=.cache/gitleaks node scripts/verify-gitleaks-fixture.mjs
   dependency-audit:
