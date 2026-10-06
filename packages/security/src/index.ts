@@ -123,3 +123,6 @@ export function secretReference(value: string): SecretReference {
   }
   return value as SecretReference;
 }
+
+export * from "./tenant-context.ts";
+export * from "./tenant-transaction.ts";
