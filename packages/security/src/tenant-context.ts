@@ -2,6 +2,7 @@ import { randomUUID } from "node:crypto";
 
 const UUID =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+const trustedContexts = new WeakSet<object>();
 
 export type TenantContextSource = "SESSION" | "WORKER" | "SERVICE";
 
@@ -39,7 +40,7 @@ export function createTrustedTenantContext(input: {
   readonly verified: true;
 }): TrustedTenantContext {
   if (input.verified !== true) throw new TenantContextDeniedError();
-  return Object.freeze({
+  const context: TrustedTenantContext = {
     tenantId: requireUuid(input.tenantId, "tenantId"),
     actorId: requireUuid(input.actorId, "actorId"),
     membershipId: requireUuid(input.membershipId, "membershipId"),
@@ -48,7 +49,21 @@ export function createTrustedTenantContext(input: {
       "correlationId",
     ),
     source: input.source,
-  });
+  };
+  trustedContexts.add(context);
+  return Object.freeze(context);
+}
+
+export function assertTrustedTenantContext(
+  context: unknown,
+): asserts context is TrustedTenantContext {
+  if (
+    typeof context !== "object" ||
+    context === null ||
+    !trustedContexts.has(context)
+  ) {
+    throw new TenantContextDeniedError();
+  }
 }
 
 export function assertSameTenantContext(
