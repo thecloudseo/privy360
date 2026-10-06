@@ -75,7 +75,11 @@ importers:
         specifier: 5.9.3
         version: 5.9.3
 
-  packages/regulatory: {}
+  packages/regulatory:
+    dependencies:
+      '@privy360/audit':
+        specifier: workspace:*
+        version: link:../audit
 
   packages/security:
     devDependencies:
