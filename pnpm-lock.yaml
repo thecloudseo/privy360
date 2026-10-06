@@ -64,6 +64,10 @@ importers:
         version: 5.9.3
 
   packages/audit:
+    dependencies:
+      '@privy360/api-common':
+        specifier: workspace:*
+        version: link:../api-common
     devDependencies:
       typescript:
         specifier: 5.9.3

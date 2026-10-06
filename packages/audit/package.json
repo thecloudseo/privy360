@@ -12,6 +12,9 @@
     "typecheck": "tsc -p tsconfig.json",
     "build": "tsc -p tsconfig.json"
   },
+  "dependencies": {
+    "@privy360/api-common": "workspace:*"
+  },
   "devDependencies": {
     "typescript": "5.9.3"
   }
