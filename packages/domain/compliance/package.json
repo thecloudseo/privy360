@@ -1,0 +1,12 @@
+{
+  "name": "@privy360/compliance-domain",
+  "private": true,
+  "type": "module",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  }
+}
