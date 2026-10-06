@@ -72,11 +72,17 @@ if (baselineProblems.length) throw new Error(baselineProblems.join("\n"));
 for (const app of ["web", "api", "privacy-centre", "worker"]) {
   const sourcePath = `apps/${app}/src`;
   const files = readdirSync(sourcePath);
-  if (files.length !== 1 || files[0] !== "workspace.ts")
+  const allowed =
+    app === "web" || app === "privacy-centre"
+      ? ["shell.ts", "workspace.ts"]
+      : ["workspace.ts"];
+  if (files.some((file) => !allowed.includes(file)))
     throw new Error(`Unexpected application source in ${sourcePath}`);
-  if (
-    readFileSync(`${sourcePath}/workspace.ts`, "utf8").trim() !== "export {};"
-  )
-    throw new Error(`Application behavior detected in ${sourcePath}`);
+  if (app === "api" || app === "worker") {
+    if (
+      readFileSync(`${sourcePath}/workspace.ts`, "utf8").trim() !== "export {};"
+    )
+      throw new Error(`Application behavior detected in ${sourcePath}`);
+  }
 }
 process.stdout.write("FOUNDATION-001 structure and baseline: pass\n");

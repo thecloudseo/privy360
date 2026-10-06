@@ -3,3 +3,4 @@ packages:
   - "packages/contracts"
   - "packages/security"
   - "packages/api-common"
+  - "packages/ui"
