@@ -2,6 +2,7 @@ packages:
   - "apps/*"
   - "packages/contracts"
   - "packages/security"
+  - "packages/auth"
   - "packages/api-common"
   - "packages/ui"
   - "packages/audit"
