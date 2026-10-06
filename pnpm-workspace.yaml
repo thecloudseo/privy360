@@ -5,3 +5,4 @@ packages:
   - "packages/api-common"
   - "packages/ui"
   - "packages/audit"
+  - "packages/regulatory"
