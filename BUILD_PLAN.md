@@ -1,8 +1,10 @@
 # Dependency-ordered engineering build plan
 
-Architecture baseline only; no ticket is implemented in this session. Full product architecture precedes the bid. Every bid ticket produces permanent, production-quality code using the same RLS, authorization, audit, versioning, contracts and review gates as later releases. Release numbers describe enabled breadth, not reduced engineering standards.
+Architecture baseline ticket definitions. FOUNDATION-001 through FOUNDATION-003 have since been completed; ticket status is tracked in EXECUTION_ROADMAP.md. This document records the approved CP0 dependency graph and remains the authority for each ticket’s objective, acceptance criteria and inherited checks. Full product architecture precedes the bid. Every bid ticket produces permanent, production-quality code using the same RLS, authorization, audit, versioning, contracts and review gates as later releases. Release numbers describe enabled breadth, not reduced engineering standards.
 
 ## Execution rules
+
+CP0 approval on 2026-10-06 changed dependencies for 19 cards: 16 reviewed roadmap proposals plus three companion hard-prerequisite cards (`REGULATORY-002/003`, `NOTICES-002`). The exact decisions, contract freezes, wave placement and checkpoint triggers are in `EXECUTION_ROADMAP.md`; the dependency values in this index and in each card are authoritative. If these two documents diverge, stop integration and reconcile the dependency record before executing the affected ticket. `MASTER_SPEC.md` and approved architecture remain higher authority; `IMPLEMENTATION_PLAN.md` is the completed FOUNDATION-003 record, while each future ticket gets its own scoped plan.
 
 EPIC identifiers preserve MASTER_SPEC §73; scheduling order is the owner's priority, not numeric epic order. Stories group bounded tickets below. Each ticket is independently reviewed and must create its own IMPLEMENTATION_PLAN.md (or scoped specs/implementation/<ticket>.md to avoid parallel overwrites) before code, referencing this baseline and relevant ADRs. Reviewer challenges that plan; Sol implements only after plan review. Human/security production acceptance remains mandatory for AGENTS §40 critical areas. No agent autonomously approves legal material.
 
@@ -18,7 +20,7 @@ Trusted tenant context, default deny, typed FK ownership, data minimisation, no 
 
 ## Priority and release semantics
 
-Execution priority: foundation → tenant security → identity → RBAC/ABAC → audit → regulatory corpus → atomic DPDP control architecture → compliance → inventory → processing graph → Privacy Centre → rights → notices → consent → vendors/processors → risk/DPIA → incidents → retention/deletion → evidence graph → reporting → regulatory intelligence → continuous assurance → AI → government hardening. A phase may have an early permanent baseline and later depth. Basic evidence storage/test links belong to compliance dependencies; advanced evidence traversal follows the graph phase. Backup/security foundation starts early, not at final hardening. Rights/portal contracts are defined before notices/consent implementation, and integrate published notices when available.
+Execution priority is guided by the approved dependency graph and `EXECUTION_ROADMAP.md` waves, not a forced single-domain chain. The former phase narrative is a product capability order: foundation → tenant security → identity → RBAC/ABAC → audit → regulatory corpus → atomic DPDP control architecture → compliance → inventory → processing graph → Privacy Centre → rights → notices → consent → vendors/processors → risk/DPIA → incidents → retention/deletion → evidence graph → reporting → regulatory intelligence → continuous assurance → AI → government hardening. A phase may have an early permanent baseline and later depth. Basic evidence storage/test links belong to compliance dependencies; advanced evidence traversal follows the graph phase. Backup/security foundation starts early, not at final hardening. Rights/portal contracts are defined before notices/consent implementation, and integrate published notices when available.
 
 Advanced vendor assessment/DPIA/breach notification/retention/deletion are NOT required by the bid. Their complete contracts are already specified. The bid includes permanent basic vendor, risk, incident and report records because MASTER_SPEC §34 requires them. A later-phase integration primitive (CONNECTOR-001) can be implemented when a dependent deletion ticket needs it; continuous assurance adapters remain later. This dependency distinction does not move AI ahead of the graph or weaken foundations.
 
@@ -39,24 +41,24 @@ This index is a valid topological execution order; priority within ready work fo
 | [TENANT-001](#tenant-001) | E02 | Tenant data foundation | B | FOUNDATION-005 |
 | [TENANT-002](#tenant-002) | E02 | Trusted transaction context | B | TENANT-001 |
 | [TENANT-003](#tenant-003) | E02 | Cross-surface context | B | TENANT-002 |
-| [IDENTITY-001](#identity-001) | E01 | Staff authentication | B | TENANT-003,FOUNDATION-003 |
+| [IDENTITY-001](#identity-001) | E01 | Staff authentication | B | TENANT-002,FOUNDATION-003 |
 | [IDENTITY-002](#identity-002) | E01 | Tenant membership selection | B | IDENTITY-001 |
 | [IDENTITY-003](#identity-003) | E01 | Principal identity | B | IDENTITY-002 |
 | [IDENTITY-004](#identity-004) | E01 | Enterprise federation | P | IDENTITY-002 |
-| [AUTHZ-001](#authz-001) | E01 | Permission foundation | B | IDENTITY-003 |
+| [AUTHZ-001](#authz-001) | E01 | Permission foundation | B | IDENTITY-002 |
 | [AUTHZ-002](#authz-002) | E01 | Grant administration | B | AUTHZ-001 |
 | [AUTHZ-003](#authz-003) | E01 | Service and worker authorization | B | AUTHZ-002 |
 | [AUTHZ-004](#authz-004) | E01 | Support governance | P | AUTHZ-003 |
-| [AUDIT-001](#audit-001) | E17 | Atomic audit foundation | B | AUTHZ-003 |
+| [AUDIT-001](#audit-001) | E17 | Atomic audit foundation | B | TENANT-002,FOUNDATION-005 |
 | [AUDIT-002](#audit-002) | E17 | Durable delivery | B | AUDIT-001 |
 | [AUDIT-003](#audit-003) | E17 | Audit integrity | B | AUDIT-002 |
 | [AUDIT-004](#audit-004) | E17 | Audit inspection | B | AUDIT-003 |
-| [REGULATORY-001](#regulatory-001) | E03 | Corpus foundation | B | AUDIT-004 |
-| [REGULATORY-002](#regulatory-002) | E03 | Corpus intake | B | REGULATORY-001 |
-| [REGULATORY-003](#regulatory-003) | E03 | Corpus publication | B | REGULATORY-002 |
+| [REGULATORY-001](#regulatory-001) | E03 | Corpus foundation | B | FOUNDATION-005 |
+| [REGULATORY-002](#regulatory-002) | E03 | Corpus intake | B | REGULATORY-001,AUDIT-001 |
+| [REGULATORY-003](#regulatory-003) | E03 | Corpus publication | B | REGULATORY-002,AUDIT-002 |
 | [REGULATORY-004](#regulatory-004) | E03 | Regulatory library | B | REGULATORY-003 |
-| [ATOMIC-001](#atomic-001) | E04 | Atomic controls | B | REGULATORY-004 |
-| [ATOMIC-002](#atomic-002) | E04 | Applicability decisions | B | ATOMIC-001 |
+| [ATOMIC-001](#atomic-001) | E04 | Atomic controls | B | REGULATORY-001,TENANT-002 |
+| [ATOMIC-002](#atomic-002) | E04 | Applicability decisions | B | ATOMIC-001,REGULATORY-003,AUTHZ-002 |
 | [ATOMIC-003](#atomic-003) | E04 | Control instantiation | B | ATOMIC-002 |
 | [COMPLIANCE-001](#compliance-001) | E04/E16 | Implementations | B | ATOMIC-003 |
 | [SECURITY-001](#security-001) | E22 | Protected payload encryption | B | FOUNDATION-004,TENANT-002,AUTHZ-001,AUDIT-001 |
@@ -65,39 +67,39 @@ This index is a valid topological execution order; priority within ready work fo
 | [COMPLIANCE-004](#compliance-004) | E04/E16 | Test execution | B | COMPLIANCE-003 |
 | [COMPLIANCE-005](#compliance-005) | E04/E16 | Assessment workflow | B | COMPLIANCE-004 |
 | [COMPLIANCE-006](#compliance-006) | E04/E16 | Compliance surfaces | B | COMPLIANCE-005 |
-| [INVENTORY-001](#inventory-001) | E05 | Catalogue foundation | B | COMPLIANCE-006 |
+| [INVENTORY-001](#inventory-001) | E05 | Catalogue foundation | B | TENANT-002,AUDIT-001,AUTHZ-001 |
 | [INVENTORY-002](#inventory-002) | E05 | System inventory | B | INVENTORY-001 |
 | [INVENTORY-003](#inventory-003) | E05 | Data catalogue | B | INVENTORY-002 |
 | [INVENTORY-004](#inventory-004) | E05 | Activity record | B | INVENTORY-003 |
 | [PROCESSING-001](#processing-001) | E05 | Processing graph foundation | B | INVENTORY-004 |
 | [PROCESSING-002](#processing-002) | E05 | Data flow map | B | PROCESSING-001 |
-| [PORTAL-001](#portal-001) | E08 | Privacy Centre configuration | B | PROCESSING-002 |
+| [PORTAL-001](#portal-001) | E08 | Privacy Centre configuration | B | TENANT-003,FOUNDATION-006,AUDIT-002,AUTHZ-003 |
 | [PORTAL-002](#portal-002) | E08 | Public portal shell | B | PORTAL-001 |
 | [PORTAL-003](#portal-003) | E08 | Principal portal session | B | PORTAL-002,IDENTITY-003 |
-| [RIGHTS-001](#rights-001) | E09 | Rights record foundation | B | PORTAL-003 |
-| [RIGHTS-002](#rights-002) | E09 | Request submission | B | RIGHTS-001 |
+| [RIGHTS-001](#rights-001) | E09 | Rights record foundation | B | IDENTITY-003,AUTHZ-003,AUDIT-002 |
+| [RIGHTS-002](#rights-002) | E09 | Request submission | B | RIGHTS-001,PORTAL-003,SECURITY-001,COMPLIANCE-003 |
 | [RIGHTS-003](#rights-003) | E09 | Verification and assignment | B | RIGHTS-002 |
 | [RIGHTS-004](#rights-004) | E09 | Fulfilment | B | RIGHTS-003 |
 | [RIGHTS-005](#rights-005) | E09 | Response approval and delivery | B | RIGHTS-004 |
 | [RIGHTS-006](#rights-006) | E09 | Grievance | B | RIGHTS-005 |
 | [RIGHTS-007](#rights-007) | E09 | Rights user journeys | B | RIGHTS-006 |
 | [RIGHTS-008](#rights-008) | E09 | Nomination and guardian delegation | P | RIGHTS-007 |
-| [NOTICES-001](#notices-001) | E06 | Notice versions | B | RIGHTS-007 |
-| [NOTICES-002](#notices-002) | E06 | Notice publication | B | NOTICES-001 |
+| [NOTICES-001](#notices-001) | E06 | Notice versions | B | REGULATORY-001,AUTHZ-002,AUDIT-002 |
+| [NOTICES-002](#notices-002) | E06 | Notice publication | B | NOTICES-001,REGULATORY-003,AUDIT-002,AUTHZ-002 |
 | [NOTICES-003](#notices-003) | E06 | Notice surfaces | B | NOTICES-002 |
-| [CONSENT-001](#consent-001) | E07 | Consent ledger | B | NOTICES-003 |
-| [CONSENT-002](#consent-002) | E07 | Consent decision | B | CONSENT-001 |
+| [CONSENT-001](#consent-001) | E07 | Consent ledger | B | NOTICES-001,IDENTITY-003,AUDIT-002 |
+| [CONSENT-002](#consent-002) | E07 | Consent decision | B | CONSENT-001,NOTICES-002,SECURITY-001 |
 | [CONSENT-003](#consent-003) | E07 | Preference surface | B | CONSENT-002 |
 | [CONSENT-004](#consent-004) | E07 | Consent SDK | P | CONSENT-003 |
-| [VENDOR-001](#vendor-001) | E10 | Vendor register | B | CONSENT-003 |
+| [VENDOR-001](#vendor-001) | E10 | Vendor register | B | PROCESSING-002,AUTHZ-003,AUDIT-002,SECURITY-001 |
 | [VENDOR-002](#vendor-002) | E10 | Vendor surfaces | B | VENDOR-001 |
 | [VENDOR-003](#vendor-003) | E10 | Processor governance | P | VENDOR-002,COMPLIANCE-005 |
-| [RISK-001](#risk-001) | E11 | Risk and remediation register | B | VENDOR-002 |
+| [RISK-001](#risk-001) | E11 | Risk and remediation register | B | COMPLIANCE-004,AUTHZ-003,AUDIT-002 |
 | [RISK-002](#risk-002) | E11 | Risk surfaces | B | RISK-001 |
 | [RISK-003](#risk-003) | E11 | Risk acceptance | P | RISK-002 |
 | [DPIA-001](#dpia-001) | E12 | DPIA record | P | RISK-003,COMPLIANCE-005 |
 | [DPIA-002](#dpia-002) | E12 | DPIA review | P | DPIA-001 |
-| [INCIDENT-001](#incident-001) | E13 | Incident register | B | RISK-002 |
+| [INCIDENT-001](#incident-001) | E13 | Incident register | B | AUTHZ-003,AUDIT-002,SECURITY-001,FOUNDATION-006 |
 | [INCIDENT-002](#incident-002) | E13 | Breach determination | P | INCIDENT-001 |
 | [INCIDENT-003](#incident-003) | E13 | Parallel notification tracks | P | INCIDENT-002,RIGHTS-005 |
 | [LIFECYCLE-001](#lifecycle-001) | E14/E15 | Retention policy | P | INCIDENT-003 |
@@ -296,7 +298,7 @@ This index is a valid topological execution order; priority within ready work fo
 - **Story:** Staff authentication.
 - **Release:** 0.1 Government Bid — REQUIRED.
 - **Objective:** Implement staff OIDC login callback and server-side session/logout.
-- **Dependencies:** TENANT-003,FOUNDATION-003. Review relevant ADRs and contracts before coding.
+- **Dependencies:** TENANT-002,FOUNDATION-003. Review relevant ADRs and contracts before coding.
 - **Expected files/modules:** packages/auth, apps/web and privacy-centre BFF auth, apps/api identity, tests/security/auth; packages/contracts and corresponding specs/tests only when relevant.
 - **Database impact:** users sessions; issuer-subject uniqueness and RLS.
 - **API impact:** BFF auth login/callback/logout and GET auth/me. Follow API_ARCHITECTURE common contracts; no arbitrary status patching.
@@ -358,7 +360,7 @@ This index is a valid topological execution order; priority within ready work fo
 - **Story:** Permission foundation.
 - **Release:** 0.1 Government Bid — REQUIRED.
 - **Objective:** Implement registered permissions roles scoped grants and policy evaluator.
-- **Dependencies:** IDENTITY-003. Review relevant ADRs and contracts before coding.
+- **Dependencies:** IDENTITY-002. Review relevant ADRs and contracts before coding.
 - **Expected files/modules:** packages/auth/authorization, packages/contracts/permissions, apps/api authorization, tests/security/authorization; packages/contracts and corresponding specs/tests only when relevant.
 - **Database impact:** roles permissions role_permissions user_roles group_roles grant_scopes policy_versions service_accounts service_grants.
 - **API impact:** Internal authorize/filterScope port only. Follow API_ARCHITECTURE common contracts; no arbitrary status patching.
@@ -420,7 +422,7 @@ This index is a valid topological execution order; priority within ready work fo
 - **Story:** Atomic audit foundation.
 - **Release:** 0.1 Government Bid — REQUIRED.
 - **Objective:** Implement append-only audit stream with transactional audit/outbox boundary.
-- **Dependencies:** AUTHZ-003. Review relevant ADRs and contracts before coding.
+- **Dependencies:** TENANT-002,FOUNDATION-005. Review relevant ADRs and contracts before coding.
 - **Expected files/modules:** packages/audit, packages/database, apps/worker/outbox, apps/api/audit, apps/web/audit, tests/integration/audit; packages/contracts and corresponding specs/tests only when relevant.
 - **Database impact:** audit_streams audit_events platform_audit_streams platform_audit_events outbox_events idempotency_records.
 - **API impact:** Internal append and unit-of-work ports. Follow API_ARCHITECTURE common contracts; no arbitrary status patching.
@@ -482,7 +484,7 @@ This index is a valid topological execution order; priority within ready work fo
 - **Story:** Corpus foundation.
 - **Release:** 0.1 Government Bid — REQUIRED.
 - **Objective:** Implement immutable regulatory source/version schema and bundle validator.
-- **Dependencies:** AUDIT-004. Review relevant ADRs and contracts before coding.
+- **Dependencies:** FOUNDATION-005. Review relevant ADRs and contracts before coding.
 - **Expected files/modules:** packages/regulatory, regulations/india/dpdp, apps/api/regulatory, apps/web/regulatory, tests/regulatory; packages/contracts and corresponding specs/tests only when relevant.
 - **Database impact:** All Regulatory G tables except changes; no legal seed.
 - **API impact:** Contract schemas only. Follow API_ARCHITECTURE common contracts; no arbitrary status patching.
@@ -497,7 +499,7 @@ This index is a valid topological execution order; priority within ready work fo
 - **Story:** Corpus intake.
 - **Release:** 0.1 Government Bid — REQUIRED.
 - **Objective:** Implement offline manifest import to quarantined draft corpus.
-- **Dependencies:** REGULATORY-001. Review relevant ADRs and contracts before coding.
+- **Dependencies:** REGULATORY-001,AUDIT-001. Review relevant ADRs and contracts before coding.
 - **Expected files/modules:** packages/regulatory, regulations/india/dpdp, apps/api/regulatory, apps/web/regulatory, tests/regulatory; packages/contracts and corresponding specs/tests only when relevant.
 - **Database impact:** regulatory_sources publication_manifests drafts.
 - **API impact:** POST regulatory-sources/import. Follow API_ARCHITECTURE common contracts; no arbitrary status patching.
@@ -512,7 +514,7 @@ This index is a valid topological execution order; priority within ready work fo
 - **Story:** Corpus publication.
 - **Release:** 0.1 Government Bid — REQUIRED.
 - **Objective:** Implement reviewed atomic bundle publication and supersession.
-- **Dependencies:** REGULATORY-002. Review relevant ADRs and contracts before coding.
+- **Dependencies:** REGULATORY-002,AUDIT-002. Review relevant ADRs and contracts before coding.
 - **Expected files/modules:** packages/regulatory, regulations/india/dpdp, apps/api/regulatory, apps/web/regulatory, tests/regulatory; packages/contracts and corresponding specs/tests only when relevant.
 - **Database impact:** regulatory_reviews immutable versions publication state.
 - **API impact:** POST regulatory-bundles/:id/publish. Follow API_ARCHITECTURE common contracts; no arbitrary status patching.
@@ -544,7 +546,7 @@ This index is a valid topological execution order; priority within ready work fo
 - **Story:** Atomic controls.
 - **Release:** 0.1 Government Bid — REQUIRED.
 - **Objective:** Implement tenant control and evidence-requirement schema with traceability validator.
-- **Dependencies:** REGULATORY-004. Review relevant ADRs and contracts before coding.
+- **Dependencies:** REGULATORY-001,TENANT-002. Review relevant ADRs and contracts before coding.
 - **Expected files/modules:** packages/domain/compliance, packages/regulatory, apps/api/compliance, tests/regulatory; packages/contracts and corresponding specs/tests only when relevant.
 - **Database impact:** controls control_templates control_mappings evidence_requirements obligations applicability.
 - **API impact:** Contract schemas only. Follow API_ARCHITECTURE common contracts; no arbitrary status patching.
@@ -559,7 +561,7 @@ This index is a valid topological execution order; priority within ready work fo
 - **Story:** Applicability decisions.
 - **Release:** 0.1 Government Bid — REQUIRED.
 - **Objective:** Implement deterministic tri-state applicability evaluate/review command.
-- **Dependencies:** ATOMIC-001. Review relevant ADRs and contracts before coding.
+- **Dependencies:** ATOMIC-001,REGULATORY-003,AUTHZ-002. Review relevant ADRs and contracts before coding.
 - **Expected files/modules:** packages/domain/compliance, packages/regulatory, apps/api/compliance, tests/regulatory; packages/contracts and corresponding specs/tests only when relevant.
 - **Database impact:** applicability_rules requirement_applicability obligations exemptions.
 - **API impact:** POST applicability-assessments/evaluate and approve. Follow API_ARCHITECTURE common contracts; no arbitrary status patching.
@@ -683,7 +685,7 @@ This index is a valid topological execution order; priority within ready work fo
 - **Story:** Catalogue foundation.
 - **Release:** 0.1 Government Bid — REQUIRED.
 - **Objective:** Implement systems and data-category/element schema and contract.
-- **Dependencies:** COMPLIANCE-006. Review relevant ADRs and contracts before coding.
+- **Dependencies:** TENANT-002,AUDIT-001,AUTHZ-001. Review relevant ADRs and contracts before coding.
 - **Expected files/modules:** packages/domain/data-governance, apps/api/data-governance, apps/web/inventory, tests/tenancy/inventory; packages/contracts and corresponding specs/tests only when relevant.
 - **Database impact:** systems data_sources data_categories data_elements subject_categories.
 - **API impact:** Contract schemas only. Follow API_ARCHITECTURE common contracts; no arbitrary status patching.
@@ -777,7 +779,7 @@ This index is a valid topological execution order; priority within ready work fo
 - **Story:** Privacy Centre configuration.
 - **Release:** 0.1 Government Bid — REQUIRED.
 - **Objective:** Implement verified-domain registry and versioned safe branding config.
-- **Dependencies:** PROCESSING-002. Review relevant ADRs and contracts before coding.
+- **Dependencies:** TENANT-003,FOUNDATION-006,AUDIT-002,AUTHZ-003. Review relevant ADRs and contracts before coding.
 - **Expected files/modules:** packages/domain/privacy-centre, apps/privacy-centre, apps/api/portal, packages/ui, tests/e2e/portal; packages/contracts and corresponding specs/tests only when relevant.
 - **Database impact:** tenant_domains domain_reservations privacy_centre_configs.
 - **API impact:** POST domain registration/verification and config publish. Follow API_ARCHITECTURE common contracts; no arbitrary status patching.
@@ -824,7 +826,7 @@ This index is a valid topological execution order; priority within ready work fo
 - **Story:** Rights record foundation.
 - **Release:** 0.1 Government Bid — REQUIRED.
 - **Objective:** Implement rights case/task/response and delegation schema contracts.
-- **Dependencies:** PORTAL-003. Review relevant ADRs and contracts before coding.
+- **Dependencies:** IDENTITY-003,AUTHZ-003,AUDIT-002. Review relevant ADRs and contracts before coding.
 - **Expected files/modules:** packages/domain/rights, packages/workflows/rights, packages/notifications, apps/api/rights, apps/web/rights, apps/privacy-centre/requests, tests/rights; packages/contracts and corresponding specs/tests only when relevant.
 - **Database impact:** rights_requests rights_tasks rights_responses events grievances nominations delegation_grants principal_system_refs.
 - **API impact:** Contract schemas only. Follow API_ARCHITECTURE common contracts; no arbitrary status patching.
@@ -839,7 +841,7 @@ This index is a valid topological execution order; priority within ready work fo
 - **Story:** Request submission.
 - **Release:** 0.1 Government Bid — REQUIRED.
 - **Objective:** Implement own-subject access/correction/erasure request submission.
-- **Dependencies:** RIGHTS-001. Review relevant ADRs and contracts before coding.
+- **Dependencies:** RIGHTS-001,PORTAL-003,SECURITY-001,COMPLIANCE-003. Review relevant ADRs and contracts before coding.
 - **Expected files/modules:** packages/domain/rights, packages/workflows/rights, packages/notifications, apps/api/rights, apps/web/rights, apps/privacy-centre/requests, tests/rights; packages/contracts and corresponding specs/tests only when relevant.
 - **Database impact:** rights_requests rights_request_events.
 - **API impact:** POST portal/requests and scoped GET tracking. Follow API_ARCHITECTURE common contracts; no arbitrary status patching.
@@ -946,7 +948,7 @@ This index is a valid topological execution order; priority within ready work fo
 - **Story:** Notice versions.
 - **Release:** 0.1 Government Bid — REQUIRED.
 - **Objective:** Implement notice draft/version/translation schema and editing APIs.
-- **Dependencies:** RIGHTS-007. Review relevant ADRs and contracts before coding.
+- **Dependencies:** REGULATORY-001,AUTHZ-002,AUDIT-002. Review relevant ADRs and contracts before coding.
 - **Expected files/modules:** packages/domain/notices, apps/api/notices, apps/web/notices, apps/privacy-centre/notices, tests/notices; packages/contracts and corresponding specs/tests only when relevant.
 - **Database impact:** notices notice_versions translations notice_purposes.
 - **API impact:** POST notices/versions; PUT translations. Follow API_ARCHITECTURE common contracts; no arbitrary status patching.
@@ -961,7 +963,7 @@ This index is a valid topological execution order; priority within ready work fo
 - **Story:** Notice publication.
 - **Release:** 0.1 Government Bid — REQUIRED.
 - **Objective:** Implement independent approve/publish and public published read.
-- **Dependencies:** NOTICES-001. Review relevant ADRs and contracts before coding.
+- **Dependencies:** NOTICES-001,REGULATORY-003,AUDIT-002,AUTHZ-002. Review relevant ADRs and contracts before coding.
 - **Expected files/modules:** packages/domain/notices, apps/api/notices, apps/web/notices, apps/privacy-centre/notices, tests/notices; packages/contracts and corresponding specs/tests only when relevant.
 - **Database impact:** Publication state/approval records.
 - **API impact:** POST notice-versions approve/publish; GET portal/notices. Follow API_ARCHITECTURE common contracts; no arbitrary status patching.
@@ -993,7 +995,7 @@ This index is a valid topological execution order; priority within ready work fo
 - **Story:** Consent ledger.
 - **Release:** 0.1 Government Bid — REQUIRED.
 - **Objective:** Implement append-only consent events receipts and preference projection.
-- **Dependencies:** NOTICES-003. Review relevant ADRs and contracts before coding.
+- **Dependencies:** NOTICES-001,IDENTITY-003,AUDIT-002. Review relevant ADRs and contracts before coding.
 - **Expected files/modules:** packages/domain/consent, packages/contracts/consent, apps/api/consent, apps/privacy-centre/preferences, packages/integrations/consent-sdk, tests/consent; packages/contracts and corresponding specs/tests only when relevant.
 - **Database impact:** consent_purposes events receipts preference_profiles/options.
 - **API impact:** Contract schemas only. Follow API_ARCHITECTURE common contracts; no arbitrary status patching.
@@ -1008,7 +1010,7 @@ This index is a valid topological execution order; priority within ready work fo
 - **Story:** Consent decision.
 - **Release:** 0.1 Government Bid — REQUIRED.
 - **Objective:** Implement grant/withdraw event command and receipt read.
-- **Dependencies:** CONSENT-001. Review relevant ADRs and contracts before coding.
+- **Dependencies:** CONSENT-001,NOTICES-002,SECURITY-001. Review relevant ADRs and contracts before coding.
 - **Expected files/modules:** packages/domain/consent, packages/contracts/consent, apps/api/consent, apps/privacy-centre/preferences, packages/integrations/consent-sdk, tests/consent; packages/contracts and corresponding specs/tests only when relevant.
 - **Database impact:** Consent ledger plus transactional outbox.
 - **API impact:** POST consents/events; GET receipts; portal equivalents. Follow API_ARCHITECTURE common contracts; no arbitrary status patching.
@@ -1055,7 +1057,7 @@ This index is a valid topological execution order; priority within ready work fo
 - **Story:** Vendor register.
 - **Release:** 0.1 Government Bid — REQUIRED.
 - **Objective:** Implement vendor/processor/service inventory schema and create/read APIs.
-- **Dependencies:** CONSENT-003. Review relevant ADRs and contracts before coding.
+- **Dependencies:** PROCESSING-002,AUTHZ-003,AUDIT-002,SECURITY-001. Review relevant ADRs and contracts before coding.
 - **Expected files/modules:** packages/domain/vendors, apps/api/vendors, apps/web/vendors, tests/vendors; packages/contracts and corresponding specs/tests only when relevant.
 - **Database impact:** vendors processors processor_services processing_processors flow_processors.
 - **API impact:** POST/GET vendors/processors/services and activity links. Follow API_ARCHITECTURE common contracts; no arbitrary status patching.
@@ -1102,7 +1104,7 @@ This index is a valid topological execution order; priority within ready work fo
 - **Story:** Risk and remediation register.
 - **Release:** 0.1 Government Bid — REQUIRED.
 - **Objective:** Implement risk/finding/remediation schema and create/update commands.
-- **Dependencies:** VENDOR-002. Review relevant ADRs and contracts before coding.
+- **Dependencies:** COMPLIANCE-004,AUTHZ-003,AUDIT-002. Review relevant ADRs and contracts before coding.
 - **Expected files/modules:** packages/domain/risk, apps/api/risks, apps/web/risks, tests/risk; packages/contracts and corresponding specs/tests only when relevant.
 - **Database impact:** risks methodologies findings remediation_tasks typed risk links.
 - **API impact:** POST/GET/PATCH risks and remediation-tasks. Follow API_ARCHITECTURE common contracts; no arbitrary status patching.
@@ -1181,7 +1183,7 @@ This index is a valid topological execution order; priority within ready work fo
 - **Story:** Incident register.
 - **Release:** 0.1 Government Bid — REQUIRED.
 - **Objective:** Implement basic incident intake scoped metadata timeline and register view.
-- **Dependencies:** RISK-002. Review relevant ADRs and contracts before coding.
+- **Dependencies:** AUTHZ-003,AUDIT-002,SECURITY-001,FOUNDATION-006. Review relevant ADRs and contracts before coding.
 - **Expected files/modules:** packages/domain/incidents, packages/workflows/incidents, apps/api/incidents, apps/web/incidents, tests/incidents; packages/contracts and corresponding specs/tests only when relevant.
 - **Database impact:** incidents incident_actions affected_data.
 - **API impact:** POST/GET/PATCH incidents. Follow API_ARCHITECTURE common contracts; no arbitrary status patching.

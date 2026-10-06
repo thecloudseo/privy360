@@ -1,5 +1,7 @@
 # Full-product roadmap and release gates
 
+Release scope and gates in this document remain authoritative. CP0-approved ticket dependencies are recorded in `BUILD_PLAN.md`; `EXECUTION_ROADMAP.md` governs execution waves, frozen-contract handoffs, predetermined checkpoints and model/skill routing. `IMPLEMENTATION_PLAN.md` records completed FOUNDATION-003 work and is not a product-wide execution plan. A disagreement between dependency records blocks the affected integration until reconciled; no execution document overrides `AGENTS.md`, approved ADRs or security/domain architecture.
+
 ## Permanent architecture before release sequencing
 
 The full domain, graph, APIs, event/workflow, security, integration, AI and deployment contracts are established in this baseline. Nothing is a disposable bid prototype. Calendar references in MASTER_SPEC are planning aspirations, not justification for omitting reviews or architecture. All enabled functionality must meet AGENTS.md Definition of Done. Release 0.1 is an early Government Bid milestone within the complete product roadmap, not the product's architectural scope.
