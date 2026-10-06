@@ -186,6 +186,99 @@ export function validateLocalCompose(config, images) {
   return errors;
 }
 
+export function scopeLocalServiceConfiguration(config, images, requested) {
+  const boundaryErrors = validateLocalCompose(config, images);
+  if (boundaryErrors.length)
+    throw new Error(
+      `Local service boundary failed: ${boundaryErrors.join(" ")}`,
+    );
+  if (
+    !Array.isArray(requested) ||
+    requested.length === 0 ||
+    requested.some((name) => typeof name !== "string" || name.length === 0)
+  )
+    throw new Error("At least one reviewed local service is required.");
+
+  const selected = new Set();
+  const select = (name) => {
+    if (selected.has(name)) return;
+    if (!config.services?.[name] || !images[name])
+      throw new Error(
+        `${name}: service is not in the reviewed local inventory.`,
+      );
+    selected.add(name);
+    for (const dependency of Object.keys(
+      config.services[name].depends_on ?? {},
+    ))
+      select(dependency);
+  };
+  for (const name of requested) select(name);
+
+  const services = Object.fromEntries(
+    [...selected].map((name) => [
+      name,
+      globalThis.structuredClone(config.services[name]),
+    ]),
+  );
+  const networkNames = new Set(
+    Object.values(services).flatMap((service) =>
+      Object.keys(service.networks ?? {}),
+    ),
+  );
+  const volumeNames = new Set(
+    Object.values(services).flatMap((service) =>
+      (service.volumes ?? [])
+        .filter((mount) => mount?.type === "volume")
+        .map((mount) => mount.source),
+    ),
+  );
+  const scopedConfig = {
+    ...globalThis.structuredClone(config),
+    services,
+    networks: Object.fromEntries(
+      [...networkNames].map((name) => [
+        name,
+        globalThis.structuredClone(config.networks[name]),
+      ]),
+    ),
+    volumes: Object.fromEntries(
+      [...volumeNames].map((name) => [
+        name,
+        globalThis.structuredClone(config.volumes[name]),
+      ]),
+    ),
+  };
+  const scopedImages = Object.fromEntries(
+    [...selected].map((name) => [
+      name,
+      globalThis.structuredClone(images[name]),
+    ]),
+  );
+  const scopedErrors = validateLocalCompose(scopedConfig, scopedImages);
+  if (scopedErrors.length)
+    throw new Error(
+      `Scoped local service boundary failed: ${scopedErrors.join(" ")}`,
+    );
+  return { config: scopedConfig, images: scopedImages };
+}
+
+export function cp1PostgresVerificationConfiguration(config) {
+  const environment = config?.services?.["app-db"]?.environment;
+  if (
+    Object.keys(config?.services ?? {}).join() !== "app-db" ||
+    !environment ||
+    environment.POSTGRES_USER !== "privy360_app"
+  )
+    throw new Error(
+      "CP1 PostgreSQL verification requires the canonical scoped app-db configuration.",
+    );
+
+  const verificationConfig = globalThis.structuredClone(config);
+  verificationConfig.services["app-db"].environment.POSTGRES_USER =
+    "privy360_cp1_bootstrap";
+  return verificationConfig;
+}
+
 const exactDate = (value) =>
   typeof value === "string" &&
   /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{1,3})?Z$/.test(value) &&

@@ -57,7 +57,7 @@ export function validateCredentials(value) {
   );
 }
 
-async function credentials() {
+export async function localCredentials() {
   const directory = dirname(localFile);
   await mkdir(directory, { recursive: true, mode: 0o700 });
   const directoryStat = await lstat(directory);
@@ -318,7 +318,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     process.exitCode = 2;
   } else {
     try {
-      const env = await credentials();
+      const env = await localCredentials();
       if (command !== "down" && command !== "security-config")
         await assertLocalBoundary(env);
       if (command === "security-config") {

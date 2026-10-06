@@ -5,13 +5,17 @@ import { mkdtemp, mkdir, writeFile, readFile, rm } from "node:fs/promises";
 import { resolve } from "node:path";
 import { gunzipSync } from "node:zlib";
 import {
+  cp1PostgresVerificationConfiguration,
   configurationHash,
+  scopeLocalServiceConfiguration,
   validateLocalCompose,
   validatePromotion,
   validDisposition,
 } from "../../scripts/local-security-policy.mjs";
 import { createHash } from "node:crypto";
+import { spawnSync } from "node:child_process";
 import { Buffer } from "node:buffer";
+import process from "node:process";
 import { URL } from "node:url";
 import {
   validateCredentials,
@@ -37,6 +41,155 @@ const syft = JSON.parse(
   gunzipSync(readFileSync(new URL(`evidence/syft-${suffix}.json.gz`, root))),
 );
 const clone = (value) => globalThis.structuredClone(value);
+
+test("service-scoped admission retains only the selected reviewed boundary", () => {
+  const config = {
+    name: "privy360-local",
+    services: {
+      "app-db": {
+        image: images["app-db"].image,
+        platform: "linux/amd64",
+        mem_limit: 512 * 1024 * 1024,
+        cpus: 1,
+        pids_limit: 256,
+        security_opt: ["no-new-privileges:true"],
+        networks: { "app-net": null },
+        volumes: [
+          {
+            type: "volume",
+            source: "app-db-v18-data",
+            target: "/var/lib/postgresql/data",
+          },
+        ],
+      },
+      keycloak: {
+        image: images.keycloak.image,
+        platform: "linux/amd64",
+        mem_limit: 1536 * 1024 * 1024,
+        cpus: 2,
+        pids_limit: 512,
+        security_opt: ["no-new-privileges:true"],
+        networks: { "app-net": null },
+      },
+    },
+    networks: { "app-net": { internal: true } },
+    volumes: { "app-db-v18-data": {} },
+  };
+
+  const scoped = scopeLocalServiceConfiguration(
+    config,
+    {
+      "app-db": images["app-db"],
+      keycloak: images.keycloak,
+    },
+    ["app-db"],
+  );
+
+  assert.deepEqual(Object.keys(scoped.config.services), ["app-db"]);
+  assert.deepEqual(Object.keys(scoped.images), ["app-db"]);
+  assert.deepEqual(Object.keys(scoped.config.networks), ["app-net"]);
+  assert.deepEqual(Object.keys(scoped.config.volumes), ["app-db-v18-data"]);
+  assert.deepEqual(validateLocalCompose(scoped.config, scoped.images), []);
+});
+
+test("service-scoped admission fails closed for unknown or changed services", () => {
+  const config = {
+    name: "privy360-local",
+    services: {
+      "app-db": {
+        image: images["app-db"].image,
+        platform: "linux/amd64",
+        mem_limit: 512 * 1024 * 1024,
+        cpus: 1,
+        pids_limit: 256,
+        security_opt: ["no-new-privileges:true"],
+        networks: { "app-net": null },
+      },
+    },
+    networks: { "app-net": { internal: true } },
+    volumes: {},
+  };
+  const inventory = { "app-db": images["app-db"] };
+
+  assert.throws(() =>
+    scopeLocalServiceConfiguration(config, inventory, ["keycloak"]),
+  );
+  const changed = clone(config);
+  changed.services["app-db"].image =
+    "cgr.dev/chainguard/postgres@sha256:" + "0".repeat(64);
+  assert.throws(() =>
+    scopeLocalServiceConfiguration(changed, inventory, ["app-db"]),
+  );
+});
+
+test("CP1 PostgreSQL verification changes only the initialization role", () => {
+  const source = {
+    name: "privy360-local",
+    services: {
+      "app-db": {
+        image: images["app-db"].image,
+        platform: "linux/amd64",
+        mem_limit: 512 * 1024 * 1024,
+        cpus: 1,
+        pids_limit: 256,
+        security_opt: ["no-new-privileges:true"],
+        environment: {
+          POSTGRES_DB: "privy360",
+          POSTGRES_USER: "privy360_app",
+          POSTGRES_PASSWORD: "<local-credential>",
+        },
+        networks: { "app-net": null },
+      },
+    },
+    networks: { "app-net": { internal: true } },
+    volumes: {},
+  };
+  const transformed = cp1PostgresVerificationConfiguration(source);
+
+  assert.equal(
+    transformed.services["app-db"].environment.POSTGRES_USER,
+    "privy360_cp1_bootstrap",
+  );
+  const restored = clone(transformed);
+  restored.services["app-db"].environment.POSTGRES_USER = "privy360_app";
+  assert.deepEqual(restored, source);
+  assert.deepEqual(source.services["app-db"].environment, {
+    POSTGRES_DB: "privy360",
+    POSTGRES_USER: "privy360_app",
+    POSTGRES_PASSWORD: "<local-credential>",
+  });
+});
+
+test("service-scoped preflight permits clean PostgreSQL and denies vulnerable images", () => {
+  const run = (service, cp1 = false) =>
+    spawnSync(
+      process.execPath,
+      [
+        new URL("../../scripts/local-image-evidence.mjs", import.meta.url)
+          .pathname,
+        "preflight",
+        "--service",
+        service,
+        ...(cp1 ? ["--cp1-postgres"] : []),
+      ],
+      { encoding: "utf8" },
+    );
+
+  const postgres = run("app-db");
+  assert.equal(postgres.status, 0, postgres.stderr);
+  assert.match(postgres.stdout, /app-db/);
+  const cp1Postgres = run("app-db", true);
+  assert.equal(cp1Postgres.status, 0, cp1Postgres.stderr);
+  assert.match(cp1Postgres.stdout, /CP1 PostgreSQL/);
+
+  const keycloakResult = run("keycloak");
+  assert.equal(keycloakResult.status, 1);
+  assert.match(keycloakResult.stderr, /High\/Critical findings/);
+
+  const unknown = run("unknown");
+  assert.equal(unknown.status, 1);
+  assert.match(unknown.stderr, /reviewed local inventory/);
+});
 
 test("R3 rejects unsupported top-level Compose configs and secrets", () => {
   const base = {

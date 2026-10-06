@@ -22,7 +22,8 @@
     "services:status": "node scripts/local-services.mjs status",
     "services:config": "node scripts/local-services.mjs config",
     "services:security:collect": "node scripts/local-image-evidence.mjs collect",
-    "services:security:eligibility": "node scripts/local-image-evidence.mjs collect-evaluate"
+    "services:security:eligibility": "node scripts/local-image-evidence.mjs collect-evaluate",
+    "test:cp1-postgres": "node scripts/cp1-postgres-rls.mjs"
   },
   "devDependencies": {
     "typescript": "5.9.3",

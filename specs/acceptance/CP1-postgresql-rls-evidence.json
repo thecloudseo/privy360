@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "checkpoint": "CP1",
+  "executedAt": "2026-10-06T20:36:10.800Z",
+  "sourceCommit": "a56ea203c2af55906233207261f37f1d512e3769",
+  "image": "cgr.dev/chainguard/postgres@sha256:a2aec7d9a0456cb64eb59e75752fa6aebd13100d320d3e544fe09f102076ff5c",
+  "platform": "linux/amd64",
+  "admission": {
+    "service": "app-db",
+    "currentScan": true,
+    "eligible": true,
+    "highCriticalFindings": 0,
+    "configurationHash": "9bfb56cf5198275637a5a8780790ad3aa7f07bee92443b868b2467a4efcec3e6",
+    "canonicalConfigurationHash": "e53af49b05014c5fe3f7217e7cb61e3302d386e60870b45b9babc36c1097ed66",
+    "configurationDelta": "app-db.environment.POSTGRES_USER"
+  },
+  "bootstrapBoundary": {
+    "initializationRole": "privy360_cp1_bootstrap",
+    "migrationOwner": "privy360_migrator",
+    "runtimeRole": "privy360_app",
+    "databaseOwner": "privy360_migrator",
+    "bootstrapOwnsApplicationObjects": false
+  },
+  "migrations": [
+    "0001_tenant_foundation.up.sql",
+    "0002_audit_foundation.up.sql",
+    "0003_regulatory_foundation.up.sql",
+    "0004_audit_delivery.up.sql",
+    "0005_regulatory_intake.up.sql"
+  ],
+  "runtimeRole": {
+    "name": "privy360_app",
+    "login": true,
+    "superuser": false,
+    "createRole": false,
+    "createDb": false,
+    "bypassRls": false,
+    "ownsProtectedTables": false
+  },
+  "rls": {
+    "enabled": true,
+    "forced": true
+  },
+  "cases": [
+    {
+      "name": "missing_context_read",
+      "passed": true
+    },
+    {
+      "name": "missing_context_write_denied",
+      "passed": true
+    },
+    {
+      "name": "tenant_a_read_isolation",
+      "passed": true
+    },
+    {
+      "name": "tenant_a_write_allowed",
+      "passed": true
+    },
+    {
+      "name": "tenant_a_foreign_insert_denied",
+      "passed": true
+    },
+    {
+      "name": "tenant_a_update_isolation",
+      "passed": true
+    },
+    {
+      "name": "tenant_a_delete_isolation",
+      "passed": true
+    },
+    {
+      "name": "cross_tenant_fk_denied",
+      "passed": true
+    },
+    {
+      "name": "tenant_b_symmetry",
+      "passed": true
+    },
+    {
+      "name": "untrusted_tenant_filter_no_effect",
+      "passed": true
+    },
+    {
+      "name": "transaction_local_cleanup",
+      "passed": true
+    },
+    {
+      "name": "pooled_connection_reuse",
+      "passed": true
+    },
+    {
+      "name": "rollback_cleanup",
+      "passed": true
+    },
+    {
+      "name": "row_security_off_denied",
+      "passed": true
+    },
+    {
+      "name": "policy_change_denied",
+      "passed": true
+    },
+    {
+      "name": "rls_disable_denied",
+      "passed": true
+    },
+    {
+      "name": "ownership_change_denied",
+      "passed": true
+    },
+    {
+      "name": "self_grant_denied",
+      "passed": true
+    },
+    {
+      "name": "privilege_elevation_denied",
+      "passed": true
+    },
+    {
+      "name": "nested_context_mismatch",
+      "passed": true
+    }
+  ],
+  "cleanup": {
+    "containerRemoved": true,
+    "volumeRemoved": true
+  }
+}

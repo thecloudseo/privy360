@@ -17,8 +17,10 @@ import console from "node:console";
 import prettier from "prettier";
 import {
   EVIDENCE_SCHEMA,
+  cp1PostgresVerificationConfiguration,
   configurationHash,
   evaluateLocalEligibility,
+  scopeLocalServiceConfiguration,
   validateScanEvidence,
 } from "./local-security-policy.mjs";
 import { mountedMaterial } from "./local-material.mjs";
@@ -38,7 +40,7 @@ import {
 
 const root = resolve(import.meta.dirname, "..");
 const security = resolve(root, "infra/docker/security");
-const images = JSON.parse(
+const reviewedImages = JSON.parse(
   await readFile(resolve(security, "images.json"), "utf8"),
 ).images;
 const dispositions = JSON.parse(
@@ -145,6 +147,13 @@ function sanitizeSyftOutput(sbom) {
 }
 
 const action = process.argv[2];
+const serviceOption = process.argv.slice(3);
+const cp1Postgres =
+  serviceOption.length === 3 && serviceOption[2] === "--cp1-postgres";
+const serviceScope =
+  [2, 3].includes(serviceOption.length) && serviceOption[0] === "--service"
+    ? serviceOption[1]
+    : null;
 if (
   ![
     "collect",
@@ -152,15 +161,28 @@ if (
     "preflight",
     "evaluate",
     "validate",
-  ].includes(action)
+  ].includes(action) ||
+  (serviceOption.length > 0 && serviceScope === null) ||
+  (serviceOption.length === 3 && !cp1Postgres) ||
+  (cp1Postgres && serviceScope !== "app-db") ||
+  (serviceScope !== null && !["preflight", "collect-evaluate"].includes(action))
 ) {
   console.error(
-    "Usage: node scripts/local-image-evidence.mjs collect|collect-evaluate|preflight|validate|evaluate",
+    "Usage: node scripts/local-image-evidence.mjs collect|collect-evaluate|preflight|validate|evaluate [--service <reviewed-service> [--cp1-postgres]]",
   );
   process.exitCode = 2;
 } else {
   try {
-    const config = composeConfig();
+    let config = composeConfig();
+    let images = reviewedImages;
+    if (serviceScope !== null) {
+      const scoped = scopeLocalServiceConfiguration(config, images, [
+        serviceScope,
+      ]);
+      config = scoped.config;
+      images = scoped.images;
+      if (cp1Postgres) config = cp1PostgresVerificationConfiguration(config);
+    }
     const mountHashes = await mountedMaterial(
       config,
       resolve(root, "infra/docker"),
@@ -190,7 +212,7 @@ if (
         }
       }
       console.log(
-        "Preflight permits a current collection attempt; it does not establish eligibility.",
+        `Preflight permits a current collection attempt for ${cp1Postgres ? "CP1 PostgreSQL" : (serviceScope ?? "the complete local stack")}; it does not establish eligibility.`,
       );
     } else if (action === "collect" || action === "collect-evaluate") {
       const collected = new Map();
@@ -386,18 +408,20 @@ if (
             `${image}: ${findings.length} High/Critical findings; evidence retained.`,
           );
         }
-        for (const name of await readdir(output).catch((error) => {
-          if (error.code === "ENOENT") return [];
-          throw error;
-        })) {
-          if (
-            /^historical-[a-z0-9-]+\.json\.gz$/.test(name) ||
-            name === "keycloak-provenance.json" ||
-            name === "keycloak-docker-provenance.json"
-          )
-            await copyFile(resolve(output, name), resolve(stage, name));
+        if (serviceScope === null) {
+          for (const name of await readdir(output).catch((error) => {
+            if (error.code === "ENOENT") return [];
+            throw error;
+          })) {
+            if (
+              /^historical-[a-z0-9-]+\.json\.gz$/.test(name) ||
+              name === "keycloak-provenance.json" ||
+              name === "keycloak-docker-provenance.json"
+            )
+              await copyFile(resolve(output, name), resolve(stage, name));
+          }
+          await publishCompletedCollection(stage, output, true);
         }
-        await publishCompletedCollection(stage, output, true);
         if (action === "collect-evaluate") {
           const records = Object.entries(images).map(([service, item]) => ({
             ...collected.get(item.image),
@@ -415,7 +439,13 @@ if (
           });
           if (!result.eligible) throw new Error(result.errors.join("\n"));
           console.log(`LOCAL_ELIGIBILITY_BINDING=${hash}`);
+          if (serviceScope !== null)
+            console.log(`LOCAL_ELIGIBILITY_SERVICES=${serviceScope}`);
+          if (cp1Postgres)
+            console.log("LOCAL_ELIGIBILITY_PROFILE=cp1-postgres");
         }
+        if (serviceScope !== null)
+          await rm(stage, { recursive: true, force: true });
       } catch (error) {
         await rm(stage, { recursive: true, force: true });
         throw error;
