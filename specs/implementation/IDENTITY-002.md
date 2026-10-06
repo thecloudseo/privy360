@@ -30,12 +30,14 @@
 ### Task 1: Freeze adversarial membership contracts
 
 **Files:**
+
 - Create: `tests/security/identity-002.test.mjs`
 - Modify: `packages/auth/src/session.ts`
 - Create: `packages/auth/src/membership.ts`
 - Modify: `packages/auth/src/index.ts`
 
 **Interfaces:**
+
 - `MembershipRecord`: immutable server-side `{membershipId,userId,tenantId,issuer,subject,membershipState,tenantState,membershipSecurityEpoch,tenantSecurityEpoch,actorId}`.
 - `MembershipStore.findForSession(session, membershipId) -> Promise<MembershipRecord | undefined>`.
 - `selectTenantMembership(session, membershipId, store, audit) -> Promise<TrustedTenantContext>`.
@@ -54,6 +56,7 @@
 ### Task 3: Add tenant-safe membership migration
 
 **Files:**
+
 - Create: `packages/database/migrations/0010_identity_memberships.up.sql`
 - Create: `packages/database/migrations/0010_identity_memberships.down.sql`
 - Modify: `tests/security/identity-002.test.mjs`
