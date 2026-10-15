@@ -21,6 +21,12 @@ jobs:
       - run: pnpm format
       - run: pnpm lint
       - run: pnpm typecheck
+      - name: Install verified Gitleaks
+        run: |
+          mkdir -p .cache
+          curl -fsSL https://github.com/gitleaks/gitleaks/releases/download/v8.30.0/gitleaks_8.30.0_linux_x64.tar.gz -o .cache/gitleaks.tar.gz
+          echo '79a3ab579b53f71efd634f3aaf7e04a0fa0cf206b7ed434638d1547a2470a66e  .cache/gitleaks.tar.gz' | sha256sum -c -
+          tar -xzf .cache/gitleaks.tar.gz -C .cache gitleaks
       - run: pnpm test
       - run: pnpm build
       - run: pnpm check:structure
