@@ -79,7 +79,17 @@ for (const app of ["web", "api", "privacy-centre", "worker"]) {
     app === "web" || app === "privacy-centre"
       ? ["shell.ts", "workspace.ts", "regulatory.ts"]
       : app === "api"
-        ? ["workspace.ts", "regulatory.ts", "main.ts", "health.ts", "types", "routes", "middleware", "services", "schemas"] // Week 1 API implementation
+        ? [
+            "workspace.ts",
+            "regulatory.ts",
+            "main.ts",
+            "health.ts",
+            "types",
+            "routes",
+            "middleware",
+            "services",
+            "schemas",
+          ] // Week 1 API implementation
         : ["workspace.ts"];
 
   if (files.some((file) => !allowed.includes(file)))

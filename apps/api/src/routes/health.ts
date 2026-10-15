@@ -1,11 +1,11 @@
-import { FastifyInstance } from 'fastify';
+import { FastifyInstance } from "fastify";
 
 export async function healthRoutes(fastify: FastifyInstance) {
-  fastify.get('/health', async (request, reply) => {
+  fastify.get("/health", async (request, reply) => {
     return {
-      status: 'ok',
+      status: "ok",
       timestamp: new Date().toISOString(),
-      service: '@privy360/api',
+      service: "@privy360/api",
     };
   });
 }

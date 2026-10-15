@@ -1,6 +1,6 @@
-import { FastifyRequest, FastifyInstance } from 'fastify';
+import { FastifyRequest, FastifyInstance } from "fastify";
 
-declare module 'fastify' {
+declare module "fastify" {
   interface FastifyRequest {
     tenant_id?: string;
     user_id?: string;

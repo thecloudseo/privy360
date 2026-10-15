@@ -1,14 +1,25 @@
-import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify';
+import { FastifyInstance, FastifyRequest, FastifyReply } from "fastify";
 
 /**
  * Role-based permission mapping per SECURITY_ARCHITECTURE.md §3.2
  */
 const ROLE_PERMISSIONS: Record<string, Set<string>> = {
-  admin: new Set(['consent:read', 'consent:write', 'rights:read', 'rights:write', 'audit:read']),
-  operator: new Set(['consent:read', 'consent:write', 'rights:read', 'rights:write']),
-  dpo: new Set(['consent:read', 'rights:read', 'audit:read']),
-  viewer: new Set(['consent:read', 'rights:read']),
-  security: new Set(['audit:read', 'consent:read']),
+  admin: new Set([
+    "consent:read",
+    "consent:write",
+    "rights:read",
+    "rights:write",
+    "audit:read",
+  ]),
+  operator: new Set([
+    "consent:read",
+    "consent:write",
+    "rights:read",
+    "rights:write",
+  ]),
+  dpo: new Set(["consent:read", "rights:read", "audit:read"]),
+  viewer: new Set(["consent:read", "rights:read"]),
+  security: new Set(["audit:read", "consent:read"]),
 };
 
 /**
@@ -21,7 +32,7 @@ export function authorize(...requiredPermissions: string[]) {
   return async (request: FastifyRequest, reply: FastifyReply) => {
     // Must have passed auth middleware
     if (!request.tenant_id || !request.roles) {
-      return reply.code(401).send({ error: 'Unauthorized' });
+      return reply.code(401).send({ error: "Unauthorized" });
     }
 
     // Check if user has any of the required permissions
@@ -31,11 +42,13 @@ export function authorize(...requiredPermissions: string[]) {
       perms.forEach((p) => userPermissions.add(p));
     }
 
-    const hasPermission = requiredPermissions.some((perm) => userPermissions.has(perm));
+    const hasPermission = requiredPermissions.some((perm) =>
+      userPermissions.has(perm),
+    );
 
     if (!hasPermission) {
       // Per API_ARCHITECTURE.md: Return 403 without revealing specifics
-      return reply.code(403).send({ error: 'Forbidden' });
+      return reply.code(403).send({ error: "Forbidden" });
     }
   };
 }
@@ -44,7 +57,7 @@ export function authorize(...requiredPermissions: string[]) {
  * Decorate Fastify with authorize method
  */
 export async function setupAuthorization(fastify: FastifyInstance) {
-  fastify.decorate('authorize', authorize);
+  fastify.decorate("authorize", authorize);
 }
 
 declare global {

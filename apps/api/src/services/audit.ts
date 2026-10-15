@@ -1,11 +1,11 @@
-import { query } from './db.js';
+import { query } from "./db.js";
 
 export interface AuditEventPayload {
   tenantId: string;
   actorId: string;
   resourceType: string;
   resourceId?: string | undefined;
-  action: 'CREATE' | 'UPDATE' | 'DELETE' | 'APPROVE' | 'WITHDRAW';
+  action: "CREATE" | "UPDATE" | "DELETE" | "APPROVE" | "WITHDRAW";
   changes?: Record<string, unknown> | undefined;
   ipAddress?: string | undefined;
   userAgent?: string | undefined;
@@ -43,11 +43,11 @@ export async function logAuditEvent(payload: AuditEventPayload): Promise<void> {
         ipAddress || null,
         userAgent || null,
       ],
-      tenantId
+      tenantId,
     );
   } catch (err) {
     // Per AGENTS.md §37: Do not hide failures
-    console.error('Failed to log audit event:', err);
+    console.error("Failed to log audit event:", err);
     throw err;
   }
 }

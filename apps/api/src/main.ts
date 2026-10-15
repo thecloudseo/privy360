@@ -1,15 +1,15 @@
-import Fastify from 'fastify';
-import { setupAuth, authMiddleware } from './middleware/auth.js';
-import { tenantContextMiddleware } from './middleware/tenant.js';
-import { setupAuthorization } from './middleware/authorize.js';
-import { healthRoutes } from './routes/health.js';
-import { consentRoutes } from './routes/consents.js';
+import Fastify from "fastify";
+import { setupAuth, authMiddleware } from "./middleware/auth.js";
+import { tenantContextMiddleware } from "./middleware/tenant.js";
+import { setupAuthorization } from "./middleware/authorize.js";
+import { healthRoutes } from "./routes/health.js";
+import { consentRoutes } from "./routes/consents.js";
 
 const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
-const host = process.env.HOST || '127.0.0.1';
+const host = process.env.HOST || "127.0.0.1";
 
 const fastify = Fastify({
-  logger: process.env.NODE_ENV === 'test' ? false : true,
+  logger: process.env.NODE_ENV === "test" ? false : true,
 });
 
 async function start() {

@@ -1,8 +1,8 @@
-import { z } from 'zod';
+import { z } from "zod";
 
 export const CreateConsentRequestSchema = z.object({
-  dataPrincipalId: z.string().min(1, 'dataPrincipalId is required'),
-  purpose: z.enum(['marketing', 'analytics', 'operations', 'research']),
+  dataPrincipalId: z.string().min(1, "dataPrincipalId is required"),
+  purpose: z.enum(["marketing", "analytics", "operations", "research"]),
   grantConsent: z.boolean(),
 });
 

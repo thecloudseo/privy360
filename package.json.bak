@@ -1,0 +1,37 @@
+{
+  "name": "privy360",
+  "private": true,
+  "version": "0.0.0",
+  "packageManager": "pnpm@12.11.2",
+  "engines": {
+    "node": ">=24 <26"
+  },
+  "scripts": {
+    "format": "prettier --check package.json pnpm-workspace.yaml trivy.yaml tsconfig.base.json tsconfig.json eslint.config.mjs playwright.config.ts IMPLEMENTATION_PLAN.md apps packages specs regulations infra tests scripts docs .github",
+    "format:write": "prettier --write package.json pnpm-workspace.yaml trivy.yaml tsconfig.base.json tsconfig.json eslint.config.mjs playwright.config.ts IMPLEMENTATION_PLAN.md apps packages specs regulations infra tests scripts docs .github",
+    "lint": "eslint .",
+    "typecheck": "tsc -p tsconfig.json && pnpm -r --if-present typecheck",
+    "test": "node --test tests/unit/*.test.mjs tests/security/*.test.mjs",
+    "test:e2e": "playwright test",
+    "audit:deps": "pnpm audit --audit-level high",
+    "build": "pnpm -r --if-present build",
+    "check:structure": "node scripts/check-structure.mjs",
+    "check:production-boundary": "node scripts/check-production-boundary.mjs",
+    "services:up": "node scripts/local-services.mjs up",
+    "services:down": "node scripts/local-services.mjs down",
+    "services:status": "node scripts/local-services.mjs status",
+    "services:config": "node scripts/local-services.mjs config",
+    "services:security:collect": "node scripts/local-image-evidence.mjs collect",
+    "services:security:eligibility": "node scripts/local-image-evidence.mjs collect-evaluate",
+    "test:cp1-postgres": "node scripts/cp1-postgres-rls.mjs"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "eslint": "10.11.0",
+    "@eslint/js": "10.0.1",
+    "typescript-eslint": "8.56.1",
+    "prettier": "3.9.9",
+    "@playwright/test": "1.63.0",
+    "@types/node": "24.19.0"
+  }
+}

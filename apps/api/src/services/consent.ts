@@ -1,6 +1,6 @@
-import { query } from './db.js';
-import { logAuditEvent } from './audit.js';
-import { CreateConsentRequest, ConsentResponse } from '../schemas/consent.js';
+import { query } from "./db.js";
+import { logAuditEvent } from "./audit.js";
+import { CreateConsentRequest, ConsentResponse } from "../schemas/consent.js";
 
 export interface CreateConsentPayload {
   tenantId: string;
@@ -21,12 +21,14 @@ export interface CreateConsentPayload {
  * - If grantConsent=false, status='pending' and no granted_date
  * - Duplicate attempts return 409 Conflict
  */
-export async function createConsent(payload: CreateConsentPayload): Promise<ConsentResponse> {
+export async function createConsent(
+  payload: CreateConsentPayload,
+): Promise<ConsentResponse> {
   const { tenantId, actorId, request, ipAddress, userAgent } = payload;
   const { dataPrincipalId, purpose, grantConsent } = request;
 
   // Determine status and granted_date based on grantConsent flag
-  const status = grantConsent ? 'granted' : 'pending';
+  const status = grantConsent ? "granted" : "pending";
   const grantedDate = grantConsent ? new Date() : null;
   const grantedBy = grantConsent ? actorId : null;
 
@@ -38,7 +40,7 @@ export async function createConsent(payload: CreateConsentPayload): Promise<Cons
       ) VALUES ($1, $2, $3, $4, $5, $6, now())
       RETURNING id, tenant_id, principal_id, purpose, status, granted_date, created_at`,
       [tenantId, dataPrincipalId, purpose, status, grantedBy, grantedDate],
-      tenantId
+      tenantId,
     );
 
     const consentRow = result.rows[0];
@@ -47,9 +49,9 @@ export async function createConsent(payload: CreateConsentPayload): Promise<Cons
     await logAuditEvent({
       tenantId,
       actorId,
-      resourceType: 'consent',
+      resourceType: "consent",
       resourceId: consentRow.id,
-      action: 'CREATE',
+      action: "CREATE",
       changes: {
         principal_id: dataPrincipalId,
         purpose,
@@ -71,15 +73,17 @@ export async function createConsent(payload: CreateConsentPayload): Promise<Cons
     };
   } catch (err: any) {
     // Check for unique constraint violation (duplicate consent)
-    if (err.code === '23505') {
-      const error = new Error('Consent already exists for this principal and purpose');
-      (error as any).code = 'DUPLICATE_CONSENT';
+    if (err.code === "23505") {
+      const error = new Error(
+        "Consent already exists for this principal and purpose",
+      );
+      (error as any).code = "DUPLICATE_CONSENT";
       (error as any).statusCode = 409;
       throw error;
     }
 
     // Other database errors
-    console.error('Consent creation failed:', err);
+    console.error("Consent creation failed:", err);
     throw err;
   }
 }
