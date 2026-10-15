@@ -150,6 +150,8 @@ export interface AtomicAuditUnitOfWork {
   ): Promise<T>;
 }
 
+export * from "./service.ts";
+
 export class InMemoryAtomicAuditUnitOfWork implements AtomicAuditUnitOfWork {
   #audits: Array<{ context: AuditContext; record: AuditRecord }> = [];
   #outbox: Array<{ context: AuditContext; event: DomainEvent }> = [];
