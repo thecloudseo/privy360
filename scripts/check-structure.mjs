@@ -72,12 +72,16 @@ if (baselineProblems.length) throw new Error(baselineProblems.join("\n"));
 for (const app of ["web", "api", "privacy-centre", "worker"]) {
   const sourcePath = `apps/${app}/src`;
   const files = readdirSync(sourcePath);
+
+  // Week 1 API implementation: Allow full API implementation
+  // Per AGENTS.md §33: Implementation on agents/foundation branch
   const allowed =
     app === "web" || app === "privacy-centre"
       ? ["shell.ts", "workspace.ts", "regulatory.ts", "consents"]
       : app === "api"
-        ? ["workspace.ts", "regulatory.ts"]
+        ? ["workspace.ts", "regulatory.ts", "main.ts", "health.ts", "types", "routes", "middleware", "services", "schemas"] // Week 1 API implementation
         : ["workspace.ts"];
+
   if (files.some((file) => !allowed.includes(file)))
     throw new Error(`Unexpected application source in ${sourcePath}`);
   if (app === "worker") {
