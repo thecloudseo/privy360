@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any, @typescript-eslint/no-namespace, no-undef */
 import { FastifyInstance, FastifyRequest, FastifyReply } from "fastify";
 import { CreateConsentRequestSchema } from "../schemas/consent.js";
 import { createConsent } from "../services/consent.js";

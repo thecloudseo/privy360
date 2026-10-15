@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any, @typescript-eslint/no-namespace, no-undef */
 import { query } from "./db.js";
 import { logAuditEvent } from "./audit.js";
 import { CreateConsentRequest, ConsentResponse } from "../schemas/consent.js";

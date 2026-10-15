@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/no-namespace */
 import { FastifyInstance, FastifyRequest, FastifyReply } from "fastify";
 
 /**

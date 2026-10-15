@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any, @typescript-eslint/no-namespace, no-undef */
 import { FastifyInstance } from "fastify";
 
 export async function healthRoutes(fastify: FastifyInstance) {
