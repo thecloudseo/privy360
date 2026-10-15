@@ -3,17 +3,19 @@
  * Required by regulatory-004-api.test.mjs
  */
 
-export function getProvision(regulatoryCorpus: unknown, provisionId: string) {
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
+export function getProvision(_regulatoryCorpus: unknown, provisionId: string) {
   return { provisionId };
 }
 
-export function getRegulations(regulatoryCorpus: unknown) {
+export function getRegulations(_regulatoryCorpus: unknown) {
   return [];
 }
 
 export function getRequirementVersions(
-  regulatoryCorpus: unknown,
-  requirementId: string,
+  _regulatoryCorpus: unknown,
+  _requirementId: string,
 ) {
   return [];
 }
