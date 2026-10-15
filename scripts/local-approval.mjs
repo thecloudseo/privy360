@@ -1,7 +1,7 @@
 import { createHash, createPublicKey, verify } from "node:crypto";
 import { Buffer } from "node:buffer";
 import { constants } from "node:fs";
-import { lstat, open, realpath } from "node:fs/promises";
+import { open, realpath } from "node:fs/promises";
 import process from "node:process";
 import { resolve } from "node:path";
 
@@ -42,23 +42,21 @@ export async function loadOperationalTrust(path) {
     throw new Error(
       "Protected approval trust record required outside workspace.",
     );
-  const metadata = await lstat(path);
-  const actualPath = await realpath(path);
-  if (
-    !metadata.isFile() ||
-    actualPath === workspace ||
-    actualPath.startsWith(`${workspace}/`) ||
-    metadata.uid === process.getuid() ||
-    metadata.mode & 0o022
-  )
-    throw new Error("Approval trust record is not independently protected.");
-  // Read through a descriptor bound to the inode checked above (no path re-resolution).
+  // Open once with O_NOFOLLOW; every check and the read use this descriptor, so the
+  // path cannot be swapped between validation and read.
   const handle = await open(path, constants.O_RDONLY | constants.O_NOFOLLOW);
   let trust;
   try {
-    const opened = await handle.stat();
-    if (opened.dev !== metadata.dev || opened.ino !== metadata.ino)
-      throw new Error("Approval trust record changed during read.");
+    const metadata = await handle.stat();
+    const actualPath = await realpath(path);
+    if (
+      !metadata.isFile() ||
+      actualPath === workspace ||
+      actualPath.startsWith(`${workspace}/`) ||
+      metadata.uid === process.getuid() ||
+      metadata.mode & 0o022
+    )
+      throw new Error("Approval trust record is not independently protected.");
     trust = JSON.parse(await handle.readFile("utf8"));
   } finally {
     await handle.close();
