@@ -38,3 +38,4 @@ Selected = Chief Architect baseline engineering choice, not human/security produ
 | [ADR-032](ADR-032.md) | Extensibility without arbitrary code | Selected for architecture baseline |
 | [ADR-033](ADR-033.md) | Tenant-scoped search and vector retrieval | Selected for architecture baseline |
 | [ADR-034](ADR-034.md) | Local service vulnerability eligibility boundary | Chief Architect approved for FOUNDATION-003 local-development remediation |
+| [ADR-035](ADR-035.md) | Static analysis gate when GitHub Advanced Security is unavailable | Decided: option 1 (CodeQL required, time-bounded blocked gate, expires 2026-11-15) |
