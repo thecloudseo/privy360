@@ -2,7 +2,17 @@
 import { FastifyInstance, FastifyRequest, FastifyReply } from "fastify";
 import fastifyJwt from "@fastify/jwt";
 
-const JWT_SECRET = process.env.JWT_SECRET || "dev-secret-change-in-production";
+// Fail closed: no hard-coded fallback secret. Missing or weak secrets stop startup
+// rather than letting tokens be forged with a known value (AGENTS.md §5).
+function requireJwtSecret(): string {
+  const secret = process.env.JWT_SECRET;
+  if (!secret || secret.length < 32) {
+    throw new Error("JWT_SECRET must be set to at least 32 characters");
+  }
+  return secret;
+}
+
+const JWT_SECRET: string = requireJwtSecret();
 
 export async function setupAuth(fastify: FastifyInstance) {
   await fastify.register(fastifyJwt, {
