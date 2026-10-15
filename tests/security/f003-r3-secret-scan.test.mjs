@@ -44,9 +44,7 @@ test("R3 normalizes only exact public package metadata and retains synthetic sec
   assert.equal(normalized.synthetic_access_key, syntheticSecret);
   const cacheDir = resolve(import.meta.dirname, "../../.cache");
   await mkdir(cacheDir, { recursive: true });
-  const directory = await mkdtemp(
-    resolve(cacheDir, "r3-secret-test-"),
-  );
+  const directory = await mkdtemp(resolve(cacheDir, "r3-secret-test-"));
   try {
     await writeFile(
       resolve(directory, "sample.json"),
