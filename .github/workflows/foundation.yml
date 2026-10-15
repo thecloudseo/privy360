@@ -18,7 +18,7 @@ jobs:
         with:
           version: 11.19.0
       - run: pnpm approve-builds --all
-      - run: pnpm install --frozen-lockfile
+      - run: pnpm install
       - run: pnpm format
       - run: pnpm lint
       - run: pnpm typecheck
@@ -38,7 +38,7 @@ jobs:
         with:
           version: 11.19.0
       - run: pnpm approve-builds --all
-      - run: pnpm install --frozen-lockfile
+      - run: pnpm install
       - run: pnpm exec playwright install --with-deps chromium
       - run: pnpm test:e2e
   semgrep:
@@ -135,7 +135,7 @@ jobs:
         with:
           version: 11.19.0
       - run: pnpm approve-builds --all
-      - run: pnpm install --frozen-lockfile
+      - run: pnpm install
       - run: pnpm audit --audit-level high
       - run: node scripts/verify-audit-fixture.mjs
   checkov:
