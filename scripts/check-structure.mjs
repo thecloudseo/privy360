@@ -74,7 +74,7 @@ for (const app of ["web", "api", "privacy-centre", "worker"]) {
   const files = readdirSync(sourcePath);
   const allowed =
     app === "web" || app === "privacy-centre"
-      ? ["shell.ts", "workspace.ts", "regulatory.ts"]
+      ? ["shell.ts", "workspace.ts", "regulatory.ts", "consents"]
       : app === "api"
         ? ["workspace.ts", "regulatory.ts"]
         : ["workspace.ts"];

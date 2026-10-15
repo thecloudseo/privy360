@@ -5,13 +5,30 @@
   "type": "module",
   "exports": {
     ".": "./src/index.ts",
-    "./audit-trail": "./src/audit-trail.ts"
+    "./audit-trail": "./src/audit-trail.ts",
+    "./design-tokens.css": "./src/design-tokens.css",
+    "./components": "./src/components/index.ts",
+    "./components.css": "./src/components.css"
   },
   "scripts": {
     "typecheck": "tsc -p tsconfig.json",
-    "build": "tsc -p tsconfig.json"
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "peerDependencies": {
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
   },
   "devDependencies": {
-    "typescript": "5.9.3"
+    "@testing-library/dom": "10.4.2",
+    "@testing-library/jest-dom": "7.0.1",
+    "@testing-library/react": "16.3.3",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "jsdom": "30.1.1",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "typescript": "5.9.3",
+    "vitest": "5.0.3"
   }
 }

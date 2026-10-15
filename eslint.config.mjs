@@ -10,6 +10,7 @@ export default tseslint.config(
       ".venv-*/**",
       "test-results/**",
       "playwright-report/**",
+      "apps/web/.next/**",
     ],
   },
   eslint.configs.recommended,
