@@ -1,0 +1,151 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Button > renders a non-submitting button by default 1`] = `
+<div>
+  <button
+    class="p360-button p360-button--primary"
+    type="button"
+  >
+    Save
+  </button>
+</div>
+`;
+
+exports[`Card > labels the section with its heading 1`] = `
+<div>
+  <section
+    aria-labelledby="_r_0_"
+    class="p360-card"
+  >
+    <header
+      class="p360-card__header"
+    >
+      <h2
+        class="p360-card__title"
+        id="_r_0_"
+      >
+        Consents
+      </h2>
+    </header>
+    <div
+      class="p360-card__body"
+    >
+      <p>
+        Body
+      </p>
+    </div>
+  </section>
+</div>
+`;
+
+exports[`Modal > renders nothing while closed and a labelled dialog when open 1`] = `
+<div>
+  <button>
+    Open
+  </button>
+  <div
+    class="p360-modal-backdrop"
+  >
+    <div
+      aria-labelledby="_r_4_"
+      aria-modal="true"
+      class="p360-modal"
+      role="dialog"
+      tabindex="-1"
+    >
+      <h2
+        class="p360-modal__title"
+        id="_r_4_"
+      >
+        Confirm
+      </h2>
+      <div
+        class="p360-modal__body"
+      >
+        <p>
+          Are you sure?
+        </p>
+      </div>
+      <div
+        class="p360-modal__footer"
+      >
+        <button>
+          OK
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SelectField > renders labelled options 1`] = `
+<div>
+  <div
+    class="p360-field"
+  >
+    <label
+      class="p360-field__label"
+      for="_r_3_"
+    >
+      Purpose
+    </label>
+    <select
+      class="p360-input p360-select"
+      id="_r_3_"
+    >
+      <option
+        selected=""
+        value="marketing"
+      >
+        Marketing
+      </option>
+      <option
+        value="analytics"
+      >
+        Analytics
+      </option>
+    </select>
+  </div>
+</div>
+`;
+
+exports[`TextField > associates label, hint and error with the input 1`] = `
+<div>
+  <div
+    class="p360-field"
+  >
+    <label
+      class="p360-field__label"
+      for="_r_1_"
+    >
+      Data principal ID
+      <span
+        aria-hidden="true"
+        class="p360-field__required"
+      >
+         *
+      </span>
+    </label>
+    <input
+      aria-describedby="_r_1_-hint _r_1_-error"
+      aria-invalid="true"
+      class="p360-input"
+      id="_r_1_"
+      required=""
+    />
+    <p
+      class="p360-field__hint"
+      id="_r_1_-hint"
+    >
+      Opaque identifier
+    </p>
+    <p
+      class="p360-field__error"
+      id="_r_1_-error"
+      role="alert"
+    >
+      Required
+    </p>
+  </div>
+</div>
+`;

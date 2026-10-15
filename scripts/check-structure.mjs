@@ -77,7 +77,7 @@ for (const app of ["web", "api", "privacy-centre", "worker"]) {
   // Per AGENTS.md §33: Implementation on agents/foundation branch
   const allowed =
     app === "web" || app === "privacy-centre"
-      ? ["shell.ts", "workspace.ts", "regulatory.ts"]
+      ? ["shell.ts", "workspace.ts", "regulatory.ts", "consents"]
       : app === "api"
         ? ["workspace.ts", "regulatory.ts", "main.ts", "health.ts", "types", "routes", "middleware", "services", "schemas"] // Week 1 API implementation
         : ["workspace.ts"];
