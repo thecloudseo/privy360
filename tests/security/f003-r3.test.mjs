@@ -526,8 +526,10 @@ test("R3 rejects future configuration exposure evidence", () => {
 });
 
 test("R3 retains completed denied evidence and preserves old evidence on incomplete collection", async () => {
+  const cacheDir = resolve(import.meta.dirname, "../../.cache");
+  await mkdir(cacheDir, { recursive: true });
   const directory = await mkdtemp(
-    resolve(import.meta.dirname, "../../.cache/r3-publication-"),
+    resolve(cacheDir, "r3-publication-"),
   );
   try {
     const accepted = resolve(directory, "accepted");
