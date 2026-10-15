@@ -11,6 +11,9 @@ export function getRegulations(regulatoryCorpus: unknown) {
   return [];
 }
 
-export function getRequirementVersions(regulatoryCorpus: unknown, requirementId: string) {
+export function getRequirementVersions(
+  regulatoryCorpus: unknown,
+  requirementId: string,
+) {
   return [];
 }
