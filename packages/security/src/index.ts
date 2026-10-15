@@ -127,3 +127,5 @@ export function secretReference(value: string): SecretReference {
 export * from "./tenant-context.ts";
 export * from "./tenant-infrastructure.ts";
 export * from "./tenant-transaction.ts";
+export * from "./permissions.ts";
+export * from "./authz.ts";
