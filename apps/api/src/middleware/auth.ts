@@ -2,20 +2,19 @@ import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify';
 import fastifyJwt from '@fastify/jwt';
 
 const JWT_SECRET = process.env.JWT_SECRET || 'dev-secret-change-in-production';
-const JWT_ISSUER = process.env.JWT_ISSUER || 'https://keycloak.privy360.in/realms/privy360';
 
 export async function setupAuth(fastify: FastifyInstance) {
   await fastify.register(fastifyJwt, {
     secret: JWT_SECRET,
   });
+}
 
-  fastify.decorate('authenticate', async function (request: FastifyRequest, reply: FastifyReply) {
-    try {
-      await request.jwtVerify();
-    } catch (err) {
-      reply.send(err);
-    }
-  });
+export async function authenticateRequest(request: FastifyRequest, reply: FastifyReply) {
+  try {
+    await request.jwtVerify();
+  } catch (err) {
+    reply.send(err);
+  }
 }
 
 export async function authMiddleware(fastify: FastifyInstance) {

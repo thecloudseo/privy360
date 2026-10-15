@@ -3,6 +3,7 @@ import { setupAuth, authMiddleware } from './middleware/auth.js';
 import { tenantContextMiddleware } from './middleware/tenant.js';
 import { setupAuthorization } from './middleware/authorize.js';
 import { healthRoutes } from './routes/health.js';
+import { consentRoutes } from './routes/consents.js';
 
 const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
 const host = process.env.HOST || '127.0.0.1';
@@ -21,6 +22,7 @@ async function start() {
 
     // Register routes
     await fastify.register(healthRoutes);
+    await fastify.register(consentRoutes);
 
     await fastify.listen({ host, port });
     console.log(`Server running at http://${host}:${port}`);
