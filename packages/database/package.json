@@ -1,0 +1,16 @@
+{
+  "name": "@privy360/database",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "migrate": "node run-migrations.mjs",
+    "migrate:test": "DB_NAME=privy360_test node run-migrations.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.0"
+  },
+  "dependencies": {
+    "pg": "^8.11.3"
+  }
+}
