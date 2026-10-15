@@ -1,8 +1,27 @@
 import { createHash } from "node:crypto";
-import { lstat, readFile, readdir, realpath } from "node:fs/promises";
+import { constants } from "node:fs";
+import { lstat, open, readdir, realpath } from "node:fs/promises";
 import { relative, resolve, sep } from "node:path";
 
 const digest = (bytes) => createHash("sha256").update(bytes).digest("hex");
+
+// Read through a descriptor opened with O_NOFOLLOW and verify it is the same inode
+// we lstat'd, so a path swapped between check and read cannot redirect the read.
+async function readVerifiedFile(path, expected) {
+  const handle = await open(path, constants.O_RDONLY | constants.O_NOFOLLOW);
+  try {
+    const opened = await handle.stat();
+    if (
+      !opened.isFile() ||
+      opened.dev !== expected.dev ||
+      opened.ino !== expected.ino
+    )
+      throw new Error("Mounted material changed during read.");
+    return await handle.readFile();
+  } finally {
+    await handle.close();
+  }
+}
 
 async function tree(path) {
   const stat = await lstat(path);
@@ -12,7 +31,7 @@ async function tree(path) {
     return {
       type: "file",
       mode: stat.mode & 0o777,
-      sha256: digest(await readFile(path)),
+      sha256: digest(await readVerifiedFile(path, stat)),
     };
   if (!stat.isDirectory()) throw new Error("Unsupported mounted material.");
   const entries = {};

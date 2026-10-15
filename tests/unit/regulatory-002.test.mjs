@@ -126,17 +126,18 @@ test("same manifest digest is idempotent", async () => {
 });
 test("failed persistence rolls back the audit unit of work", async () => {
   const uow = new InMemoryAtomicAuditUnitOfWork();
-  await assert.rejects(() =>
-    importRegulatoryManifest(
-      request({
-        uow,
-        manifestBytes: bytes,
-        persist: async () => {
-          throw new Error("db unavailable");
-        },
-      }),
-      /db unavailable/,
-    ),
+  await assert.rejects(
+    () =>
+      importRegulatoryManifest(
+        request({
+          uow,
+          manifestBytes: bytes,
+          persist: async () => {
+            throw new Error("db unavailable");
+          },
+        }),
+      ),
+    /db unavailable/,
   );
   assert.equal(uow.auditCount, 0);
   assert.equal(uow.outboxCount, 0);

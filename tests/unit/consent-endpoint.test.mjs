@@ -75,7 +75,6 @@ test("POST /api/v1/consents - returns 409 on duplicate consent", async (t) => {
 
 test("Tenant isolation - RLS prevents cross-tenant access", async (t) => {
   // Simulating RLS: Set tenant context before query
-  const tenantIdForRLS = "550e8400-e29b-41d4-a716-446655440000";
   const requestTenantId = "550e8400-e29b-41d4-a716-446655440000";
   const queriedTenantId = "550e8400-e29b-41d4-a716-446655440000";
 

@@ -1,6 +1,7 @@
 import { createHash, createPublicKey, verify } from "node:crypto";
 import { Buffer } from "node:buffer";
-import { readFile, lstat, realpath } from "node:fs/promises";
+import { constants } from "node:fs";
+import { lstat, open, realpath } from "node:fs/promises";
 import process from "node:process";
 import { resolve } from "node:path";
 
@@ -51,7 +52,17 @@ export async function loadOperationalTrust(path) {
     metadata.mode & 0o022
   )
     throw new Error("Approval trust record is not independently protected.");
-  const trust = JSON.parse(await readFile(path, "utf8"));
+  // Read through a descriptor bound to the inode checked above (no path re-resolution).
+  const handle = await open(path, constants.O_RDONLY | constants.O_NOFOLLOW);
+  let trust;
+  try {
+    const opened = await handle.stat();
+    if (opened.dev !== metadata.dev || opened.ino !== metadata.ino)
+      throw new Error("Approval trust record changed during read.");
+    trust = JSON.parse(await handle.readFile("utf8"));
+  } finally {
+    await handle.close();
+  }
   if (
     !keys(trust, [
       "schemaVersion",

@@ -1,4 +1,5 @@
 import Fastify from "fastify";
+import rateLimit from "@fastify/rate-limit";
 import { setupAuth, authMiddleware } from "./middleware/auth.js";
 import { tenantContextMiddleware } from "./middleware/tenant.js";
 import { setupAuthorization } from "./middleware/authorize.js";
@@ -14,7 +15,8 @@ const fastify = Fastify({
 
 async function start() {
   try {
-    // Setup security middleware
+    // Setup security middleware: throttle every route, including unauthenticated JWT checks
+    await fastify.register(rateLimit, { max: 100, timeWindow: "1 minute" });
     await setupAuth(fastify);
     await setupAuthorization(fastify);
     await authMiddleware(fastify);
